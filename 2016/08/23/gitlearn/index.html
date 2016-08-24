@@ -1,0 +1,512 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>git learning day 1 | Never Git up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jerry">
+    
+
+    
+    <meta name="description" content="git起步配置12345#配置 用户名，邮箱$ git config --global user.name &quot;Jerry&quot;$ git config --global user.email 20121954@cqu.edu.cn#检查配置信息$ git config --list
+帮助手册命令12345678#三种方法找到git使用手册$ git help &amp;lt;verb&amp;gt;$ git &amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git learning day 1">
+<meta property="og:url" content="http://wenjiewang.top/2016/08/23/gitlearn/index.html">
+<meta property="og:site_name" content="Never Git up">
+<meta property="og:description" content="git起步配置12345#配置 用户名，邮箱$ git config --global user.name &quot;Jerry&quot;$ git config --global user.email 20121954@cqu.edu.cn#检查配置信息$ git config --list
+帮助手册命令12345678#三种方法找到git使用手册$ git help &amp;lt;verb&amp;gt;$ git &amp;lt">
+<meta property="og:updated_time" content="2016-08-24T02:01:46.620Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git learning day 1">
+<meta name="twitter:description" content="git起步配置12345#配置 用户名，邮箱$ git config --global user.name &quot;Jerry&quot;$ git config --global user.email 20121954@cqu.edu.cn#检查配置信息$ git config --list
+帮助手册命令12345678#三种方法找到git使用手册$ git help &amp;lt;verb&amp;gt;$ git &amp;lt">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/f.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.jpg" alt="Never Git up" title="Never Git up"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Never Git up">Never Git up</a></h1>
+				<h2 class="blog-motto">Better late than never</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/works">My Works</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+    				<label>Search</label>
+    				<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+   				</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/23/gitlearn/" title="git learning day 1" itemprop="url">git learning day 1</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-23T11:00:22.000Z" itemprop="datePublished"> Published 2016-08-23</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git起步"><span class="toc-number">1.</span> <span class="toc-text">git起步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">1.1.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#帮助手册命令"><span class="toc-number">1.2.</span> <span class="toc-text">帮助手册命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git基础"><span class="toc-number">2.</span> <span class="toc-text">git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取一个仓库"><span class="toc-number">2.1.</span> <span class="toc-text">获取一个仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件操作"><span class="toc-number">2.2.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看提交历史"><span class="toc-number">2.3.</span> <span class="toc-text">查看提交历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销操作"><span class="toc-number">2.4.</span> <span class="toc-text">撤销操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库的使用"><span class="toc-number">2.5.</span> <span class="toc-text">远程仓库的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看远程仓库"><span class="toc-number">2.5.1.</span> <span class="toc-text">查看远程仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加远程仓库"><span class="toc-number">2.5.2.</span> <span class="toc-text">添加远程仓库</span></a></li></ol></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="git起步"><a href="#git起步" class="headerlink" title="git起步"></a>git起步</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#配置 用户名，邮箱</span></div><div class="line">$ git config --global user.name <span class="string">"Jerry"</span></div><div class="line">$ git config --global user.email 20121954@cqu.edu.cn</div><div class="line"><span class="comment">#检查配置信息</span></div><div class="line">$ git config --list</div></pre></td></tr></table></figure>
+<h3 id="帮助手册命令"><a href="#帮助手册命令" class="headerlink" title="帮助手册命令"></a>帮助手册命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#三种方法找到git使用手册</span></div><div class="line">$ git <span class="built_in">help</span> &lt;verb&gt;</div><div class="line">$ git &lt;verb&gt; --help</div><div class="line">$ man git -&lt;verb&gt;</div><div class="line"><span class="comment">#例如，想获得config命令的手册</span></div><div class="line">$ git <span class="built_in">help</span> config</div><div class="line">$ git config --help</div><div class="line">$ man git -config</div></pre></td></tr></table></figure>
+<h2 id="git基础"><a href="#git基础" class="headerlink" title="git基础"></a>git基础</h2><h3 id="获取一个仓库"><a href="#获取一个仓库" class="headerlink" title="获取一个仓库"></a>获取一个仓库</h3><p>初始化一个存在的仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#初始存在的一个仓库</span></div><div class="line">$ git init</div><div class="line"><span class="comment">#指定所有文件的跟踪，也可以指定一些文件</span></div><div class="line">$ git add *</div><div class="line"><span class="comment">#将跟踪文件提交</span></div><div class="line">$ git commit -m <span class="string">'initial project version'</span></div></pre></td></tr></table></figure></p>
+<p>克隆一个git仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#git clone + 路径（则生成一个仓库名的文件夹，里面为仓库的数据）</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/LJerRRy/Hadoop.git</div><div class="line"><span class="comment">#git clone + 路径 + 名称（自己命名的）</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/LJerRRy/Hadoop.git myhadoop</div><div class="line"><span class="comment">#上述是使用https协议，也可以ssh传输协议的</span></div></pre></td></tr></table></figure></p>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p>检查文件状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#文件状态 已跟踪或未跟踪</span></div><div class="line"><span class="comment">#已跟踪的文件是指那些被纳入了版本控制的文件，在上一次快照中有它们的记录，</span></div><div class="line"><span class="comment">#在工作一段时间后，它们的状态可能处于未修改，已修改或已放入暂存区（staged）。 </span></div><div class="line">$ git status</div><div class="line">$ <span class="built_in">echo</span> <span class="string">'My World'</span> &gt; README</div><div class="line"><span class="comment">#将新建文件跟踪，或者暂存已修改文件</span></div><div class="line">$ git add README</div><div class="line"><span class="comment">#状态简览</span></div><div class="line">$ git status <span class="_">-s</span></div><div class="line"><span class="comment">#git diff 查看未暂存(unstaged)文件*具体*修改情况</span></div><div class="line">$ git diff</div><div class="line"><span class="comment">#git diff --staged查看已暂存文件修改情况==git diff --cached</span></div><div class="line">$ git diff --staged</div></pre></td></tr></table></figure></p>
+<p>忽略文件（无需git管理的文件）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#新建一个.gitignore文件，然后列出要忽然的文件模式</span></div><div class="line"> $ <span class="built_in">echo</span> <span class="string">"*.log"</span> &gt;&gt; .gitignore</div><div class="line"> <span class="comment">#上面表示将.log文件忽略</span></div></pre></td></tr></table></figure></p>
+<p>提交更新<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#直接用git commit 会启动文本编辑器以便输入本次提交的说明。</span></div><div class="line">$ git commit</div><div class="line"><span class="comment">#直接提交并设置本次跟新的说明</span></div><div class="line">$ git commit -m <span class="string">"此次更新的说明"</span></div><div class="line"><span class="comment">#使用git commit -a git会自动把所有已经跟踪的文件暂存起来并一起提交，跳过git add步骤</span></div><div class="line">$ git commit <span class="_">-a</span> -m</div></pre></td></tr></table></figure></p>
+<p>移除文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#rm README.md从暂存文件中移除，只是简单地从工作目录中手工删除文件</span></div><div class="line">$ rm README.md</div><div class="line"><span class="comment">#git rm README.md从git中删除指定的文件，这样以后就不会出现在未跟踪文件清单中了。</span></div><div class="line">$ git rm README.md</div><div class="line"><span class="comment"># 如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f</span></div><div class="line">$ git rm <span class="_">-f</span> README.md</div><div class="line"><span class="comment">#从暂存区删除</span></div><div class="line">$ git rm --cached README</div></pre></td></tr></table></figure></p>
+<p>移动文件（重命名文件）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git mv file_from file_to</div><div class="line"><span class="comment">#上面一句话等价于下面三句话</span></div><div class="line">$ mv file_from file_to</div><div class="line">$ git rm file_from</div><div class="line">$ git add file_to</div></pre></td></tr></table></figure></p>
+<h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#git log会按提交时间列出所有的更新，最近的更新排在最上面。</span></div><div class="line">$ git <span class="built_in">log</span></div><div class="line"><span class="comment">#git log 有许多选项可以帮助你搜寻你所要找的提交， 接下来我们介绍些最常用的。</span></div><div class="line"><span class="comment">#一个常用的选项是 -p，用来显示每次提交的内容差异。 你也可以加上 -2 来仅显示最近两次提交</span></div><div class="line">$ git <span class="built_in">log</span> -p -2</div><div class="line"><span class="comment">#你想看到每次提交的简略的统计信息，你可以使用 --stat 选项：</span></div><div class="line">$ git <span class="built_in">log</span> --stat</div><div class="line"><span class="comment">#--pretty选项可以指定使用不同于默认格式的方式展示提交历史</span></div><div class="line"><span class="comment">#用oneline将每个提交放在一行显示，查看的提交数很大时非常有用</span></div></pre></td></tr></table></figure>
+<h3 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h3><p>看不懂！！！</p>
+<h3 id="远程仓库的使用"><a href="#远程仓库的使用" class="headerlink" title="远程仓库的使用"></a>远程仓库的使用</h3><h4 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span>  https://github.com/LJerRRy/myhexo.git</div><div class="line">$ <span class="built_in">cd</span> myhexo</div><div class="line"><span class="comment">#git remote是获取给你克隆仓库服务器的默认名称</span></div><div class="line">$ git remote</div><div class="line"><span class="comment">#可以指定选项-v，显示读写远程仓库使用的Git报错的简写和其对应的URL</span></div><div class="line">$ git remote -v</div><div class="line"><span class="comment">#查看远程仓库</span></div><div class="line">$ git remote show origin</div></pre></td></tr></table></figure>
+<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">#运行git remote add &lt;shortname&gt; &lt;url&gt;添加一个新的远程 Git 仓库，同时指定一个你可以轻松引用的简写：</span></div><div class="line">    $ git remote add pb https://github.com/LJerRRy/myhexo.git</div><div class="line">    $ git remote -v</div><div class="line">    <span class="comment">#现在你可以在命令行中使用字符串 pb 来代替整个 URL。</span></div><div class="line">    <span class="comment">#如果你想拉取 Paul 的仓库中有但你没有的信息，可以运行git fetch pb：</span></div><div class="line">    $ git fetch pb</div><div class="line">    <span class="comment">#当你想分享你的项目时，必须将其推送到上游。</span></div><div class="line">    <span class="comment">#这个命令很简单：git push [remote-name] [branch-name]。</span></div><div class="line">    $ git push origin master</div><div class="line"><span class="comment">#### 远程仓库的移除与重命名</span></div><div class="line">    $ git remote rename pb paul</div><div class="line">    $ git remote rm paul</div></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/ProgramingLanguage/">ProgramingLanguage</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/git/">git</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://wenjiewang.top/2016/08/23/gitlearn/" data-title="git learning day 1 | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/08/24/gitlearn2/" title="git learning day 2">
+  <strong>上一篇：</strong><br/>
+  <span>
+  git learning day 2</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/08/23/hello-world/"  title="Hello World">
+ <strong>下一篇：</strong><br/> 
+ <span>Hello World
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/08/23/gitlearn/" data-title="git learning day 1" data-url="http://wenjiewang.top/2016/08/23/gitlearn/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git起步"><span class="toc-number">1.</span> <span class="toc-text">git起步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">1.1.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#帮助手册命令"><span class="toc-number">1.2.</span> <span class="toc-text">帮助手册命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git基础"><span class="toc-number">2.</span> <span class="toc-text">git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取一个仓库"><span class="toc-number">2.1.</span> <span class="toc-text">获取一个仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件操作"><span class="toc-number">2.2.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看提交历史"><span class="toc-number">2.3.</span> <span class="toc-text">查看提交历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销操作"><span class="toc-number">2.4.</span> <span class="toc-text">撤销操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库的使用"><span class="toc-number">2.5.</span> <span class="toc-text">远程仓库的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看远程仓库"><span class="toc-number">2.5.1.</span> <span class="toc-text">查看远程仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加远程仓库"><span class="toc-number">2.5.2.</span> <span class="toc-text">添加远程仓库</span></a></li></ol></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/ProgramingLanguage/" title="ProgramingLanguage">ProgramingLanguage<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/hexo入门/" title="hexo入门">hexo入门<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://baidu.com" target="_blank" title="一个好用的网站">百度</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wenjiewang.top" target="_blank" title="Jerry&#39;s Blog">Jerry&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+    <iframe width="100%" height="450" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=450&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2952571673&verifier=a427a000&dpc=1"></iframe>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2952571673" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/LJeRRy" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:120392899@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Jerry">Jerry</a>
+		
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260198983'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260198983%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		</p>
+		<script type="text/javascript">
+  		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+ 			 e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  			})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  		_st('install','t5ji62MJwvB-Eyyt7Ktz','2.0.0');
+		</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jerry2016"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_null'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3Dnull' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
