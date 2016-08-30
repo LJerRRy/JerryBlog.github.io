@@ -1,6 +1,6 @@
 
  <!DOCTYPE HTML>
-<html >
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
@@ -11,16 +11,19 @@
     
 
     
-    <meta name="description" content="Git基础撤销操作一次提交过程，漏了几个文件未提交，此时可以运行带有--amend选修的提交命令12#$ git commit --amend">
+    <meta name="description" content="Git基础撤销操作(昨天没看懂的地方，没细心看。。。)一次提交过程，漏了几个文件未提交，此时可以运行带有--amend选修的提交命令
+123456#某一次commit$ git commit -m &apos;initial commit&apos;#补上之前未git add 的文件$ git add forgotten_file#直接进行下面操作，则将这些文件提交到该次commit,不需要-m$ git commi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git learning day 2">
 <meta property="og:url" content="http://wenjiewang.top/2016/08/24/gitlearn2/index.html">
 <meta property="og:site_name" content="Never Git up">
-<meta property="og:description" content="Git基础撤销操作一次提交过程，漏了几个文件未提交，此时可以运行带有--amend选修的提交命令12#$ git commit --amend">
-<meta property="og:updated_time" content="2016-08-24T03:52:59.855Z">
+<meta property="og:description" content="Git基础撤销操作(昨天没看懂的地方，没细心看。。。)一次提交过程，漏了几个文件未提交，此时可以运行带有--amend选修的提交命令
+123456#某一次commit$ git commit -m &apos;initial commit&apos;#补上之前未git add 的文件$ git add forgotten_file#直接进行下面操作，则将这些文件提交到该次commit,不需要-m$ git commi">
+<meta property="og:updated_time" content="2016-08-25T09:14:20.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git learning day 2">
-<meta name="twitter:description" content="Git基础撤销操作一次提交过程，漏了几个文件未提交，此时可以运行带有--amend选修的提交命令12#$ git commit --amend">
+<meta name="twitter:description" content="Git基础撤销操作(昨天没看懂的地方，没细心看。。。)一次提交过程，漏了几个文件未提交，此时可以运行带有--amend选修的提交命令
+123456#某一次commit$ git commit -m &apos;initial commit&apos;#补上之前未git add 的文件$ git add forgotten_file#直接进行下面操作，则将这些文件提交到该次commit,不需要-m$ git commi">
 
     
     <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
@@ -48,7 +51,7 @@
 				<h1 class="site-name"><a href="/" title="Never Git up">Never Git up</a></h1>
 				<h2 class="blog-motto">Better late than never</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -88,20 +91,39 @@
 		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-24T03:07:57.000Z" itemprop="datePublished"> Published 2016-08-24</time>
+    <time datetime="2016-08-24T03:07:57.000Z" itemprop="datePublished"> 发表于 2016-08-24</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git基础"><span class="toc-number">1.</span> <span class="toc-text">Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销操作"><span class="toc-number">1.1.</span> <span class="toc-text">撤销操作</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git基础"><span class="toc-number">1.</span> <span class="toc-text">Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销操作-昨天没看懂的地方，没细心看。。。"><span class="toc-number">1.1.</span> <span class="toc-text">撤销操作(昨天没看懂的地方，没细心看。。。)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#取消暂存的文件"><span class="toc-number">1.1.1.</span> <span class="toc-text">取消暂存的文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#撤销对文件的修改"><span class="toc-number">1.1.2.</span> <span class="toc-text">撤销对文件的修改</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git分支"><span class="toc-number">2.</span> <span class="toc-text">Git分支</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分支简介"><span class="toc-number">2.1.</span> <span class="toc-text">分支简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分支创建与查看"><span class="toc-number">2.1.1.</span> <span class="toc-text">分支创建与查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支切换"><span class="toc-number">2.1.2.</span> <span class="toc-text">分支切换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支的合并"><span class="toc-number">2.2.</span> <span class="toc-text">分支的合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#普通合并"><span class="toc-number">2.2.1.</span> <span class="toc-text">普通合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#遇到冲突合并"><span class="toc-number">2.2.2.</span> <span class="toc-text">遇到冲突合并</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="Git基础"><a href="#Git基础" class="headerlink" title="Git基础"></a>Git基础</h2><h3 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h3><p>一次提交过程，漏了几个文件未提交，此时可以运行带有<code>--amend</code>选修的提交命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#</span></div><div class="line">$ git commit --amend</div></pre></td></tr></table></figure></p>
+		<h2 id="Git基础"><a href="#Git基础" class="headerlink" title="Git基础"></a>Git基础</h2><h3 id="撤销操作-昨天没看懂的地方，没细心看。。。"><a href="#撤销操作-昨天没看懂的地方，没细心看。。。" class="headerlink" title="撤销操作(昨天没看懂的地方，没细心看。。。)"></a>撤销操作(昨天没看懂的地方，没细心看。。。)</h3><p>一次提交过程，漏了几个文件未提交，此时可以运行带有<code>--amend</code>选修的提交命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#某一次commit</span></div><div class="line">$ git commit -m <span class="string">'initial commit'</span></div><div class="line"><span class="comment">#补上之前未git add 的文件</span></div><div class="line">$ git add forgotten_file</div><div class="line"><span class="comment">#直接进行下面操作，则将这些文件提交到该次commit,不需要-m</span></div><div class="line">$ git commit --amend</div></pre></td></tr></table></figure>
+<p><em>最终只会有一个提交结果，第二次提交将代替第一次提交</em></p>
+<h4 id="取消暂存的文件"><a href="#取消暂存的文件" class="headerlink" title="取消暂存的文件"></a>取消暂存的文件</h4><p>某一次执行<code>git add</code>时不小心多添加几个文件到暂存区去，如何取消这几个文件？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#下面假设add了所有文件到暂存区</span></div><div class="line">$ git add *</div><div class="line"><span class="comment">#查看文件状态</span></div><div class="line">$ git status</div><div class="line"><span class="comment">#假设要取消README文件,使用git reset</span></div><div class="line">$ git reset HEAD README</div><div class="line"><span class="comment">#其中HEAD是当前分支引用的指针，它指向该分支上的最后一次提交，这表示HEAD</span></div><div class="line"><span class="comment">#将是下一次提交的父节点。即可以将其看作你的上一次提交的快照</span></div></pre></td></tr></table></figure>
+<h4 id="撤销对文件的修改"><a href="#撤销对文件的修改" class="headerlink" title="撤销对文件的修改"></a>撤销对文件的修改</h4><p>想对一个已修改文件，将其还原成上次提交的样子，<code>git status</code>会提示你如何做,即使用<code>git checkout -- &lt;file&gt; ...</code>,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ vim README</div><div class="line">$ git status</div><div class="line">$ git checkout -- README</div><div class="line">$ git status</div></pre></td></tr></table></figure>
+<p><em>你需要知道</em><code>git checkout -- [file]</code><em>是一个危险的命令</em>，这很重要。 你对那个文件做的任何修改都会消失 - 你只是拷贝了另一个文件来覆盖它。 除非你确实清楚不想要那个文件了，否则不要使用这个命令。<br>如果你仍然想保留对那个文件做出的修改，但是现在仍然需要撤消，将会在 <em>Git 分支</em>部分 介绍保存进度与分支；这些通常是更好的做法。<br>在git中任何<em>已提交的</em>东西总是可以恢复的。然而，你任何未提交的东西丢失后很可能再也找不回来。</p>
+<h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><p><em>Git的分支很重要</em>,是Git区分其他版本控制系统的一个重要原因。</p>
+<h3 id="分支简介"><a href="#分支简介" class="headerlink" title="分支简介"></a>分支简介</h3><p>在进行提交操作时，Git会保存一个提交对象（commit object）。该对象包括一个指向暂存内容快照的指针，作者的姓名、邮箱，和提交时所输入的信息，以及一个指向其父对象的指针。首次提交没有父对象，普通提交操作产生一个父对象，而<em>由多个分支合并产生的提交对象有多个父对象</em>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#假设一个工作目录有三个文件分别为L,B,J，进行暂存操作，该过程会对每个文件计算一个校验和，</span></div><div class="line"><span class="comment">#然后把当前版本的文件快照报错到Git仓库中（Git使用blob对象来保存），最终将校验和加入到暂存区域等待提交：</span></div><div class="line">$ git add L B J</div><div class="line">$ git commit -m <span class="string">'The initial commit of my project'</span></div><div class="line">[master (root-commit) 27b7e34] The initial commit of my project</div><div class="line"> 3 files changed, 0 insertions(+), 0 deletions(-)</div><div class="line"> create mode 100644 L</div><div class="line"> create mode 100644 B</div><div class="line"> create mode 100644 J</div></pre></td></tr></table></figure>
+<ol>
+<li>现在Git 仓库中有五个对象：三个 blob 对象（保存着文件快照）、一个树对象（记录着目录结构和 blob 对象索引）以及一个提交对象（包含着指向前述树对象的指针和所有提交信息）。</li>
+<li>然后做些修改后再次提交，那么这次产生的提交对象会包含一个指向上次提交对象（父对象）的指针。</li>
+<li>Git 的分支，其实本质上仅仅是指向提交对象的可变指针。 Git 的默认分支名字是 master。 在多次提交操作之后，你其实已经有一个指向最后那个提交对象的 master 分支。 它会在每次的提交操作中自动向前移动。<br><em>Git 的 “master” 分支并不是一个特殊分支。</em> 它就跟其它分支完全没有区别。 之所以几乎每一个仓库都有 master 分支，是因为 git init 命令默认创建它，并且大多数人都懒得去改动它。</li>
+</ol>
+<h4 id="分支创建与查看"><a href="#分支创建与查看" class="headerlink" title="分支创建与查看"></a>分支创建与查看</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#创建一个名称为testing分支，新创建的分支会在当前的提交对象上创建一个指针</span></div><div class="line">$ git branch testing</div><div class="line"><span class="comment">#可以通过git log命令查看各个分支所指的对象</span></div><div class="line">$ git <span class="built_in">log</span> --online --decorate</div></pre></td></tr></table></figure>
+<h4 id="分支切换"><a href="#分支切换" class="headerlink" title="分支切换"></a>分支切换</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># git checkout &lt;branch&gt;来切换（ps. git checkout --&lt;file&gt; 用来撤销对文件的修改，不过一般不用，太危险了），加一个-b可以直接创建并切换到该分支</span></div><div class="line">$ git checkout testing</div><div class="line">Switched to branch <span class="string">'testing'</span></div><div class="line"><span class="comment">#这样HEAD就指向testing分支了</span></div><div class="line">$ vim B</div><div class="line">$ git commit <span class="_">-a</span> -m <span class="string">'made a change'</span></div><div class="line">$ git <span class="built_in">log</span> --online --decorate</div><div class="line">be33a7d (HEAD -&gt; testing) made a change</div><div class="line">27b7e34 (master) The initial commit of my project</div><div class="line"><span class="comment">#切换到master分支</span></div><div class="line">$ git checkout master</div><div class="line"><span class="comment">#该命令做了两件事，一是使HEAD指向master分支，二是将工作目录恢复成master分支所指向的快照内容，也就是说现在你修改的话，将相对于一个较旧的版本</span></div><div class="line"><span class="comment">#现在在master分支上改变B文件</span></div><div class="line">$ vim B</div><div class="line">$ git commit <span class="_">-a</span> -m <span class="string">'made a change'</span></div><div class="line"><span class="comment">#通过下面指令输出提交历史、各个分支的指向以及项目分支交叉情况</span></div><div class="line">$ git <span class="built_in">log</span> --oneline  --decorate --graph --all</div><div class="line">* 084ec94 (HEAD -&gt; master) made a other changes</div><div class="line">| * be33a7d (testing) made a change</div><div class="line">|/</div><div class="line">* 27b7e34 The initial commit of my project</div></pre></td></tr></table></figure>
+<p>由于 Git 的分支实质上仅是包含所指对象校验和（长度为 40 的 SHA-1 值字符串）的文件，所以它的*创建和销毁都异常高效。 创建一个新分支就像是往一个文件中写入 41 个字节（40 个字符和 1 个换行符），如此的简单能不快吗？</p>
+<h3 id="分支的合并"><a href="#分支的合并" class="headerlink" title="分支的合并"></a>分支的合并</h3><h4 id="普通合并"><a href="#普通合并" class="headerlink" title="普通合并"></a>普通合并</h4><h4 id="遇到冲突合并"><a href="#遇到冲突合并" class="headerlink" title="遇到冲突合并"></a>遇到冲突合并</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$ git merge testing</div><div class="line">Auto-merging B</div><div class="line">CONFLICT (content): Merge conflict <span class="keyword">in</span> READE</div><div class="line">Automatic merge failed; fix conflicts and <span class="keyword">then</span> commit the result.</div><div class="line">$ git status</div><div class="line">On branch master</div><div class="line">You have unmerged paths.</div><div class="line">  (fix conflicts and run <span class="string">"git commit"</span>)</div><div class="line">  (use <span class="string">"git merge --abort"</span> to abort the merge)</div><div class="line"></div><div class="line">Unmerged paths:</div><div class="line">  (use <span class="string">"git add &lt;file&gt;..."</span> to mark resolution)</div><div class="line"></div><div class="line">        both modified:   READE</div><div class="line"></div><div class="line">no changes added to commit (use <span class="string">"git add"</span> and/or <span class="string">"git commit -a"</span>)</div><div class="line"><span class="comment">#使用图形化工具来解决冲突，你可以运行git mergetool</span></div><div class="line">$ git mergetool</div></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -137,6 +159,14 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/08/25/hadooptest/" title="hadooptest">
+  <strong>上一篇：</strong><br/>
+  <span>
+  hadooptest</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2016/08/23/gitlearn/"  title="git learning day 1">
@@ -155,34 +185,34 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git基础"><span class="toc-number">1.</span> <span class="toc-text">Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销操作"><span class="toc-number">1.1.</span> <span class="toc-text">撤销操作</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git基础"><span class="toc-number">1.</span> <span class="toc-text">Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销操作-昨天没看懂的地方，没细心看。。。"><span class="toc-number">1.1.</span> <span class="toc-text">撤销操作(昨天没看懂的地方，没细心看。。。)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#取消暂存的文件"><span class="toc-number">1.1.1.</span> <span class="toc-text">取消暂存的文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#撤销对文件的修改"><span class="toc-number">1.1.2.</span> <span class="toc-text">撤销对文件的修改</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git分支"><span class="toc-number">2.</span> <span class="toc-text">Git分支</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分支简介"><span class="toc-number">2.1.</span> <span class="toc-text">分支简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分支创建与查看"><span class="toc-number">2.1.1.</span> <span class="toc-text">分支创建与查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支切换"><span class="toc-number">2.1.2.</span> <span class="toc-text">分支切换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支的合并"><span class="toc-number">2.2.</span> <span class="toc-text">分支的合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#普通合并"><span class="toc-number">2.2.1.</span> <span class="toc-text">普通合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#遇到冲突合并"><span class="toc-number">2.2.2.</span> <span class="toc-text">遇到冲突合并</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分类</p>
 		<ul>
 		
 		  
-			<li><a href="/categories/ProgramingLanguage/" title="ProgramingLanguage">ProgramingLanguage<sup>1</sup></a></li>
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>4</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/hexo入门/" title="hexo入门">hexo入门<sup>2</sup></a></li>
+			<li><a href="/categories/研究生涯/" title="研究生涯">研究生涯<sup>1</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>1</sup></a></li>
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -191,15 +221,31 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>2</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/hadoop/" title="hadoop">hadoop<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -207,18 +253,18 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
             
-            	<a href="https://baidu.com" target="_blank" title="一个好用的网站">百度</a>
+            	<a href="http://FangHeart.top" target="_blank" title="FangHeart">FangHeart</a>
             
           </li>
         
           <li>
             
-            	<a href="http://wenjiewang.top" target="_blank" title="Jerry&#39;s Blog">Jerry&#39;s Blog</a>
+            	<a href="http://sikaoa.com" target="_blank" title="SiKaoA">SiKaoA</a>
             
           </li>
         
@@ -226,7 +272,7 @@
 </div>
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
   <div class="weiboshow">
@@ -470,7 +516,7 @@ $(document).ready(function(){
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

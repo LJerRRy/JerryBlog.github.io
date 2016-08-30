@@ -1,27 +1,27 @@
 
  <!DOCTYPE HTML>
-<html >
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>markdown | Never Git up</title>
+    <title>How to markdown | Never Git up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jerry">
     
 
     
-    <meta name="description" content="How to markdownThe title">
+    <meta name="description" content="兼容HTML不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。要制约的只有一些 HTML 区块元素――比如&amp;lt; div&amp;gt;、&amp;lt; table&amp;gt;、&amp;lt; pre&amp;gt;、&amp;lt; p&amp;gt; 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markdown">
+<meta property="og:title" content="How to markdown">
 <meta property="og:url" content="http://wenjiewang.top/2016/08/22/markdown/index.html">
 <meta property="og:site_name" content="Never Git up">
-<meta property="og:description" content="How to markdownThe title">
+<meta property="og:description" content="兼容HTML不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。要制约的只有一些 HTML 区块元素――比如&amp;lt; div&amp;gt;、&amp;lt; table&amp;gt;、&amp;lt; pre&amp;gt;、&amp;lt; p&amp;gt; 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能">
 <meta property="og:image" content="http://ocdga6wo9.bkt.clouddn.com/san.jpg">
-<meta property="og:updated_time" content="2016-08-24T02:01:46.621Z">
+<meta property="og:updated_time" content="2016-08-29T01:37:43.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markdown">
-<meta name="twitter:description" content="How to markdownThe title">
+<meta name="twitter:title" content="How to markdown">
+<meta name="twitter:description" content="兼容HTML不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。要制约的只有一些 HTML 区块元素――比如&amp;lt; div&amp;gt;、&amp;lt; table&amp;gt;、&amp;lt; pre&amp;gt;、&amp;lt; p&amp;gt; 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能">
 <meta name="twitter:image" content="http://ocdga6wo9.bkt.clouddn.com/san.jpg">
 
     
@@ -50,7 +50,7 @@
 				<h1 class="site-name"><a href="/" title="Never Git up">Never Git up</a></h1>
 				<h2 class="blog-motto">Better late than never</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -83,27 +83,73 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/22/markdown/" title="markdown" itemprop="url">markdown</a>
+      <a href="/2016/08/22/markdown/" title="How to markdown" itemprop="url">How to markdown</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-21T16:48:19.000Z" itemprop="datePublished"> Published 2016-08-22</time>
+    <time datetime="2016-08-21T16:48:19.000Z" itemprop="datePublished"> 发表于 2016-08-22</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-markdown"><span class="toc-number">1.</span> <span class="toc-text">How to markdown</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-title"><span class="toc-number">1.1.</span> <span class="toc-text">The title</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#兼容HTML"><span class="toc-number">1.</span> <span class="toc-text">兼容HTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊字符自动转换"><span class="toc-number">2.</span> <span class="toc-text">特殊字符自动转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区块元素"><span class="toc-number">3.</span> <span class="toc-text">区块元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#段落和换行"><span class="toc-number">3.1.</span> <span class="toc-text">段落和换行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#标题"><span class="toc-number">3.1.1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块引用-Blockquotes"><span class="toc-number">3.1.2.</span> <span class="toc-text">区块引用 Blockquotes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#列表"><span class="toc-number">3.1.3.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分隔线"><span class="toc-number">3.1.4.</span> <span class="toc-text">分隔线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区段元素"><span class="toc-number">3.2.</span> <span class="toc-text">区段元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#链接"><span class="toc-number">3.2.1.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片"><span class="toc-number">3.2.2.</span> <span class="toc-text">图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#强调"><span class="toc-number">3.2.3.</span> <span class="toc-text">强调</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">3.2.4.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自动链接"><span class="toc-number">4.1.</span> <span class="toc-text">自动链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反斜杠"><span class="toc-number">4.2.</span> <span class="toc-text">反斜杠</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="How-to-markdown"><a href="#How-to-markdown" class="headerlink" title="How to markdown"></a>How to markdown</h2><h3 id="The-title"><a href="#The-title" class="headerlink" title="The title"></a>The title</h3><p><img src="http://ocdga6wo9.bkt.clouddn.com/san.jpg" alt=""></p>
+		<h2 id="兼容HTML"><a href="#兼容HTML" class="headerlink" title="兼容HTML"></a>兼容HTML</h2><p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。<br>要制约的只有一些 HTML 区块元素――比如&lt; div&gt;、&lt; table&gt;、&lt; pre&gt;、&lt; p&gt; 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 &lt; p&gt; 标签。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">这是一个普通段落。</div><div class="line"></div><div class="line">&lt;table&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td&gt;Foo&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div><div class="line"></div><div class="line">这是另一个普通段落。</div></pre></td></tr></table></figure>
+<h2 id="特殊字符自动转换"><a href="#特殊字符自动转换" class="headerlink" title="特殊字符自动转换"></a>特殊字符自动转换</h2><p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML 实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像是 <code>&amp;lt;</code> 和 <code>&amp;amp;</code>。比如要链接到如下网址，必须将&amp;改为<code>&amp;amp;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">http://images.google.com/images?num=30&amp;q=larry+bird</div><div class="line">http://images.google.com/images?num=30&amp;amp;q=larry+bird</div></pre></td></tr></table></figure>
+<p>修改后的网址才能放到链接标签的 href 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。</p>
+<h2 id="区块元素"><a href="#区块元素" class="headerlink" title="区块元素"></a>区块元素</h2><h3 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h3><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
+<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>两种方式表示标题，这里只介绍用星号。<strong>星号后一定有个空格</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 标题1</span></div><div class="line"><span class="section">## 标题2</span></div><div class="line"><span class="section">### 标题3</span></div><div class="line"><span class="section">#### 标题4</span></div><div class="line"><span class="section">##### 标题5</span></div><div class="line"><span class="section">###### 标题6</span></div></pre></td></tr></table></figure>
+<h4 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h4><p>Markdown 标记区块引用是使用类似 email 中用 &gt; 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 &gt; ：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="quote">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span></div><div class="line"><span class="quote">&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span></div><div class="line"><span class="quote">&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</span></div><div class="line"><span class="quote">&gt; </span></div><div class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</div><div class="line"><span class="quote">&gt; id sem consectetuer libero luctus adipiscing.</span></div></pre></td></tr></table></figure>
+<p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 &gt; ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</div><div class="line">consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</div><div class="line">Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</div><div class="line"></div><div class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</div><div class="line">id sem consectetuer libero luctus adipiscing.</div></pre></td></tr></table></figure>
+<p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &gt; ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; This is the first level of quoting.</div><div class="line">&gt;</div><div class="line">&gt; &gt; This is nested blockquote.</div><div class="line">&gt;</div><div class="line">&gt; Back to the first level.</div></pre></td></tr></table></figure>
+<p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; ## 这是一个标题。</div><div class="line">&gt; </div><div class="line">&gt; 1.   这是第一行列表项。</div><div class="line">&gt; 2.   这是第二行列表项。</div><div class="line">&gt; </div><div class="line">&gt; 给出一些例子代码：</div><div class="line">&gt; </div><div class="line">&gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);</div></pre></td></tr></table></figure>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>无序列表使用星号、加号或是减号作为列表标记：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">*   Red</div><div class="line">*   Green</div><div class="line">*   Blue</div><div class="line">+   Red</div><div class="line">+   Green</div><div class="line">+   Blue</div><div class="line">-   Red</div><div class="line">-   Green</div><div class="line">-   Blue</div></pre></td></tr></table></figure>
+<p>有序列表则使用数字接着一个英文句点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.  Bird</div><div class="line">2.  McHale</div><div class="line">3.  Parish</div></pre></td></tr></table></figure>
+<h4 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h4><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* * *</div><div class="line"></div><div class="line">***</div><div class="line"></div><div class="line">*****</div><div class="line"></div><div class="line">- - -</div><div class="line"></div><div class="line">---------------------------------------</div></pre></td></tr></table></figure>
+<h3 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h3><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。</p>
+<p>不管是哪一种，链接文字都是用 [方括号] 来标记。</p>
+<p>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字(可以为相对路劲，只要在网址后面，用双引号把 title 文字包起来即可，例如：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">This is [<span class="string">an example</span>](<span class="link">http://example.com/ "Title"</span>) inline link.</div><div class="line"></div><div class="line">[<span class="string">This link</span>](<span class="link">http://example.net/</span>) has no title attribute.</div><div class="line"></div><div class="line">See my [<span class="string">About</span>](<span class="link">/about/</span>) page for details.</div></pre></td></tr></table></figure>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p><img src="http://ocdga6wo9.bkt.clouddn.com/san.jpg" alt="纲手"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![Alt text](链接)</div><div class="line">![纲手](http://ocdga6wo9.bkt.clouddn.com/san.jpg)</div></pre></td></tr></table></figure>
+<h4 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h4><p>Markdown 使用星号（<em>）和底线（_）作为标记强调字词的符号，被 </em> 或 <em> 包围的字词会被转成用 <em> 标签包围，用两个 * 或 </em> 包起来的话，则会被转成 <strong>，例如：<br><strong>强调</strong><br><em>斜体</em><br>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="strong">**强调**</span></div><div class="line"><span class="emphasis">*斜体*</span></div><div class="line">\<span class="emphasis">*没用的强调、*</span></div></pre></td></tr></table></figure></strong></em></p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><ol>
+<li>缩进 4 个空格或是 1 个制表符<br>这是一个普通段落：</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这是一个代码区块。</div></pre></td></tr></table></figure>
+<ol>
+<li>用 <strong>`</strong> 来框住代码</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="code">`这是一个代码区块`</span></div></pre></td></tr></table></figure>
+<ol>
+<li>用 **<figure class="highlight plain"><figcaption><span>来框住代码</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```markdown</div><div class="line">这是一个代码区块</div></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h3><p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;http://example.com/&gt;</div></pre></td></tr></table></figure>
+<p>Markdown 会转为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;</div></pre></td></tr></table></figure>
+<h3 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h3><p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">\   反斜线</div><div class="line">`   反引号</div><div class="line"><span class="bullet">*   </span>星号</div><div class="line">_   底线</div><div class="line">&#123;&#125;  花括号</div><div class="line">[]  方括号</div><div class="line">()  括弧</div><div class="line"><span class="section">#   井字号</span></div><div class="line"><span class="bullet">+   </span>加号</div><div class="line"><span class="bullet">-   </span>减号</div><div class="line">.   英文句点</div><div class="line">!   惊叹号</div></pre></td></tr></table></figure>
+<p>本文参考<a href="http://www.appinn.com/markdown/#precode" target="_blank" rel="external">http://www.appinn.com/markdown/#precode</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -111,7 +157,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/hexo入门/">hexo入门</a>
+  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
 </div>
 
 
@@ -126,7 +172,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wenjiewang.top/2016/08/22/markdown/" data-title="markdown | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  <div data-url="http://wenjiewang.top/2016/08/22/markdown/" data-title="How to markdown | Never Git up" data-tsina="2952571673" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -140,10 +186,10 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/08/23/hello-world/" title="Hello World">
+ <a href="/2016/08/23/hello-world/" title="Hello World Hexo">
   <strong>上一篇：</strong><br/>
   <span>
-  Hello World</span>
+  Hello World Hexo</span>
 </a>
 </div>
 
@@ -152,39 +198,39 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/22/markdown/" data-title="markdown" data-url="http://wenjiewang.top/2016/08/22/markdown/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/22/markdown/" data-title="How to markdown" data-url="http://wenjiewang.top/2016/08/22/markdown/"></div>
 </section>
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-markdown"><span class="toc-number">1.</span> <span class="toc-text">How to markdown</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-title"><span class="toc-number">1.1.</span> <span class="toc-text">The title</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#兼容HTML"><span class="toc-number">1.</span> <span class="toc-text">兼容HTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊字符自动转换"><span class="toc-number">2.</span> <span class="toc-text">特殊字符自动转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区块元素"><span class="toc-number">3.</span> <span class="toc-text">区块元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#段落和换行"><span class="toc-number">3.1.</span> <span class="toc-text">段落和换行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#标题"><span class="toc-number">3.1.1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块引用-Blockquotes"><span class="toc-number">3.1.2.</span> <span class="toc-text">区块引用 Blockquotes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#列表"><span class="toc-number">3.1.3.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分隔线"><span class="toc-number">3.1.4.</span> <span class="toc-text">分隔线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区段元素"><span class="toc-number">3.2.</span> <span class="toc-text">区段元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#链接"><span class="toc-number">3.2.1.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片"><span class="toc-number">3.2.2.</span> <span class="toc-text">图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#强调"><span class="toc-number">3.2.3.</span> <span class="toc-text">强调</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">3.2.4.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自动链接"><span class="toc-number">4.1.</span> <span class="toc-text">自动链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反斜杠"><span class="toc-number">4.2.</span> <span class="toc-text">反斜杠</span></a></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分类</p>
 		<ul>
 		
 		  
-			<li><a href="/categories/ProgramingLanguage/" title="ProgramingLanguage">ProgramingLanguage<sup>1</sup></a></li>
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>4</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/hexo入门/" title="hexo入门">hexo入门<sup>2</sup></a></li>
+			<li><a href="/categories/研究生涯/" title="研究生涯">研究生涯<sup>1</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>1</sup></a></li>
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -193,15 +239,31 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>2</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/hadoop/" title="hadoop">hadoop<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -209,18 +271,18 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
             
-            	<a href="https://baidu.com" target="_blank" title="一个好用的网站">百度</a>
+            	<a href="http://FangHeart.top" target="_blank" title="FangHeart">FangHeart</a>
             
           </li>
         
           <li>
             
-            	<a href="http://wenjiewang.top" target="_blank" title="Jerry&#39;s Blog">Jerry&#39;s Blog</a>
+            	<a href="http://sikaoa.com" target="_blank" title="SiKaoA">SiKaoA</a>
             
           </li>
         
@@ -228,7 +290,7 @@
 </div>
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
   <div class="weiboshow">
@@ -472,7 +534,7 @@ $(document).ready(function(){
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

@@ -4,26 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World Hexo | Never Git up</title>
+    <title>Leetcode-4 | Never Git up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jerry">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="Leetcode上算法题四，求两个已排序数组的中位数。
+问题描述There are two sorted arrays nums1 and nums2 of size m and n respectively.
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World Hexo">
-<meta property="og:url" content="http://wenjiewang.top/2016/08/23/hello-world/index.html">
+<meta property="og:title" content="Leetcode-4">
+<meta property="og:url" content="http://wenjiewang.top/2016/08/28/leetcode-4/index.html">
 <meta property="og:site_name" content="Never Git up">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-08-29T01:37:43.962Z">
+<meta property="og:description" content="Leetcode上算法题四，求两个已排序数组的中位数。
+问题描述There are two sorted arrays nums1 and nums2 of size m and n respectively.
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n">
+<meta property="og:updated_time" content="2016-08-30T02:04:22.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World Hexo">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Leetcode-4">
+<meta name="twitter:description" content="Leetcode上算法题四，求两个已排序数组的中位数。
+问题描述There are two sorted arrays nums1 and nums2 of size m and n respectively.
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n">
 
     
     <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
@@ -84,14 +87,14 @@ Quick">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/23/hello-world/" title="Hello World Hexo" itemprop="url">Hello World Hexo</a>
+      <a href="/2016/08/28/leetcode-4/" title="Leetcode-4" itemprop="url">Leetcode-4</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-23T05:35:50.580Z" itemprop="datePublished"> 发表于 2016-08-23</time>
+    <time datetime="2016-08-28T15:00:32.000Z" itemprop="datePublished"> 发表于 2016-08-28</time>
     
   </p>
 </header>
@@ -100,33 +103,39 @@ Quick">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法效率"><span class="toc-number">3.</span> <span class="toc-text">算法效率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-number">4.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-number">4.2.</span> <span class="toc-text">方法二</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-  
+		<p><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="external">Leetcode</a>上算法题四，求两个已排序数组的中位数。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively.</p>
+<p>Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
+<p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nums1 = [1, 3]</div><div class="line">nums2 = [2]</div><div class="line"></div><div class="line">The median is 2.0</div></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nums1 = [1, 2]</div><div class="line">nums2 = [3, 4]</div><div class="line"></div><div class="line">The median is (2 + 3)/2 = 2.5</div></pre></td></tr></table></figure></p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ul>
+<li><strong>方法一</strong>  将两个数组合并为一个有序数组a，根据两个数组长度的总长度n分类讨论：<ul>
+<li>偶数则取数组a下标为n/2-1和n/2的取均值为所求的中位数，<strong>注意：数组为整数，应该除以2.0，转换为浮点数。</strong></li>
+<li>奇数则取数组a下标为(n+1)/2-1的值为所求的中位数。</li>
+</ul>
+</li>
+<li><strong>方法二</strong> 分开求(未完成)</li>
+</ul>
+<h2 id="算法效率"><a href="#算法效率" class="headerlink" title="算法效率"></a>算法效率</h2><p>方法一的空间复杂度为O(m+n),时间复杂度就是遍历一遍A,B数组为O(m+n);<br><br>方法二</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays2</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = nums1.length + nums2.length;</div><div class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[len];</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>,k = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> (i&lt;nums1.length&amp;&amp;j&lt;nums2.length)&#123;</div><div class="line">            <span class="keyword">if</span>(nums1[i]&lt;nums2[j])&#123;</div><div class="line">                a[k++]=nums1[i++];</div><div class="line">            &#125;<span class="keyword">else</span> &#123;</div><div class="line">                a[k++]=nums2[j++];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//下面的while 只会执行一个</span></div><div class="line">        <span class="keyword">while</span> (i&lt;nums1.length) a[k++]=nums1[i++];</div><div class="line">        <span class="keyword">while</span> (j&lt;nums2.length) a[k++]=nums2[j++];</div><div class="line">        <span class="keyword">if</span>(len%<span class="number">2</span>==<span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> (a[len/<span class="number">2</span>-<span class="number">1</span>]+a[len/<span class="number">2</span>])/<span class="number">2.0</span>;<span class="comment">//注意：数组为整数，应该除以2.0</span></div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="keyword">return</span> a[(len+<span class="number">1</span>)/<span class="number">2</span>-<span class="number">1</span>];</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = nums1.length + nums2.length;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> flag = <span class="number">0</span>;<span class="comment">//flag 为1时表示数组1进行了++操作，为2表示数组2进行了++操作</span></div><div class="line">        <span class="keyword">if</span> (len % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">int</span> m, n;</div><div class="line">            <span class="keyword">while</span> (i &lt; nums1.length &amp;&amp; i &lt; nums2.length) &#123;</div><div class="line">                <span class="keyword">if</span> (count == len / <span class="number">2</span>) &#123;</div><div class="line">                    <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;<span class="comment">//数组1中有一个中位数其序号为i,另一个中位数序号可能为i+1,j,j+1中的一个</span></div><div class="line">                        <span class="keyword">if</span> (nums1[i] &lt;= nums2[j]) &#123;<span class="comment">//另一个中位数为j</span></div><div class="line">                            <span class="keyword">return</span> (nums1[i] + nums2[j]) / <span class="number">2.0</span>;</div><div class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums1[i + <span class="number">1</span>] &gt; nums2[j + <span class="number">1</span>])</div><div class="line"></div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> (nums1[i] + nums2[j]) / <span class="number">2</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  <a class="article-category-link" href="/categories/算法分析/">算法分析</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/algorithm/">algorithm</a>
   </div>
 
 </div>
@@ -135,7 +144,7 @@ Quick">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wenjiewang.top/2016/08/23/hello-world/" data-title="Hello World Hexo | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  <div data-url="http://wenjiewang.top/2016/08/28/leetcode-4/" data-title="Leetcode-4 | Never Git up" data-tsina="2952571673" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,18 +158,18 @@ Quick">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/08/23/gitlearn/" title="git learning day 1">
+ <a href="/2016/08/30/Leetcode-389-390/" title="Leetcode-389-390">
   <strong>上一篇：</strong><br/>
   <span>
-  git learning day 1</span>
+  Leetcode-389-390</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/08/22/markdown/"  title="How to markdown">
+<a href="/2016/08/25/hadooptest/"  title="hadooptest">
  <strong>下一篇：</strong><br/> 
- <span>How to markdown
+ <span>hadooptest
 </span>
 </a>
 </div>
@@ -169,7 +178,7 @@ Quick">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/23/hello-world/" data-title="Hello World Hexo" data-url="http://wenjiewang.top/2016/08/23/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/28/leetcode-4/" data-title="Leetcode-4" data-url="http://wenjiewang.top/2016/08/28/leetcode-4/"></div>
 </section>
 
 
@@ -179,7 +188,7 @@ Quick">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法效率"><span class="toc-number">3.</span> <span class="toc-text">算法效率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-number">4.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-number">4.2.</span> <span class="toc-text">方法二</span></a></li></ol></li></ol>
  
   </div>
 
