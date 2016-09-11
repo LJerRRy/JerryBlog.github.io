@@ -1,0 +1,575 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Leetcode-392-394(共四道) | Never Git up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jerry">
+    
+
+    
+    <meta name="description" content="Leetcoode上的第392题到第394题
+题目392 Is Subsequence问题描述Given a string s and a string t, check if s is subsequence of t.
+You may assume that there is only lower case English letters in both s and t. t is poten">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode-392-394(共四道)">
+<meta property="og:url" content="http://wenjiewang.top/2016/09/07/Leetcode-392-394/index.html">
+<meta property="og:site_name" content="Never Git up">
+<meta property="og:description" content="Leetcoode上的第392题到第394题
+题目392 Is Subsequence问题描述Given a string s and a string t, check if s is subsequence of t.
+You may assume that there is only lower case English letters in both s and t. t is poten">
+<meta property="og:updated_time" content="2016-09-11T07:49:06.434Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode-392-394(共四道)">
+<meta name="twitter:description" content="Leetcoode上的第392题到第394题
+题目392 Is Subsequence问题描述Given a string s and a string t, check if s is subsequence of t.
+You may assume that there is only lower case English letters in both s and t. t is poten">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/f.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.jpg" alt="Never Git up" title="Never Git up"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Never Git up">Never Git up</a></h1>
+				<h2 class="blog-motto">Better late than never</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/works">My Works</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+    				<label>Search</label>
+    				<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+   				</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/07/Leetcode-392-394/" title="Leetcode-392-394(共四道)" itemprop="url">Leetcode-392-394(共四道)</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-06T17:17:21.000Z" itemprop="datePublished"> 发表于 2016-09-07</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目392-Is-Subsequence"><span class="toc-number">1.</span> <span class="toc-text">题目392 Is Subsequence</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目391-Perfect-Rectangle"><span class="toc-number">2.</span> <span class="toc-text">题目391 Perfect Rectangle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-1"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目394-Decode-String"><span class="toc-number">3.</span> <span class="toc-text">题目394 Decode String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-2"><span class="toc-number">3.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-2"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第392题到第394题</p>
+<h1 id="题目392-Is-Subsequence"><a href="#题目392-Is-Subsequence" class="headerlink" title="题目392 Is Subsequence"></a>题目392 Is Subsequence</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Given a string s and a string t, check if s is subsequence of t.</p>
+<p>You may assume that there is only lower case English letters in both s and t. t is potentially a very long (length ~= 500,000) string, and s is a short string (&lt;=100).</p>
+<p>A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, “ace” is a subsequence of <code>&quot;abcde&quot;</code> while <code>&quot;aec&quot;</code> is not).</p>
+<p><strong>Example1:</strong></p>
+<p>s = <code>&quot;abc&quot;</code>, t = <code>&quot;ahbgdc&quot;</code></p>
+<p>Return <code>true</code>.</p>
+<p><strong>Example2</strong></p>
+<p>s=<code>&quot;axc&quot;</code>,t=<code>&quot;ahbgdc&quot;</code></p>
+<p>Return <code>false</code>.</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>题目大意：给定两个字符串s，t，检查s是否是t的子串。其中s和t都只包含小写字符，t是非常大的字符串（长度大约有50万长），s是一个比较短的字符串长度小于等于100。子串是指该字符串由原来的字符串删除一些字符但不改变字符的相对位置。</p>
+<ul>
+<li><strong>方法一</strong> 两个for循环遍历一遍。（刚刚开始，我在想int是不是不能50万，后来想到java中int为32位，肯定可以达到50w；</li>
+<li><strong>方法二</strong> 参考了discuss上的，只需要一个for循环。</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String t)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> ls=s.length();</div><div class="line">        <span class="keyword">int</span> lt=t.length();</div><div class="line">        <span class="keyword">if</span>(ls==<span class="number">0</span>)<span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//空串肯定为t的子串</span></div><div class="line">        <span class="keyword">int</span> i,m=<span class="number">0</span>;<span class="comment">//m标识该从t中哪开始遍历</span></div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;ls;i++)&#123;</div><div class="line">            <span class="keyword">char</span> a = s.charAt(i);</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&lt;lt;j++)&#123;</div><div class="line">                <span class="keyword">if</span>(a==t.charAt(j))&#123;</div><div class="line">                    m = j+<span class="number">1</span>;<span class="comment">//下次遍历从j+1开始</span></div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                m = j + <span class="number">1</span>;<span class="comment">//记录当前遍历到哪了</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(m&gt;=lt&amp;&amp;i&lt;ls-<span class="number">1</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>方法二</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String t)</span> </span></div><div class="line">   &#123;</div><div class="line">       <span class="keyword">if</span>(t.length() &lt; s.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">       <span class="keyword">int</span> prev = <span class="number">0</span>;<span class="comment">//相当于方法一中的m</span></div><div class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length();i++)</div><div class="line">       &#123;</div><div class="line">           <span class="keyword">char</span> tempChar = s.charAt(i);</div><div class="line">           prev = t.indexOf(tempChar,prev);<span class="comment">//在t中查找tempChar字符，运用indexOf方法，相当于方法一中第二个for循环</span></div><div class="line">           <span class="keyword">if</span>(prev == -<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">           prev++;</div><div class="line">       &#125;</div><div class="line">       </div><div class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h1 id="题目391-Perfect-Rectangle"><a href="#题目391-Perfect-Rectangle" class="headerlink" title="题目391 Perfect Rectangle"></a>题目391 Perfect Rectangle</h1><h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p><a href="https://leetcode.com/contest/2/problems/perfect-rectangle/" target="_blank" rel="external">题目链接</a></p>
+<p>A character in UTF8 can be from 1 to 4 bytes long, subjected to the following rules:</p>
+<ol>
+<li>For 1-byte character, the first bit is a 0, followed by its unicode code.</li>
+<li>For n-bytes character, the first n-bits are all one’s, the n+1 bit is 0, followed by n-1 bytes with most significant 2 bits being 10.<br>This is how the UTF-8 encoding would work:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Char. number range  |        UTF-8 octet sequence</div><div class="line">     (hexadecimal)    |              (binary)</div><div class="line">  --------------------+---------------------------------------------</div><div class="line">  0000 0000-0000 007F | 0xxxxxxx</div><div class="line">  0000 0080-0000 07FF | 110xxxxx 10xxxxxx</div><div class="line">  0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx</div><div class="line">  0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</div></pre></td></tr></table></figure>
+<p>Given an array of integers representing the data, return whether it is a valid utf-8 encoding.</p>
+<p><strong>Note:</strong><br>The input is an array of integers. Only <strong>the least significant 8 bits</strong> of each integer is used to store the data. This means each integer represents only 1 byte of data.</p>
+<p><strong>Example1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data = [197, 130, 1], which represents the octet sequence: 11000101 10000010 00000001.</div><div class="line"></div><div class="line">Return true.</div><div class="line">It is a valid utf-8 encoding for a 2-bytes character followed by a 1-byte character.</div></pre></td></tr></table></figure>
+<p><strong>Example2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">data = [235, 140, 4], which represented the octet sequence: 11101011 10001100 00000100.</div><div class="line"></div><div class="line">Return false.</div><div class="line">The first 3 bits are all one&apos;s and the 4th bit is 0 means it is a 3-bytes character.</div><div class="line">The next byte is a continuation byte which starts with 10 and that&apos;s correct.</div><div class="line">But the second continuation byte does not start with 10, so it is invalid.</div></pre></td></tr></table></figure>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h2><p>题目大意：一个UTF-8编码的字符长度可能为1byte到4byte长，主要取决于以下规则：</p>
+<ol>
+<li>对于1byte字符，他的第一位是0，紧接着的是其的Unicode编码</li>
+<li>对于n-bytes字符，前n-bits全是1，而n+1位为0，紧跟着的是n-1个字节其前两位为10开始的</li>
+</ol>
+<p>给定一个int数组，数组中每个整数都至少是8位来存储数据，这意味着一个整数仅仅代表一个字节的数据</p>
+<ul>
+<li><strong>方法一</strong> 首先获取第一个整数判断其前几位是1，然后再判断后面几个是否为10（二进制）开始的。参考discuss的</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLen</span><span class="params">(<span class="keyword">int</span> s)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> mask = <span class="number">0x80</span>;<span class="comment">//mask 二进制为10000000</span></div><div class="line">    <span class="keyword">if</span>((s&amp;mask)==<span class="number">0</span>)<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//进行与操作，判断第一位是否为0</span></div><div class="line">    mask&gt;&gt;=<span class="number">1</span>;<span class="comment">//mask 现在为 1000000 ，进行右移操作</span></div><div class="line">    <span class="keyword">if</span>((s&amp;mask)==<span class="number">0</span>)<span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//第二位为0的话肯定不是utf-8</span></div><div class="line">    <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">    mask&gt;&gt;=<span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>((mask!=<span class="number">0</span>)&amp;&amp;(s&amp;mask)==mask)&#123;<span class="comment">//判断前几位1的个数</span></div><div class="line">        mask&gt;&gt;=<span class="number">1</span>;</div><div class="line">        len++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> len==<span class="number">7</span>?-<span class="number">1</span>:len;<span class="comment">//排除11111111，</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validUtf8</span><span class="params">(<span class="keyword">int</span>[] data)</span> </span>&#123;</div><div class="line">   <span class="keyword">if</span>(data.length==<span class="number">0</span>&amp;&amp;data ==<span class="keyword">null</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">int</span>  i =<span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(i&lt;data.length)&#123;</div><div class="line">        <span class="keyword">int</span> s = getLen(data[i]);</div><div class="line">        <span class="keyword">if</span>(s&lt;<span class="number">0</span>||(i+s)&gt;=data.length)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">while</span> (s&gt;<span class="number">0</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(data[++i]&gt;&gt;<span class="number">6</span>!=<span class="number">2</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            s--;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(s&gt;<span class="number">0</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        i++;<span class="comment">//如果数组中还有数要继续判断其是否为utf-8</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="题目394-Decode-String"><a href="#题目394-Decode-String" class="headerlink" title="题目394 Decode String"></a>题目394 Decode String</h1><h2 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h2><p>Given an encoded string, return it’s decoded string.</p>
+<p>The encoding rule is: <code>k[encoded_string]</code>, where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.</p>
+<p>You may assume that the input string is always valid; No extra white spaces, square brackets are well-formed, etc.</p>
+<p>Furthermore, you may assume that the original data does not contain any digits and that digits are only for those repeat numbers, k. For example, there won’t be input like <code>3a or 2[4]</code>.<br><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">s = &quot;3[a]2[bc]&quot;, return &quot;aaabcbc&quot;.</div><div class="line">s = &quot;3[a2[c]]&quot;, return &quot;accaccacc&quot;.//注意可以嵌套的，我当时做的时候没注意嵌套，然后做错了</div><div class="line">s = &quot;2[abc]3[cd]ef&quot;, return &quot;abcabccdcdcdef&quot;.</div></pre></td></tr></table></figure>
+<h2 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h2><p>题目大意：将字符串解码，返回解码后的字符串。</p>
+<ul>
+<li><strong>方法一</strong> 用栈来存储待解码字符串，每当遇到<code>]</code>进行一次解码，然后重新将其压入栈中，直到遍历完整个编码字符串。</li>
+<li><strong>方法二</strong> 用递归来解决。参考的discuss。</li>
+</ul>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">decodeString</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">       Stack&lt;Character&gt; str = <span class="keyword">new</span> Stack&lt;&gt;();<span class="comment">//栈用来存放字符</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c:s.toCharArray())&#123;</div><div class="line">            <span class="keyword">if</span>(c==<span class="string">']'</span>)&#123;<span class="comment">//当前c为]则要做出一次解码</span></div><div class="line">                String repeat = <span class="string">""</span>;</div><div class="line">                <span class="keyword">while</span>(str.peek()!=<span class="string">'['</span>)&#123;</div><div class="line">                    repeat=str.peek()+repeat;<span class="comment">//注意这里一定是str.peek()+repeat，不能写反,也不能用+=</span></div><div class="line">                    str.pop();</div><div class="line">                &#125;</div><div class="line">                str.pop();</div><div class="line">                String num = <span class="string">""</span>;<span class="comment">//重复的数量，由于重复的值可能是多位数</span></div><div class="line">                <span class="keyword">while</span>(!str.isEmpty())&#123;</div><div class="line">                    <span class="keyword">char</span> n = str.peek();</div><div class="line">                    <span class="keyword">if</span>(!Character.isDigit(n))<span class="keyword">break</span>;</div><div class="line">                    <span class="keyword">else</span> &#123;</div><div class="line">                        num=n+num;<span class="comment">//注意这里一定是n+num，不能写反，也不能用+=</span></div><div class="line">                        str.pop();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">int</span> re;</div><div class="line">                <span class="keyword">if</span>(num==<span class="string">""</span>)re=<span class="number">1</span>;</div><div class="line">                <span class="keyword">else</span>&#123;</div><div class="line">                    re = Integer.parseInt(num);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">while</span>(re--&gt;<span class="number">0</span>)&#123;</div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">char</span> ch:repeat.toCharArray())</div><div class="line">                        str.push(ch);</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                str.push(c);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        String aimS=<span class="string">""</span>;</div><div class="line">        <span class="keyword">while</span>(!str.isEmpty())&#123;</div><div class="line">            aimS=str.pop()+aimS;<span class="comment">//注意这里一定是str.pop()+aimS，不能写反，也不能用+=</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> aimS;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>方法二</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> idx;</div><div class="line">    <span class="function"><span class="keyword">public</span>  String <span class="title">decodeString3</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        idx = <span class="number">0</span>;</div><div class="line">        <span class="keyword">return</span> helper(s);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span>  String <span class="title">helper</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        StringBuffer ans = <span class="keyword">new</span> StringBuffer();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;idx &lt; s.length();++idx)&#123;</div><div class="line">            <span class="keyword">char</span> ch = s.charAt(idx);</div><div class="line">            <span class="keyword">if</span>(ch == <span class="string">'['</span>)&#123;</div><div class="line">                idx++;</div><div class="line">                String str = helper(s);</div><div class="line">                <span class="keyword">while</span> (k &gt; <span class="number">0</span>) &#123;</div><div class="line">                    ans.append(str);</div><div class="line">                    --k;</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">']'</span>) &#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Character.isDigit(ch)) &#123;</div><div class="line">                k = k * <span class="number">10</span> + ch - <span class="string">'0'</span>;</div><div class="line">            &#125; <span class="keyword">else</span> ans.append(ch);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ans.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/算法分析/">算法分析</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/algorithm/">algorithm</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://wenjiewang.top/2016/09/07/Leetcode-392-394/" data-title="Leetcode-392-394(共四道) | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/09/11/Leetcode-5-7/" title="Leetcode-6-391">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Leetcode-6-391</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/09/04/Leetcode-391-6/"  title="Leetcode-6-391">
+ <strong>下一篇：</strong><br/> 
+ <span>Leetcode-6-391
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/09/07/Leetcode-392-394/" data-title="Leetcode-392-394(共四道)" data-url="http://wenjiewang.top/2016/09/07/Leetcode-392-394/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目392-Is-Subsequence"><span class="toc-number">1.</span> <span class="toc-text">题目392 Is Subsequence</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目391-Perfect-Rectangle"><span class="toc-number">2.</span> <span class="toc-text">题目391 Perfect Rectangle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-1"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目394-Decode-String"><span class="toc-number">3.</span> <span class="toc-text">题目394 Decode String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-2"><span class="toc-number">3.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-2"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/研究生涯/" title="研究生涯">研究生涯<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>5</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hadoop/" title="hadoop">hadoop<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://FangHeart.top" target="_blank" title="FangHeart">FangHeart</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://sikaoa.com" target="_blank" title="SiKaoA">SiKaoA</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+    <iframe width="100%" height="450" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=450&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2952571673&verifier=a427a000&dpc=1"></iframe>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2952571673" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/LJeRRy" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:120392899@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Jerry">Jerry</a>
+		
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260198983'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260198983%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		</p>
+		<script type="text/javascript">
+  		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+ 			 e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  			})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  		_st('install','t5ji62MJwvB-Eyyt7Ktz','2.0.0');
+		</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jerry2016"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_null'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3Dnull' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

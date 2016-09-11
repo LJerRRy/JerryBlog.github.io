@@ -1,0 +1,548 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Leetcode-6-391 | Never Git up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jerry">
+    
+
+    
+    <meta name="description" content="Leetcoode上的第6题与第391题
+题目6 ZigZag Conversion问题描述The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode-6-391">
+<meta property="og:url" content="http://wenjiewang.top/2016/09/04/Leetcode-391-6/index.html">
+<meta property="og:site_name" content="Never Git up">
+<meta property="og:description" content="Leetcoode上的第6题与第391题
+题目6 ZigZag Conversion问题描述The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for">
+<meta property="og:image" content="http://wenjiewang.top/img/leetcode6.png">
+<meta property="og:updated_time" content="2016-09-07T16:53:05.687Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode-6-391">
+<meta name="twitter:description" content="Leetcoode上的第6题与第391题
+题目6 ZigZag Conversion问题描述The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for">
+<meta name="twitter:image" content="http://wenjiewang.top/img/leetcode6.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/f.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.jpg" alt="Never Git up" title="Never Git up"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Never Git up">Never Git up</a></h1>
+				<h2 class="blog-motto">Better late than never</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/works">My Works</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+    				<label>Search</label>
+    				<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+   				</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/04/Leetcode-391-6/" title="Leetcode-6-391" itemprop="url">Leetcode-6-391</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-03T16:12:01.000Z" itemprop="datePublished"> 发表于 2016-09-04</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目6-ZigZag-Conversion"><span class="toc-number">1.</span> <span class="toc-text">题目6 ZigZag Conversion</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目391-Perfect-Rectangle"><span class="toc-number">2.</span> <span class="toc-text">题目391 Perfect Rectangle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-1"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第6题与第391题</p>
+<h1 id="题目6-ZigZag-Conversion"><a href="#题目6-ZigZag-Conversion" class="headerlink" title="题目6 ZigZag Conversion"></a>题目6 ZigZag Conversion</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">P   A   H   N</div><div class="line">A P L S I I G</div><div class="line">Y   I   R</div></pre></td></tr></table></figure>
+<p>And then read line by line: “PAHNAPLSIIGYIR”<br>Write the code that will take a string and make this conversion given a number of rows:<br><code>string convert(string text, int nRows);</code><br>convert(“PAYPALISHIRING”, 3) should return “PAHNAPLSIIGYIR”.</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>其实刚刚看到这个题目时，看了很久都不知道题目意思，然后去wiki了<a href="https://en.wikipedia.org/wiki/Zigzag" target="_blank" rel="external">Zigzag</a>的意思，指锯齿状，而且锯齿的角度是平行的且每隔一条线之间的两条行平行。简而言之就是多个<code>W</code>连接起来。<br>例如：<br><img src="img/leetcode6.png" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String s=<span class="string">"123456789"</span>;</div><div class="line">convert(s,<span class="number">3</span>);</div><div class="line"><span class="comment">//输出的字符串应该为159246837</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>方法一</strong> 用一个字符串数组来保存要输出每行的字符串，最后将字符串数组依次输出。</li>
+<li><strong>方法二</strong> 寻找每行之间的规律，可以发现第一行和最后一行字符之间数组下标值相差（numRows-1）*2，而其他行除了下标相差（numRows-1)*2之外还有一个数，即该数是前一个数加上（numRows-1-i）*2，这里i为行数（从0开始）。</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">略</div></pre></td></tr></table></figure>
+<p>方法二</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">convert</span><span class="params">(String s, <span class="keyword">int</span> numRows)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = s.length();</div><div class="line">        <span class="keyword">if</span>(numRows&lt;=<span class="number">1</span>||len==<span class="number">0</span>)<span class="keyword">return</span> s;<span class="comment">//只有一行，或者字符串为空时直接返回s</span></div><div class="line">        String res = <span class="string">""</span>;<span class="comment">//要输出的字符串</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;numRows;i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i;j&lt;len;j+=(numRows-<span class="number">1</span>)*<span class="number">2</span>)&#123;</div><div class="line">                res = res + s.charAt(j);</div><div class="line">                <span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;i&lt;len-<span class="number">1</span>)&#123;<span class="comment">//除了第一行和最后一行</span></div><div class="line">                    <span class="keyword">int</span> k = j + (numRows - i - <span class="number">1</span>)*<span class="number">2</span>;<span class="comment">//之间的数的下标</span></div><div class="line">                    <span class="keyword">if</span>(k&lt;len)&#123;<span class="comment">//小于字符串长度</span></div><div class="line">                        res += s.charAt(k);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="题目391-Perfect-Rectangle"><a href="#题目391-Perfect-Rectangle" class="headerlink" title="题目391 Perfect Rectangle"></a>题目391 Perfect Rectangle</h1><h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p><a href="https://leetcode.com/contest/2/problems/perfect-rectangle/" target="_blank" rel="external">题目链接</a></p>
+<p>Given N axis-aligned rectangles where N &gt; 0, determine if they all together form an exact cover of a rectangular region.</p>
+<p>Each rectangle is represented as a bottom-left point and a top-right point. For example, a unit square is represented as [1,1,2,2]. (coordinate of bottom-left point is (1, 1) and top-right point is (2, 2)).</p>
+<p><strong>Example1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">rectangles = [</div><div class="line">  [1,1,3,3],</div><div class="line">  [3,1,4,2],</div><div class="line">  [3,2,4,4],</div><div class="line">  [1,3,2,4],</div><div class="line">  [2,3,3,4]</div><div class="line">]</div><div class="line"></div><div class="line">Return true. All 5 rectangles together form an exact cover of a rectangular region.</div></pre></td></tr></table></figure>
+<p><strong>Example2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">rectangles = [</div><div class="line">  [1,1,2,3],</div><div class="line">  [1,3,2,4],</div><div class="line">  [3,1,4,2],</div><div class="line">  [3,2,4,4]</div><div class="line">]</div><div class="line"></div><div class="line">Return false. Because there is a gap between the two rectangular regions.</div></pre></td></tr></table></figure>
+<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h2><p>n个轴对称矩形(其中n&gt;0)，判断是否能围成一个矩形,不能有重叠且恰好围成一个矩形区域。每个矩形用左下顶点和右上顶点来表示，如矩形[1,1,2,3]，表示该矩形左下顶点坐标为（1,1），右下顶点坐标为（2,3）。</p>
+<ul>
+<li><strong>方法一</strong>  顶点检查法，<a href="https://discuss.leetcode.com/topic/55923/o-n-solution-by-counting-corners-with-detailed-explaination/2" target="_blank" rel="external">参考地址</a></li>
+<li><strong>方法二</strong>  扫描线法，<a href="https://discuss.leetcode.com/topic/55944/o-n-log-n-sweep-line-solution" target="_blank" rel="external">参考地址</a><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2></li>
+</ul>
+<p>方法一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">lastRemaining2</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span> [n];</div><div class="line">    <span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span> [n];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;n;i++)</div><div class="line">        a[i]=i+<span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> k = n;</div><div class="line">    <span class="keyword">while</span>(k&gt;<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">int</span> i =<span class="number">0</span>,j=<span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(i&lt;k-<span class="number">1</span>)&#123;<span class="comment">//正向删除</span></div><div class="line">            b[j++]=a[i+<span class="number">1</span>];<span class="comment">//复制</span></div><div class="line">            i+=<span class="number">2</span>;</div><div class="line">        &#125;</div><div class="line">        k=k/<span class="number">2</span>;</div><div class="line">        <span class="keyword">if</span>(k!=<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">for</span>(j=k-<span class="number">1</span>,i=<span class="number">0</span>;j&gt;=<span class="number">0</span>;j-=<span class="number">2</span>)&#123;<span class="comment">//逆向删除</span></div><div class="line">            b[j]=<span class="number">0</span>;<span class="comment">//直接将其改为0</span></div><div class="line">        &#125;&#125;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>,j=<span class="number">0</span>;i&lt;k;i++)&#123;</div><div class="line">            <span class="keyword">if</span>(b[i]!=<span class="number">0</span>)&#123;</div><div class="line">                a[j++]=b[i];<span class="comment">//复制</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        k=k/<span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> a[<span class="number">0</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>方法二</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个扫描事件</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Event</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Event</span>&gt; </span>&#123;</div><div class="line">	<span class="keyword">int</span> time;</div><div class="line">	<span class="keyword">int</span>[] rect;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Event</span><span class="params">(<span class="keyword">int</span> time, <span class="keyword">int</span>[] rect)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.time = time;</div><div class="line">		<span class="keyword">this</span>.rect = rect;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Event that)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.time != that.time) <span class="keyword">return</span> <span class="keyword">this</span>.time - that.time;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">this</span>.rect[<span class="number">0</span>] - that.rect[<span class="number">0</span>];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isRectangleCover</span><span class="params">(<span class="keyword">int</span>[][] rectangles)</span> </span>&#123;</div><div class="line">	PriorityQueue&lt;Event&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;Event&gt; ();</div><div class="line">        <span class="comment">// border of y-intervals</span></div><div class="line">	<span class="keyword">int</span>[] border= &#123;Integer.MAX_VALUE, Integer.MIN_VALUE&#125;;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span>[] rect : rectangles) &#123;</div><div class="line">		Event e1 = <span class="keyword">new</span> Event(rect[<span class="number">0</span>], rect);</div><div class="line">		Event e2 = <span class="keyword">new</span> Event(rect[<span class="number">2</span>], rect);</div><div class="line">		pq.add(e1);</div><div class="line">		pq.add(e2);</div><div class="line">		<span class="keyword">if</span> (rect[<span class="number">1</span>] &lt; border[<span class="number">0</span>]) border[<span class="number">0</span>] = rect[<span class="number">1</span>];</div><div class="line">		<span class="keyword">if</span> (rect[<span class="number">3</span>] &gt; border[<span class="number">1</span>]) border[<span class="number">1</span>] = rect[<span class="number">3</span>];</div><div class="line">	&#125;</div><div class="line">	TreeSet&lt;<span class="keyword">int</span>[]&gt; set = <span class="keyword">new</span> TreeSet&lt;<span class="keyword">int</span>[]&gt; (<span class="keyword">new</span> Comparator&lt;<span class="keyword">int</span>[]&gt; () &#123;</div><div class="line">		<span class="meta">@Override</span></div><div class="line">                <span class="comment">// if two y-intervals intersects, return 0</span></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span> <span class="params">(<span class="keyword">int</span>[] rect1, <span class="keyword">int</span>[] rect2)</span> </span>&#123;</div><div class="line">			<span class="keyword">if</span> (rect1[<span class="number">3</span>] &lt;= rect2[<span class="number">1</span>]) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (rect2[<span class="number">3</span>] &lt;= rect1[<span class="number">1</span>]) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	<span class="keyword">int</span> yRange = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (!pq.isEmpty()) &#123;</div><div class="line">		<span class="keyword">int</span> time = pq.peek().time;</div><div class="line">		<span class="keyword">while</span> (!pq.isEmpty() &amp;&amp; pq.peek().time == time) &#123;</div><div class="line">			Event e = pq.poll();</div><div class="line">			<span class="keyword">int</span>[] rect = e.rect;</div><div class="line">			<span class="keyword">if</span> (time == rect[<span class="number">2</span>]) &#123;</div><div class="line">				set.remove(rect);</div><div class="line">				yRange -= rect[<span class="number">3</span>] - rect[<span class="number">1</span>];</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				<span class="keyword">if</span> (!set.add(rect)) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">				yRange += rect[<span class="number">3</span>] - rect[<span class="number">1</span>];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">                <span class="comment">// check intervals' range</span></div><div class="line">		<span class="keyword">if</span> (!pq.isEmpty() &amp;&amp; yRange != border[<span class="number">1</span>] - border[<span class="number">0</span>]) &#123;</div><div class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">			<span class="comment">//if (set.isEmpty()) return false;</span></div><div class="line">			<span class="comment">//if (yRange != border[1] - border[0]) return false;</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/算法分析/">算法分析</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/algorithm/">algorithm</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://wenjiewang.top/2016/09/04/Leetcode-391-6/" data-title="Leetcode-6-391 | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/09/07/Leetcode-392-394/" title="Leetcode-392-394(共四道)">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Leetcode-392-394(共四道)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/08/30/Leetcode-389-390/"  title="Leetcode-389-390">
+ <strong>下一篇：</strong><br/> 
+ <span>Leetcode-389-390
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/09/04/Leetcode-391-6/" data-title="Leetcode-6-391" data-url="http://wenjiewang.top/2016/09/04/Leetcode-391-6/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目6-ZigZag-Conversion"><span class="toc-number">1.</span> <span class="toc-text">题目6 ZigZag Conversion</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目391-Perfect-Rectangle"><span class="toc-number">2.</span> <span class="toc-text">题目391 Perfect Rectangle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-1"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/研究生涯/" title="研究生涯">研究生涯<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>5</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hadoop/" title="hadoop">hadoop<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://FangHeart.top" target="_blank" title="FangHeart">FangHeart</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://sikaoa.com" target="_blank" title="SiKaoA">SiKaoA</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+    <iframe width="100%" height="450" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=450&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2952571673&verifier=a427a000&dpc=1"></iframe>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2952571673" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/LJeRRy" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:120392899@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Jerry">Jerry</a>
+		
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260198983'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260198983%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		</p>
+		<script type="text/javascript">
+  		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+ 			 e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  			})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  		_st('install','t5ji62MJwvB-Eyyt7Ktz','2.0.0');
+		</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jerry2016"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_null'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3Dnull' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
