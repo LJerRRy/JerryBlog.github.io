@@ -21,7 +21,7 @@ You may assume that there is only lower case English letters in both s and t. t 
 <meta property="og:description" content="Leetcoode上的第392题到第394题
 题目392 Is Subsequence问题描述Given a string s and a string t, check if s is subsequence of t.
 You may assume that there is only lower case English letters in both s and t. t is poten">
-<meta property="og:updated_time" content="2016-09-11T07:49:06.434Z">
+<meta property="og:updated_time" content="2016-09-13T11:15:34.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-392-394(共四道)">
 <meta name="twitter:description" content="Leetcoode上的第392题到第394题
@@ -103,7 +103,7 @@ You may assume that there is only lower case English letters in both s and t. t 
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目392-Is-Subsequence"><span class="toc-number">1.</span> <span class="toc-text">题目392 Is Subsequence</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目391-Perfect-Rectangle"><span class="toc-number">2.</span> <span class="toc-text">题目391 Perfect Rectangle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-1"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目394-Decode-String"><span class="toc-number">3.</span> <span class="toc-text">题目394 Decode String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-2"><span class="toc-number">3.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-2"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目392-Is-Subsequence"><span class="toc-number">1.</span> <span class="toc-text">题目392 Is Subsequence</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目393-UTF-8-Validation"><span class="toc-number">2.</span> <span class="toc-text">题目393 UTF-8 Validation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-1"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目394-Decode-String"><span class="toc-number">3.</span> <span class="toc-text">题目394 Decode String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-2"><span class="toc-number">3.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-2"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -126,7 +126,7 @@ You may assume that there is only lower case English letters in both s and t. t 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String t)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> ls=s.length();</div><div class="line">        <span class="keyword">int</span> lt=t.length();</div><div class="line">        <span class="keyword">if</span>(ls==<span class="number">0</span>)<span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//空串肯定为t的子串</span></div><div class="line">        <span class="keyword">int</span> i,m=<span class="number">0</span>;<span class="comment">//m标识该从t中哪开始遍历</span></div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;ls;i++)&#123;</div><div class="line">            <span class="keyword">char</span> a = s.charAt(i);</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&lt;lt;j++)&#123;</div><div class="line">                <span class="keyword">if</span>(a==t.charAt(j))&#123;</div><div class="line">                    m = j+<span class="number">1</span>;<span class="comment">//下次遍历从j+1开始</span></div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                m = j + <span class="number">1</span>;<span class="comment">//记录当前遍历到哪了</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(m&gt;=lt&amp;&amp;i&lt;ls-<span class="number">1</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p>方法二</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String t)</span> </span></div><div class="line">   &#123;</div><div class="line">       <span class="keyword">if</span>(t.length() &lt; s.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">       <span class="keyword">int</span> prev = <span class="number">0</span>;<span class="comment">//相当于方法一中的m</span></div><div class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length();i++)</div><div class="line">       &#123;</div><div class="line">           <span class="keyword">char</span> tempChar = s.charAt(i);</div><div class="line">           prev = t.indexOf(tempChar,prev);<span class="comment">//在t中查找tempChar字符，运用indexOf方法，相当于方法一中第二个for循环</span></div><div class="line">           <span class="keyword">if</span>(prev == -<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">           prev++;</div><div class="line">       &#125;</div><div class="line">       </div><div class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<h1 id="题目391-Perfect-Rectangle"><a href="#题目391-Perfect-Rectangle" class="headerlink" title="题目391 Perfect Rectangle"></a>题目391 Perfect Rectangle</h1><h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p><a href="https://leetcode.com/contest/2/problems/perfect-rectangle/" target="_blank" rel="external">题目链接</a></p>
+<h1 id="题目393-UTF-8-Validation"><a href="#题目393-UTF-8-Validation" class="headerlink" title="题目393 UTF-8 Validation"></a>题目393 UTF-8 Validation</h1><h2 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h2><p><a href="https://leetcode.com/contest/2/problems/perfect-rectangle/" target="_blank" rel="external">题目链接</a></p>
 <p>A character in UTF8 can be from 1 to 4 bytes long, subjected to the following rules:</p>
 <ol>
 <li>For 1-byte character, the first bit is a 0, followed by its unicode code.</li>
@@ -176,7 +176,7 @@ You may assume that there is only lower case English letters in both s and t. t 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/algorithm/">algorithm</a>
+  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/Leetcode/">Leetcode</a>
   </div>
 
 </div>
@@ -199,10 +199,10 @@ You may assume that there is only lower case English letters in both s and t. t 
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/09/11/Leetcode-5-7/" title="Leetcode-5-7">
+ <a href="/2016/09/11/Leetcode-8/" title="String to Integer (atoi)">
   <strong>上一篇：</strong><br/>
   <span>
-  Leetcode-5-7</span>
+  String to Integer (atoi)</span>
 </a>
 </div>
 
@@ -229,7 +229,7 @@ You may assume that there is only lower case English letters in both s and t. t 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目392-Is-Subsequence"><span class="toc-number">1.</span> <span class="toc-text">题目392 Is Subsequence</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目391-Perfect-Rectangle"><span class="toc-number">2.</span> <span class="toc-text">题目391 Perfect Rectangle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-1"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目394-Decode-String"><span class="toc-number">3.</span> <span class="toc-text">题目394 Decode String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-2"><span class="toc-number">3.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-2"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目392-Is-Subsequence"><span class="toc-number">1.</span> <span class="toc-text">题目392 Is Subsequence</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目393-UTF-8-Validation"><span class="toc-number">2.</span> <span class="toc-text">题目393 UTF-8 Validation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-1"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目394-Decode-String"><span class="toc-number">3.</span> <span class="toc-text">题目394 Decode String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述-2"><span class="toc-number">3.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路-2"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
  
   </div>
 
@@ -251,7 +251,11 @@ You may assume that there is only lower case English letters in both s and t. t 
 		  
 		
 		  
-			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>5</sup></a></li>
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法导论/" title="算法导论">算法导论<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -264,11 +268,11 @@ You may assume that there is only lower case English letters in both s and t. t 
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>5</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>5</sup></a></li>
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>8</sup></a></li>
 			
 		
 			
@@ -276,11 +280,15 @@ You may assume that there is only lower case English letters in both s and t. t 
 			
 		
 			
-				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+				<li><a href="/tags/sort/" title="sort">sort<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/hadoop/" title="hadoop">hadoop<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
 			
 		
 			

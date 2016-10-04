@@ -4,26 +4,38 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World Hexo | Never Git up</title>
+    <title>Palindrome Number | Never Git up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jerry">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="Leetcoode上的第8题
+题目9 SPalindrome Number问题描述Determine whether an integer is a palindrome. Do this without extra space.
+解题思路求一个整数是否为回文数字。
+
+0~9肯定是回文数字，负数也不是（开始以为负数也要判断其是否为回文）。
+将整数从最低位开始向最高位进行比较，不需要转换为字符串。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World Hexo">
-<meta property="og:url" content="http://wenjiewang.top/2016/08/23/hello-world/index.html">
+<meta property="og:title" content="Palindrome Number">
+<meta property="og:url" content="http://wenjiewang.top/2016/09/20/Leetcode-9/index.html">
 <meta property="og:site_name" content="Never Git up">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-08-29T01:37:43.962Z">
+<meta property="og:description" content="Leetcoode上的第8题
+题目9 SPalindrome Number问题描述Determine whether an integer is a palindrome. Do this without extra space.
+解题思路求一个整数是否为回文数字。
+
+0~9肯定是回文数字，负数也不是（开始以为负数也要判断其是否为回文）。
+将整数从最低位开始向最高位进行比较，不需要转换为字符串。">
+<meta property="og:updated_time" content="2016-09-19T16:47:19.820Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World Hexo">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Palindrome Number">
+<meta name="twitter:description" content="Leetcoode上的第8题
+题目9 SPalindrome Number问题描述Determine whether an integer is a palindrome. Do this without extra space.
+解题思路求一个整数是否为回文数字。
+
+0~9肯定是回文数字，负数也不是（开始以为负数也要判断其是否为回文）。
+将整数从最低位开始向最高位进行比较，不需要转换为字符串。">
 
     
     <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
@@ -84,14 +96,14 @@ Quick">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/23/hello-world/" title="Hello World Hexo" itemprop="url">Hello World Hexo</a>
+      <a href="/2016/09/20/Leetcode-9/" title="Palindrome Number" itemprop="url">Palindrome Number</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-23T05:35:50.580Z" itemprop="datePublished"> 发表于 2016-08-23</time>
+    <time datetime="2016-09-19T16:12:12.000Z" itemprop="datePublished"> 发表于 2016-09-20</time>
     
   </p>
 </header>
@@ -100,19 +112,22 @@ Quick">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目9-SPalindrome-Number"><span class="toc-number">1.</span> <span class="toc-text">题目9 SPalindrome Number</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第8题</p>
+<h1 id="题目9-SPalindrome-Number"><a href="#题目9-SPalindrome-Number" class="headerlink" title="题目9 SPalindrome Number"></a>题目9 SPalindrome Number</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Determine whether an integer is a palindrome. Do this without extra space.</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>求一个整数是否为回文数字。</p>
+<ol>
+<li>0~9肯定是回文数字，负数也不是（开始以为负数也要判断其是否为回文）。</li>
+<li>将整数从最低位开始向最高位进行比较，不需要转换为字符串。</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(x&lt;<span class="number">10</span>&amp;&amp;x&gt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//0~9</span></div><div class="line">        <span class="keyword">if</span>(x&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//负数</span></div><div class="line">        <span class="keyword">int</span> y = x;</div><div class="line">        <span class="keyword">int</span> m = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> c = <span class="number">0</span>;<span class="comment">//c来存储整数的位数</span></div><div class="line">        <span class="keyword">while</span>(y/<span class="number">10</span>!=<span class="number">0</span>)&#123;<span class="comment">//计算整数x有几位</span></div><div class="line">            y/=<span class="number">10</span>;</div><div class="line">            m*=<span class="number">10</span>;</div><div class="line">            c++;</div><div class="line">        &#125;</div><div class="line">        c++;</div><div class="line">        y=x;<span class="comment">//x,y，分别代表从高位和从低位开始</span></div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">            <span class="keyword">int</span> t = x/m;<span class="comment">//高位的值</span></div><div class="line">            <span class="keyword">int</span> p = y%<span class="number">10</span>;<span class="comment">//低位的值</span></div><div class="line">            <span class="keyword">if</span>(t!=p)<span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//若不相等则肯定不为回文</span></div><div class="line">            <span class="keyword">if</span>(c==<span class="number">0</span>||c==<span class="number">1</span>)<span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//若c=0或者c=1代表以及比较完毕，肯定为回文。</span></div><div class="line">            x=x%m;<span class="comment">//去掉高位值</span></div><div class="line">            m=m/<span class="number">10</span>;</div><div class="line">            y=y/<span class="number">10</span>;<span class="comment">//去掉低位</span></div><div class="line">            c=c-<span class="number">2</span>;<span class="comment">//位数减2</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>方法二</p>
+<p>该方法参考的discuss上的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">*1. 将整数x分为两部分，前半部分保存在x，后半部分逆序后保存在v中，</div><div class="line">*2. 其中x&gt;v，即若x的位数为奇数时，x则比v多一位。若x&gt;v，x=x/10</div><div class="line">*3. 然后再判断x是否和v相等</div><div class="line">*4. 这个方法效率z高</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> v;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">        <span class="comment">//optimizations</span></div><div class="line">        <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">if</span>(x&lt;<span class="number">10</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span>(x%<span class="number">10</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">if</span>(x&lt;<span class="number">100</span>&amp;&amp;x%<span class="number">11</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span>(x&lt;<span class="number">1000</span>&amp;&amp;((x/<span class="number">100</span>)*<span class="number">10</span>+x%<span class="number">10</span>)%<span class="number">11</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        <span class="comment">//actual logic</span></div><div class="line">        v=x%<span class="number">10</span>;</div><div class="line">        x=x/<span class="number">10</span>;</div><div class="line">        <span class="keyword">while</span>(x-v&gt;<span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">                v=v*<span class="number">10</span>+x%<span class="number">10</span>;</div><div class="line">                x/=<span class="number">10</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(v&gt;x)&#123;v/=<span class="number">10</span>;&#125;</div><div class="line">        <span class="keyword">return</span> v==x?<span class="keyword">true</span>:<span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -120,13 +135,13 @@ Quick">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  <a class="article-category-link" href="/categories/算法分析/">算法分析</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/Leetcode/">Leetcode</a>
   </div>
 
 </div>
@@ -135,7 +150,7 @@ Quick">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wenjiewang.top/2016/08/23/hello-world/" data-title="Hello World Hexo | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  <div data-url="http://wenjiewang.top/2016/09/20/Leetcode-9/" data-title="Palindrome Number | Never Git up" data-tsina="2952571673" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,18 +164,18 @@ Quick">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/08/23/gitlearn/" title="git learning day 1">
+ <a href="/2016/09/28/Chapter-Two/" title="Chapter Two and One">
   <strong>上一篇：</strong><br/>
   <span>
-  git learning day 1</span>
+  Chapter Two and One</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/08/22/markdown/"  title="How to markdown">
+<a href="/2016/09/12/Leetcode-396-399/"  title="Leetcode-396-399">
  <strong>下一篇：</strong><br/> 
- <span>How to markdown
+ <span>Leetcode-396-399
 </span>
 </a>
 </div>
@@ -169,7 +184,7 @@ Quick">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/23/hello-world/" data-title="Hello World Hexo" data-url="http://wenjiewang.top/2016/08/23/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="2016/09/20/Leetcode-9/" data-title="Palindrome Number" data-url="http://wenjiewang.top/2016/09/20/Leetcode-9/"></div>
 </section>
 
 
@@ -179,7 +194,7 @@ Quick">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目9-SPalindrome-Number"><span class="toc-number">1.</span> <span class="toc-text">题目9 SPalindrome Number</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
  
   </div>
 
