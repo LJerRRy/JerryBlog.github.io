@@ -1,0 +1,548 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Chapter Two and One | Never Git up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jerry">
+    
+
+    
+    <meta name="description" content="算法导论（Introduction to Algorithm）
+最短路径和旅行商问题相似之处：都是寻求最短的路线不同之处：最短路线问题是从若干条可选线路中选择一条线路使之在两个点之间达到交通路径最短，不需要经过所有的点；旅行商人问题中如果把仓库看做是图中的一个点的话，首先要满足遍历所有的点，然后在所有满足的线路中选择最短的线路，其复杂程度要高于最短路径。
+插入排序插入算法的设计使用的是增量（inc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter Two and One">
+<meta property="og:url" content="http://wenjiewang.top/2016/09/28/Chapter-Four/index.html">
+<meta property="og:site_name" content="Never Git up">
+<meta property="og:description" content="算法导论（Introduction to Algorithm）
+最短路径和旅行商问题相似之处：都是寻求最短的路线不同之处：最短路线问题是从若干条可选线路中选择一条线路使之在两个点之间达到交通路径最短，不需要经过所有的点；旅行商人问题中如果把仓库看做是图中的一个点的话，首先要满足遍历所有的点，然后在所有满足的线路中选择最短的线路，其复杂程度要高于最短路径。
+插入排序插入算法的设计使用的是增量（inc">
+<meta property="og:updated_time" content="2016-09-29T13:59:28.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter Two and One">
+<meta name="twitter:description" content="算法导论（Introduction to Algorithm）
+最短路径和旅行商问题相似之处：都是寻求最短的路线不同之处：最短路线问题是从若干条可选线路中选择一条线路使之在两个点之间达到交通路径最短，不需要经过所有的点；旅行商人问题中如果把仓库看做是图中的一个点的话，首先要满足遍历所有的点，然后在所有满足的线路中选择最短的线路，其复杂程度要高于最短路径。
+插入排序插入算法的设计使用的是增量（inc">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/f.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.jpg" alt="Never Git up" title="Never Git up"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Never Git up">Never Git up</a></h1>
+				<h2 class="blog-motto">Better late than never</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/works">My Works</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+    				<label>Search</label>
+    				<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+   				</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/28/Chapter-Four/" title="Chapter Two and One" itemprop="url">Chapter Two and One</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-28T04:11:05.000Z" itemprop="datePublished"> 发表于 2016-09-28</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最短路径和旅行商问题"><span class="toc-number">1.</span> <span class="toc-text">最短路径和旅行商问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入排序"><span class="toc-number">2.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环不变式"><span class="toc-number">3.</span> <span class="toc-text">循环不变式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分治法"><span class="toc-number">4.</span> <span class="toc-text">分治法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归并排序"><span class="toc-number">5.</span> <span class="toc-text">归并排序</span></a></li></ol>
+		
+		</div>
+		
+		<p>算法导论（Introduction to Algorithm）</p>
+<h3 id="最短路径和旅行商问题"><a href="#最短路径和旅行商问题" class="headerlink" title="最短路径和旅行商问题"></a>最短路径和旅行商问题</h3><p>相似之处：都是寻求最短的路线<br>不同之处：最短路线问题是从若干条可选线路中选择一条线路使之在两个点之间达到交通路径最短，不需要经过所有的点；旅行商人问题中如果把仓库看做是图中的一个<br>点的话，首先要满足遍历所有的点，然后在所有满足的线路中选择最短的线路，其复杂程度要高于最短路径。</p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>插入算法的设计使用的是增量（incremental）方法：在排好子数组A[1..j-1]后，将元素A[j]插入，形成排好序的子数组A[1..j]。伪代码如下，伪代码中<strong>数组是从1开始的</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">INSERTION-SORT(A)</div><div class="line">1 for j = 2 to length[A]</div><div class="line">2   key = A[j]</div><div class="line">3   //Insert A[j] into the sorted sequence A[1..j-1]</div><div class="line">4   i = j-1</div><div class="line">5   while i &gt; 0 and A[i] &gt; key</div><div class="line">6       A[i+1]=A[i]</div><div class="line">7       i = i − 1</div><div class="line">8   A[i+1]=key</div></pre></td></tr></table></figure>
+<p>插入排序的java算法如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InsertSort</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inserSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> len = a.length;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;len;j++)&#123;</div><div class="line">            <span class="keyword">int</span> key = a[j];</div><div class="line">            <span class="keyword">int</span> i = j-<span class="number">1</span>;</div><div class="line">            <span class="keyword">while</span>(i&gt;=<span class="number">0</span>&amp;&amp;a[i]&gt;key)&#123;</div><div class="line">                a[i+<span class="number">1</span>]=a[i];</div><div class="line">                i--;</div><div class="line">            &#125;</div><div class="line">            a[i+<span class="number">1</span>]=key;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        InsertSort is = <span class="keyword">new</span> InsertSort();</div><div class="line">        <span class="keyword">int</span> num=<span class="number">100</span>;</div><div class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[num];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)</div><div class="line">            a[i]= (<span class="keyword">int</span>) (Math.random()*num);<span class="comment">//Math.random()随机产生[0,1]的双精度浮点数</span></div><div class="line">        is.inserSort(a);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;num;i++)</div><div class="line">            System.out.print(a[i]+<span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="循环不变式"><a href="#循环不变式" class="headerlink" title="循环不变式"></a>循环不变式</h3><p>循环不变式(Loop Invariant)是证明算法正确性的一个重要工具。对于循环不变式，必须证明它的三个性质：<br><br><strong>初始化(Initialization)</strong>：它在循环的第一轮迭代开始之前，应该是正确的。 <br><br><strong>保持(Maintenance)</strong>：如果在循环的某一次迭代开始之前它是正确的，那么，在下一次迭代开始之前，它也是正确的。<br><strong>终止(Termination)</strong>：当循环结束时，不变式给了我们一个有用的性质，它有助于表明算法是正确的。 <br></p>
+<p>运用循环不变式对插入排序算法的正确性进行证明：<br><strong>初始化</strong>：j=2，子数组 A[1..j-1]只包含一个元素 A[1],显然它是已排序的。<br><strong>保持</strong>： 若A[1..j-1]是已排序的， 则按照大小确定了插入元素 A[j]位置之后的数组A[1..j]显然也是已排序的。<br><strong>终止</strong>：当 j=n+1 时，退出循环，此时已排序的数组是由 A[1],A[2],A[3]…A[n]组成的A[1..n]，此即原始数组 A。</p>
+<h3 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h3><p><strong>分治法（divide-and-conquer）</strong>:有很多算法在结构上是递归的：为了解决一个给定的问题，算法要一次戒多次地递归调用其自身来解决相关的问题。这些算法通常采用分治策略：将原问题划分成 n 个规模较小而结构不原问题相似的子问题；递归地解决这些子问题，然后再合并其结果，就得到原问题的解。</p>
+<p>分治模式在每一层递归上都有三个步骤：<br><strong>分解（Divide）</strong>：将原问题分解成一系列子问题；<br><strong>解决（Conquer）</strong>：递归地解各子问题。若子问题足够小，则直接求解；<br><strong>合并（Combine）</strong>：将子问题的结果合并成原问题的解。</p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序是基于分治法。<br><strong>分解</strong>：将 n 个元素分成各含 n/2 个元素的子序列；<br><strong>解决</strong>：用合并排序法对两个子序列递归地排序；<br><strong>合并</strong>：合并两个已排序的子序列以得到排序结果。<br>归并排序伪代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">MERGE(A,p,q,r)</div><div class="line">1 n1 = q − p + 1</div><div class="line">2 n2 = r − q</div><div class="line">3 create arrays L[1..n1 + 1] and R[1..n2 + 1]</div><div class="line">4 for i = 1 to n1</div><div class="line">5   L[i]=A[p+i-1]</div><div class="line">6 for j=1 to n2</div><div class="line">7   R[j]=A[q+j]</div><div class="line">8 L[n1 + 1]= ∞</div><div class="line">9 R[n2 + 1]= ∞</div><div class="line">10 i = 1</div><div class="line">11 j = 1</div><div class="line">12 for k =p to r</div><div class="line">13  if L[i]≤R[j]</div><div class="line">14      A[k]=L[i]</div><div class="line">15      i = i + 1</div><div class="line">16  else A[k]=R[j]</div><div class="line">17      j = j + 1</div><div class="line">MERGE-SORT(A,p,r)</div><div class="line">1 if p&lt;r</div><div class="line">2   q= (p+r)/2</div><div class="line">3   MERGE-SORT(A,p,r)</div><div class="line">4   MERGE-SORT(A,q+1,r)</div><div class="line">5   MERGE-SORT(A,p,q,r)</div></pre></td></tr></table></figure>
+<p>java代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Merge</span> </span>&#123;</div><div class="line">    <span class="comment">//归并算法</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] a,<span class="keyword">int</span> p,<span class="keyword">int</span> q,<span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> []m = <span class="keyword">new</span> <span class="keyword">int</span>[q-p+<span class="number">1</span>];</div><div class="line">        <span class="keyword">int</span> []n = <span class="keyword">new</span> <span class="keyword">int</span>[r-q];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=p;j&lt;=q;i++,j++)</div><div class="line">            m[i]=a[j];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=q+<span class="number">1</span>;j&lt;=r;i++,j++)</div><div class="line">            n[i]=a[j];</div><div class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(i&lt;m.length&amp;&amp;j&lt;n.length)&#123;</div><div class="line">            <span class="keyword">if</span>(m[i]&gt;n[j])a[p++]=n[j++];</div><div class="line">            <span class="keyword">else</span> a[p++]=m[i++];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span>(i&lt;m.length)a[p++]=m[i++];</div><div class="line">        <span class="keyword">while</span>(j&lt;n.length)a[p++]=n[j++];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//递归进行归并排序</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span>[]a,<span class="keyword">int</span> p,<span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(p&lt;r)&#123;</div><div class="line">            <span class="keyword">int</span> q=(p+r)/<span class="number">2</span>;</div><div class="line">            merge_sort(a,p,q);</div><div class="line">            merge_sort(a,q+<span class="number">1</span>,r);</div><div class="line">            merge(a,p,q,r);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Merge merge = <span class="keyword">new</span> Merge();</div><div class="line">        <span class="keyword">int</span> num=<span class="number">100</span>;</div><div class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[num];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)</div><div class="line">            a[i]= (<span class="keyword">int</span>) (Math.random()*num);<span class="comment">//Math.random()随机产生[0,1]的双精度浮点数</span></div><div class="line">        merge.merge_sort(a,<span class="number">0</span>,num-<span class="number">1</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;num;i++)</div><div class="line">            System.out.print(a[i]+<span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/算法导论/">算法导论</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/sort/">sort</a><a href="/tags/algorithm/">algorithm</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://wenjiewang.top/2016/09/28/Chapter-Four/" data-title="Chapter Two and One | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/10/20/R-Summary/" title="R Learnning">
+  <strong>上一篇：</strong><br/>
+  <span>
+  R Learnning</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/09/28/Chapter-Two/"  title="Chapter Two and One">
+ <strong>下一篇：</strong><br/> 
+ <span>Chapter Two and One
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/09/28/Chapter-Four/" data-title="Chapter Two and One" data-url="http://wenjiewang.top/2016/09/28/Chapter-Four/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最短路径和旅行商问题"><span class="toc-number">1.</span> <span class="toc-text">最短路径和旅行商问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入排序"><span class="toc-number">2.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环不变式"><span class="toc-number">3.</span> <span class="toc-text">循环不变式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分治法"><span class="toc-number">4.</span> <span class="toc-text">分治法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归并排序"><span class="toc-number">5.</span> <span class="toc-text">归并排序</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/研究生涯/" title="研究生涯">研究生涯<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法导论/" title="算法导论">算法导论<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>11</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sort/" title="sort">sort<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/BFS/" title="BFS">BFS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/R/" title="R">R<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hadoop/" title="hadoop">hadoop<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://FangHeart.top" target="_blank" title="FangHeart">FangHeart</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://sikaoa.com" target="_blank" title="SiKaoA">SiKaoA</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+    <iframe width="100%" height="450" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=450&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2952571673&verifier=a427a000&dpc=1"></iframe>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2952571673" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/LJeRRy" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:120392899@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Jerry">Jerry</a>
+		
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260198983'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260198983%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		</p>
+		<script type="text/javascript">
+  		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+ 			 e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  			})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  		_st('install','t5ji62MJwvB-Eyyt7Ktz','2.0.0');
+		</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jerry2016"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_null'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3Dnull' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

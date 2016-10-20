@@ -21,7 +21,7 @@ Assume Bk to be an array obtained by rotating the array A k positions clock-wise
 <meta property="og:description" content="Leetcoode  Weekly Contest 4总共有四道题
 题目389 Find the Difference问题描述Given an array of integers A and let n to be its length.
 Assume Bk to be an array obtained by rotating the array A k positions clock-wise">
-<meta property="og:updated_time" content="2016-09-14T02:52:07.981Z">
+<meta property="og:updated_time" content="2016-10-11T06:11:34.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-396-399">
 <meta name="twitter:description" content="Leetcoode  Weekly Contest 4总共有四道题
@@ -141,9 +141,9 @@ Assume Bk to be an array obtained by rotating the array A k positions clock-wise
 </ol>
 <ul>
 <li><strong>方法一</strong>  用递归，不过要注意到java中int的范围是-2147483648到2147483647，若n=2147483647时只能做减法,而且还要和(n+1)/2进行比较;n=1时为递归中值条件，否则则取(n+1)/2和(n-1)/2所求得最小值</li>
-<li><strong>方法二</strong>  也是用递归，但是用的是BFS(广度优先搜索算法)，用队列来保存每次转换的可能值，下次遍历队列，继续遍历队列，直至有一个值为1（表示递归结束，已经找到最小值）。<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2></li>
+<li><strong>方法二</strong>  也是用递归，但是用的是<strong>BFS(广度优先搜索算法)</strong>，用队列来保存每次转换的可能值，下次遍历队列，继续遍历队列，直至有一个值为1（表示递归结束，已经找到最小值）。</li>
 </ul>
-<p>方法一</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">integerReplacement</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="comment">//由于int不能超过2147483647，只能手动计算(2147483647 + 1)的变化值，然后进行比较取最小值</span></div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">2147483647</span>)</div><div class="line">        <span class="keyword">return</span> Math.min(<span class="number">1</span>+integerReplacement(<span class="number">2147483647</span>-<span class="number">1</span>),<span class="number">2</span>+integerReplacement((<span class="number">2147483646</span>/<span class="number">2</span>) + <span class="number">1</span>));</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>((n&amp;<span class="number">1</span>)==<span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>+integerReplacement(n/<span class="number">2</span>);</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">2</span> + Math.min(integerReplacement((n+<span class="number">1</span>)/<span class="number">2</span>),integerReplacement(n/<span class="number">2</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>方法二</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">integerReplacement</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">       <span class="keyword">assert</span> n &gt; <span class="number">0</span>;</div><div class="line">       Queue&lt;Long&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();<span class="comment">//一定是long型的队列，不然要分类讨论</span></div><div class="line">       <span class="comment">//n进队</span></div><div class="line">       queue.offer((<span class="keyword">long</span>)n);</div><div class="line">       <span class="keyword">return</span> bfs(queue, <span class="number">0</span>);<span class="comment">//初始化的队列只有一个值，level初始值0，因为n可能为1.</span></div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">bfs</span><span class="params">(Queue&lt;Long&gt; oldqueue, <span class="keyword">int</span> level)</span> </span>&#123;</div><div class="line">       Queue&lt;Long&gt; newqueue = <span class="keyword">new</span> LinkedList&lt;&gt;();<span class="comment">//新建一个队列用来保存</span></div><div class="line">       <span class="keyword">while</span> (!oldqueue.isEmpty()) &#123;</div><div class="line">           <span class="keyword">long</span> n = oldqueue.poll();<span class="comment">//出队</span></div><div class="line">           <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</div><div class="line">               <span class="keyword">return</span> level;</div><div class="line">           &#125;</div><div class="line">           <span class="comment">//进队，到新的队列</span></div><div class="line">           <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">               newqueue.offer(n / <span class="number">2</span>);</div><div class="line">           &#125; <span class="keyword">else</span> &#123;</div><div class="line">               newqueue.offer(n + <span class="number">1</span>);</div><div class="line">               newqueue.offer(n - <span class="number">1</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> bfs(newqueue, level + <span class="number">1</span>);<span class="comment">//继续将新的队列递归</span></div><div class="line">   &#125;</div></pre></td></tr></table></figure>
@@ -160,7 +160,7 @@ Assume Bk to be an array obtained by rotating the array A k positions clock-wise
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/Leetcode/">Leetcode</a>
+  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/Leetcode/">Leetcode</a><a href="/tags/BFS/">BFS</a>
   </div>
 
 </div>
@@ -192,9 +192,9 @@ Assume Bk to be an array obtained by rotating the array A k positions clock-wise
 
 
 <div class="next">
-<a href="/2016/09/11/Leetcode-5-7/"  title="Leetcode-5-7">
+<a href="/2016/09/11/Leetcode-8/"  title="String to Integer (atoi)">
  <strong>下一篇：</strong><br/> 
- <span>Leetcode-5-7
+ <span>String to Integer (atoi)
 </span>
 </a>
 </div>
@@ -227,7 +227,7 @@ Assume Bk to be an array obtained by rotating the array A k positions clock-wise
 		<ul>
 		
 		  
-			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>4</sup></a></li>
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>5</sup></a></li>
 		  
 		
 		  
@@ -235,11 +235,11 @@ Assume Bk to be an array obtained by rotating the array A k positions clock-wise
 		  
 		
 		  
-			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>8</sup></a></li>
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>9</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/算法导论/" title="算法导论">算法导论<sup>1</sup></a></li>
+			<li><a href="/categories/算法导论/" title="算法导论">算法导论<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -252,11 +252,15 @@ Assume Bk to be an array obtained by rotating the array A k positions clock-wise
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>9</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>11</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>8</sup></a></li>
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sort/" title="sort">sort<sup>2</sup></a></li>
 			
 		
 			
@@ -264,7 +268,11 @@ Assume Bk to be an array obtained by rotating the array A k positions clock-wise
 			
 		
 			
-				<li><a href="/tags/sort/" title="sort">sort<sup>1</sup></a></li>
+				<li><a href="/tags/BFS/" title="BFS">BFS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/R/" title="R">R<sup>1</sup></a></li>
 			
 		
 			

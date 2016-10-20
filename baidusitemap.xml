@@ -4,6 +4,94 @@
 
     
   <url>
+    <loc>http://wenjiewang.top/2016/10/20/R-Summary/</loc>
+    <lastmod>2016-10-20T14:55:04.124Z</lastmod>
+    <data>
+        <display>
+        <title>R Learnning</title>
+        <pubTime>2016-10-20T14:48:19.000Z</pubTime>
+        
+        <tag>R</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wenjiewang.top/2016/09/12/Leetcode-396-399/</loc>
+    <lastmod>2016-10-11T06:11:34.627Z</lastmod>
+    <data>
+        <display>
+        <title>Leetcode-396-399</title>
+        <pubTime>2016-09-12T14:53:21.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+        <tag>BFS</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法分析" url="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wenjiewang.top/2016/09/11/Leetcode-11/</loc>
+    <lastmod>2016-10-07T14:41:58.961Z</lastmod>
+    <data>
+        <display>
+        <title>Container With Most Water(Leetcode 11)</title>
+        <pubTime>2016-09-11T05:15:24.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>Leetcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法分析" url="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wenjiewang.top/2016/09/28/Chapter-Four/</loc>
+    <lastmod>2016-09-29T13:59:28.255Z</lastmod>
+    <data>
+        <display>
+        <title>Chapter Two and One</title>
+        <pubTime>2016-09-28T04:11:05.000Z</pubTime>
+        
+        <tag>sort</tag>
+         
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法导论" url="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wenjiewang.top/2016/09/28/Chapter-Two/</loc>
     <lastmod>2016-09-29T13:59:28.255Z</lastmod>
     <data>
@@ -54,28 +142,6 @@
         <display>
         <title>String to Integer (atoi)</title>
         <pubTime>2016-09-11T05:15:24.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>Leetcode</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法分析" url="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wenjiewang.top/2016/09/12/Leetcode-396-399/</loc>
-    <lastmod>2016-09-14T02:52:07.981Z</lastmod>
-    <data>
-        <display>
-        <title>Leetcode-396-399</title>
-        <pubTime>2016-09-12T14:53:21.000Z</pubTime>
         
         <tag>algorithm</tag>
          
@@ -202,15 +268,16 @@
 
     
     
+    
   <url>
-    <loc>http://wenjiewang.top/2016/08/22/markdown/</loc>
+    <loc>http://wenjiewang.top/2016/08/23/gitlearn/</loc>
     <lastmod>2016-08-29T01:37:43.962Z</lastmod>
     <data>
         <display>
-        <title>How to markdown</title>
-        <pubTime>2016-08-21T16:48:19.000Z</pubTime>
+        <title>git learning day 1</title>
+        <pubTime>2016-08-23T11:00:22.000Z</pubTime>
         
-        <tag>markdown</tag>
+        <tag>git</tag>
          
          
            
@@ -242,36 +309,15 @@
     </url>
 
     
-    
   <url>
-    <loc>http://wenjiewang.top/2016/08/23/gitlearn/</loc>
+    <loc>http://wenjiewang.top/2016/08/22/markdown/</loc>
     <lastmod>2016-08-29T01:37:43.962Z</lastmod>
     <data>
         <display>
-        <title>git learning day 1</title>
-        <pubTime>2016-08-23T11:00:22.000Z</pubTime>
+        <title>How to markdown</title>
+        <pubTime>2016-08-21T16:48:19.000Z</pubTime>
         
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wenjiewang.top/2016/08/24/gitlearn2/</loc>
-    <lastmod>2016-08-25T09:14:20.565Z</lastmod>
-    <data>
-        <display>
-        <title>git learning day 2</title>
-        <pubTime>2016-08-24T03:07:57.000Z</pubTime>
-        
-        <tag>git</tag>
+        <tag>markdown</tag>
          
          
            
@@ -297,6 +343,26 @@
            
              
               <breadCrumb title="研究生涯" url="http://wenjiewang.top/categories/%E7%A0%94%E7%A9%B6%E7%94%9F%E6%B6%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wenjiewang.top/2016/08/24/gitlearn2/</loc>
+    <lastmod>2016-08-25T09:14:20.565Z</lastmod>
+    <data>
+        <display>
+        <title>git learning day 2</title>
+        <pubTime>2016-08-24T03:07:57.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
