@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenjiewang.top/"/>
-  <updated>2016-10-20T14:55:04.124Z</updated>
+  <updated>2016-11-09T16:04:37.000Z</updated>
   <id>http://wenjiewang.top/</id>
   
   <author>
@@ -14,6 +14,284 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python入门</title>
+    <link href="http://wenjiewang.top/2016/11/05/pythonbases/"/>
+    <id>http://wenjiewang.top/2016/11/05/pythonbases/</id>
+    <published>2016-11-05T05:52:05.000Z</published>
+    <updated>2016-11-09T16:04:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Python基本知识"><a href="#Python基本知识" class="headerlink" title="Python基本知识"></a>Python基本知识</h2><ol>
+<li>区分大小写，用<code>#</code>来注释</li>
+<li>用缩进（四个空格）来表示块</li>
+<li>变量的类型可以变，即不需要删除原始变量，直接进行赋值另一种类型</li>
+<li>print，type函数，print为输出到终端，type查看类型</li>
+<li>常用数据类型有int,float,boolean(True/False),字符串</li>
+<li><p>sequence序列是一组有序的元素集合，包括tuple（定值表，也叫元组，其中元素不能改变）和list（表，元素可以改变）<br>序列元素<strong>下标从0开始</strong><br>基本样式 <strong>[下限:上限:步长]</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">s1 = (<span class="number">2</span>, <span class="number">1.3</span>, <span class="string">'love'</span>, <span class="number">5.6</span>, <span class="number">9</span>, <span class="number">12</span>, <span class="keyword">False</span>)         <span class="comment"># s1是一个tuple,用括号来赋值</span></div><div class="line">s2 = [<span class="keyword">True</span>, <span class="number">5</span>, <span class="string">'smile'</span>]                          <span class="comment"># s2是一个list，用中括号来赋值</span></div><div class="line">s3 = [<span class="number">1</span>,[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]]                                 <span class="comment"># 一个序列作为另一个序列的元素</span></div><div class="line"><span class="keyword">print</span> s1[:<span class="number">5</span>]             <span class="comment"># 从开始到下标4 （下标5的元素 不包括在内）</span></div><div class="line"><span class="keyword">print</span> s1[<span class="number">2</span>:]             <span class="comment"># 从下标2到最后</span></div><div class="line"><span class="keyword">print</span> s1[<span class="number">0</span>:<span class="number">5</span>:<span class="number">2</span>]          <span class="comment"># 从下标0到下标4 (下标5不包括在内)，每隔2取一个元素 （下标为0，2，4的元素）</span></div><div class="line"><span class="keyword">print</span> s1[<span class="number">2</span>:<span class="number">0</span>:<span class="number">-1</span>]         <span class="comment"># 从下标2到下标1</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>字符串也是元组，所以也可以像序列一样进行相关操作</p>
+</li>
+<li>逻辑运算符 and,or,not（与或非）</li>
+<li><code>if elif else</code> 选择语句，判断条件直接接在<code>if elif</code>后面，<strong>不需要括号，但其末尾必须有个冒号</strong></li>
+<li><code>for while</code>循环， <code>for 元素 in 序列:</code>其中末尾有个冒号（while也是，判断条件不需要加括号），<code>range()</code>函数来帮助建表，<code>range(5) == [0,1,2,3,4]</code></li>
+<li><code>break, continue</code></li>
+<li><code>def</code>定义函数，可以用<code>return</code>返回函数值，可以返回多个</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">square_sum</span><span class="params">(a,b)</span>:</span></div><div class="line">    c = a**<span class="number">2</span> + b**<span class="number">2</span></div><div class="line">    <span class="keyword">return</span> c</div><div class="line"><span class="comment">#可以return a,b,c多个返回值</span></div></pre></td></tr></table></figure>
+<ol>
+<li>函数调用时，如果参数是表的话，然后对表进行操作，会改变表的值（引用传递），如果是整数的话，不会改变（按值传递）。</li>
+<li>类，用<code>class</code>定义类，都有一个原型（默认为object，但必须写）。属性和方法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span><span class="params">(object)</span>:</span></div><div class="line">    have_feather = <span class="keyword">True</span> <span class="comment">#属性</span></div><div class="line">    way_of_reproduction  = <span class="string">'egg'</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, dx, dy)</span>:</span> <span class="comment">#方法，其中包括一个self（第一个参数必须是self），类似于java或者c++中的this</span></div><div class="line">        position = [<span class="number">0</span>,<span class="number">0</span>]</div><div class="line">        <span class="comment">#self.have_feather = False #调用类属性</span></div><div class="line">        position[<span class="number">0</span>] = position[<span class="number">0</span>] + dx</div><div class="line">        position[<span class="number">1</span>] = position[<span class="number">1</span>] + dy</div><div class="line">        <span class="keyword">return</span> position</div><div class="line"><span class="comment">#类的继承</span></div><div class="line"><span class="comment">#子类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chicken</span><span class="params">(Bird)</span>:</span></div><div class="line">    way_of_move = <span class="string">'walk'</span></div><div class="line">    possible_in_KFC = <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Oriole</span><span class="params">(Bird)</span>:</span></div><div class="line">    way_of_move = <span class="string">'fly'</span></div><div class="line">    possible_in_KFC = <span class="keyword">False</span></div><div class="line"></div><div class="line">summer = Chicken()<span class="comment">#创建一个对象</span></div><div class="line"><span class="keyword">print</span> summer.have_feather<span class="comment">#调用对象的属性</span></div><div class="line"><span class="keyword">print</span> summer.move(<span class="number">5</span>,<span class="number">8</span>)</div></pre></td></tr></table></figure>
+<ol>
+<li><p>类中有个<strong>特殊方法（special method）</strong>  <code>__init__()</code>方法 创建对象时自动调用这个方法，初始化对象的属性。</p>
+</li>
+<li><p>list是一个类，表的运算符，比如+, -, &gt;, &lt;, 以及下标引用[start:end]等等，从根本上都是定义在类内部的方法。</p>
+</li>
+</ol>
+<h2 id="Python中词典-dictionary"><a href="#Python中词典-dictionary" class="headerlink" title="Python中词典(dictionary)"></a>Python中词典(dictionary)</h2><p>一个新的类，词典 (dictionary)。与列表相似，词典也可以储存多个元素。这种储存多个元素的对象称为容器(container)</p>
+<ol>
+<li>词典和表类似的地方，是包含有多个元素，每个元素以逗号分隔。但词典的元素包含有两部分，<strong>键</strong>和<strong>值</strong>，常见的是以字符串来表示键，也可以使用数字或者真值来表示键（不可变的对象可以作为键）。值可以是任意对象。键和值两者一一对应。</li>
+<li>与表不同的是，词典的元素没有顺序。你不能通过下标引用元素。词典是通过键来引用。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">dic = &#123;<span class="string">'tom'</span>:<span class="number">11</span>, <span class="string">'sam'</span>:<span class="number">57</span>,<span class="string">'lily'</span>:<span class="number">100</span>&#125; <span class="comment">#一个词典，词典可以为空</span></div><div class="line"><span class="keyword">print</span> type(dic)</div><div class="line">dic[<span class="string">'lilei'</span>] = <span class="number">99</span> <span class="comment">#添加元素</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic: <span class="comment">#遍历词典</span></div><div class="line">    <span class="keyword">print</span> dic[key]</div><div class="line"></div><div class="line"><span class="keyword">print</span> dic.keys()           <span class="comment"># 返回dic所有的键</span></div><div class="line"><span class="keyword">print</span> dic.values()         <span class="comment"># 返回dic所有的值</span></div><div class="line"><span class="keyword">print</span> dic.items()          <span class="comment"># 返回dic所有的元素（键值对）</span></div><div class="line">dic.clear()                <span class="comment"># 清空dic，dict变为&#123;&#125;</span></div><div class="line"><span class="keyword">del</span> dic[<span class="string">'tom'</span>]             <span class="comment"># 删除 dic 的‘tom’元素</span></div><div class="line"><span class="comment">#del是Python中保留的关键字，用于删除对象。</span></div><div class="line"><span class="keyword">print</span> len(dic)             <span class="comment"># 返回dic元素个数</span></div></pre></td></tr></table></figure>
+<h2 id="Python进阶"><a href="#Python进阶" class="headerlink" title="Python进阶"></a>Python进阶</h2><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p>对象名 = open(文件名，模式)<br>最常用的模式有：</p>
+<pre><code>r 打开只读文件，该文件必须存在。
+r+ 打开可读写的文件，该文件必须存在。
+w 打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。
+w+ 打开可读写文件，若文件存在则文件长度清为零，即该文件内容会消失。若文件不存在则建立该文件。
+a 以附加的方式打开只写文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾，即文件原先的内容会被保留。
+a+ 以附加方式打开可读写的文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾后，即文件原先的内容会被保留。
+上述的形态字符串都可以再加一个b字符，如rb、w+b或ab＋等组合，加入b 字符用来告诉函数库打开的文件为二进制文件，而非纯文字文件。
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">"test.txt"</span>,<span class="string">"r"</span>)</div><div class="line">content = f.read(N)          <span class="comment"># 读取N bytes的数据</span></div><div class="line">content = f.readline()       <span class="comment"># 读取一行</span></div><div class="line">content = f.readlines()      <span class="comment"># 读取所有行，储存在列表中，每个元素是一行。</span></div><div class="line">f.write(<span class="string">'I like apple!\n'</span>)      <span class="comment"># 将'I like apple'写入文件并换行</span></div><div class="line">f.close()   <span class="comment"># 不要忘记关闭文件</span></div></pre></td></tr></table></figure>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>一个.py文件就构成<strong>一个模块</strong>。通过模块，你可以<strong>调用</strong>其它文件中的程序。</p>
+<ol>
+<li>引入模块，用<code>import + 文件名（不要加后缀名）</code><br>引入模块后，可以通过 模块.对象 的方式来调用引入模块中的某个对象。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#first.py文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">laugh</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'HaHaHaHa'</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> first   <span class="comment">#将first文件引入</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    first.laugh()<span class="comment">#first为引入的模块，laugh()是我们所引入的对象。</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> a <span class="keyword">as</span> b             <span class="comment"># 引入模块a，并将模块a重命名为b</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> a <span class="keyword">import</span> function1   <span class="comment"># 从模块a中引入function1对象。调用a中对象时，我们不用再说明模块，即直接使用function1，而不是a.function1。</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> a <span class="keyword">import</span> *           <span class="comment"># 从模块a中引入所有对象。调用a中对象时，我们不用再说明模块，即直接使用对象，而不是a.对象。</span></div></pre></td></tr></table></figure>
+<ol>
+<li>Python会在以下路径中搜索它想要寻找的模块：<br>– 程序所在的文件夹<br>– 操作系统环境变量PYTHONPATH所包含的路径<br>– 标准库的安装路径</li>
+</ol>
+<p>如果自定义的模块，或者下载的模块，可以根据情况放在相应的路径，以便Python可以找到。</p>
+<ol>
+<li>模块包,可以将功能相似的模块放在同一个文件夹（比如说this_dir）中，构成一个模块包。通过<code>import this_dir.module</code><br>引入<code>this_dir</code>文件夹中的<code>module</code>模块。<br>该文件夹中必须包含一个<code>__init__.py</code> 的文件，提醒Python，该文件夹为一个模块包。<code>__init__.py</code> 可以是一个空文件。</li>
+</ol>
+<h3 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h3><p>一般为位置传递，但比较死板。</p>
+<ol>
+<li>关键字(keyword)传递是根据每个参数的名字传递参数。关键字并不用遵守位置的对应关系。</li>
+<li>参数默认值，有的参数有默认值可以不需要传递</li>
+<li>包裹传递：在定义函数时，我们有时候并不知道调用的时候会传递多少个参数。这时候，包裹(packing)位置参数，或者包裹关键字参数，来进行参数传递，会非常有用。<br>Example 1:</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(*name)</span>:</span></div><div class="line">    <span class="keyword">print</span> type(name)</div><div class="line">    <span class="keyword">print</span> name</div><div class="line"></div><div class="line">func(<span class="number">1</span>,<span class="number">4</span>,<span class="number">6</span>)</div><div class="line">func(<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</div><div class="line"><span class="comment">#两次调用，尽管参数个数不同，都基于同一个func定义。</span></div><div class="line"><span class="comment">#在func的参数表中，所有的参数被name收集，根据位置合并成一个元组(tuple)，这就是包裹位置传递。</span></div></pre></td></tr></table></figure>
+<p>Example 2:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(**dict)</span>:</span></div><div class="line">    <span class="keyword">print</span> type(dict)</div><div class="line">    <span class="keyword">print</span> dict</div><div class="line"></div><div class="line">func(a=<span class="number">1</span>,b=<span class="number">9</span>)</div><div class="line">func(m=<span class="number">2</span>,n=<span class="number">1</span>,c=<span class="number">11</span>)</div><div class="line"><span class="comment">#dict是一个字典，收集所有的关键字，传递给函数func。</span></div><div class="line"><span class="comment">#为了提醒Python，参数dict是包裹关键字传递所用的字典，在dict前加 * *。</span></div></pre></td></tr></table></figure>
+<ol>
+<li>解包裹（unpacking）<br>* 和 **，也可以在调用的时候使用，即解包裹(unpacking).所谓的解包裹，就是在传递tuple时，让tuple的每一个元素对应一个位置参数。<br>Example :</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b,c)</span>:</span></div><div class="line">    <span class="keyword">print</span> a,b,c</div><div class="line"></div><div class="line">args = (<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>)</div><div class="line">func(*args)</div><div class="line"></div><div class="line">dict = &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>,<span class="string">'c'</span>:<span class="number">3</span>&#125;</div><div class="line">func(**dict)</div></pre></td></tr></table></figure>
+<ol>
+<li>在定义或者调用参数时，参数的几种传递方式可以混合。但在过程中要小心前后顺序。基本原则是：<strong>先位置，再关键字，再包裹位置，再包裹关键字</strong>，并且根据上面所说的原理细细分辨。</li>
+</ol>
+<h3 id="循环设计-循环对象-函数对象"><a href="#循环设计-循环对象-函数对象" class="headerlink" title="循环设计 循环对象 函数对象"></a>循环设计 循环对象 函数对象</h3><ol>
+<li>循环设计<br>三个函数，<code>range(), enumerate(), zip()</code><br>–range() :<br>–enumerate() : 利用enumerate()函数，可以在每次循环中同时得到下标和元素，其返回的是一个包含两个元素的定值表(tuple)<br>–zip() : 如果你多个等长的序列，然后想要每次循环时从各个序列分别取出一个元素，可以利用zip()方便地实现</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">S = <span class="string">'abcdefghijk'</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(S),<span class="number">2</span>):</div><div class="line">    <span class="keyword">print</span> S[i]</div><div class="line"><span class="keyword">for</span> (index,char) <span class="keyword">in</span> enumerate(S):</div><div class="line">    <span class="keyword">print</span> index</div><div class="line">    <span class="keyword">print</span> char</div><div class="line">ta = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">tb = [<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>]</div><div class="line">tc = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</div><div class="line"><span class="keyword">for</span> (a,b,c) <span class="keyword">in</span> zip(ta,tb,tc):</div><div class="line">    print(a,b,c)</div></pre></td></tr></table></figure>
+<ol>
+<li><strong>循环对象</strong>：循环对象是这样一个对象，它包含有一个<code>next()</code>方法 ( <code>__next__()</code> 方法，在python 3x中 )， 这个方法的目的是进行到下一个结果，而在结束一系列结果之后，举出StopIteration错误。<br>当一个循环结构（比如for）调用循环对象时，<strong>它就会每次循环的时候调用next()方法</strong>，直到StopIteration出现，for循环接收到，就知道循环已经结束，停止调用next()。<br><strong>用循环对象的好处在于</strong>：不用在循环还没有开始的时候，就生成好要使用的元素。所使用的元素可以在循环过程中逐次生成。这样，节省了空间，提高了效率，编程更灵活。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">'test.txt'</span>):</div><div class="line">    <span class="keyword">print</span> line</div><div class="line"><span class="comment">#open()返回的实际上是一个循环对象，包含有next()方法。</span></div><div class="line"><span class="comment">#而该next()方法每次返回的就是新的一行的内容，到达文件结尾时举出StopIteration。这样，我们相当于手工进行了循环。</span></div></pre></td></tr></table></figure>
+<p><strong>迭代器</strong>：从技术上来说，循环对象和for循环调用之间还有一个中间层，就是要将循环对象转换成迭代器(iterator)。这一转换是通过使用iter()函数实现的。但从逻辑层面上，常常可以忽略这一层，所以循环对象和迭代器常常相互指代对方。<br><strong>生成器</strong>(generator)的主要目的是构成一个用户自定义的循环对象。<br>生成器的编写方法和函数定义类似，只是在return的地方<strong>改为yield</strong>。生成器中可以有多个yield。当生成器遇到一个yield时，会暂停运行生成器，返回yield后面的值。当再次调用生成器的时候，会从刚才暂停的地方继续运行，直到下一个yield。生成器自身又构成一个循环器，每次循环使用一个yield返回的值。<br>Example 1：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">()</span>:</span></div><div class="line">    a = <span class="number">100</span></div><div class="line">    <span class="keyword">yield</span> a</div><div class="line">    a = a*<span class="number">8</span></div><div class="line">    <span class="keyword">yield</span> a</div><div class="line">    <span class="keyword">yield</span> <span class="number">1000</span></div><div class="line"><span class="comment">#该生成器共有三个yield， 如果用作循环器时，会进行三次循环。</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> gen():</div><div class="line">    <span class="keyword">print</span> i</div></pre></td></tr></table></figure>
+<p>Example 2:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</div><div class="line">        <span class="keyword">yield</span> i</div><div class="line"><span class="comment">#它又可以写成生成器表达式(Generator Expression)：</span></div><div class="line">G = (x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>))</div></pre></td></tr></table></figure>
+<p><strong>表推导</strong>是快速生成表的方法。它的语法简单，很有实用价值。<br>假设生成表 L ：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">L = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    L.append(x**<span class="number">2</span>)</div><div class="line"><span class="comment">#快捷的写法，也就是表推导的方式:</span></div><div class="line">L = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]</div><div class="line"></div><div class="line">xl = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>]</div><div class="line">yl = [<span class="number">9</span>,<span class="number">12</span>,<span class="number">13</span>]</div><div class="line">L  = [ x**<span class="number">2</span> <span class="keyword">for</span> (x,y) <span class="keyword">in</span> zip(xl,yl) <span class="keyword">if</span> y &gt; <span class="number">10</span>]</div></pre></td></tr></table></figure>
+<ol>
+<li>函数对象<br>一切皆对象，函数也是一个对象，具有属性（可以使用dir()查询）。作为对象，它还可以赋值给其它对象名，或者作为参数传递。即函数也可以作为参数进行传递。</li>
+</ol>
+<p><strong>lambda()函数</strong>：用来<strong>定义函数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func = <span class="keyword">lambda</span> x,y: x + y</div><div class="line"><span class="keyword">print</span> func(<span class="number">3</span>,<span class="number">4</span>)</div><div class="line"><span class="comment">#lambda生成一个函数对象。该函数参数为x,y，返回值为x+y。</span></div><div class="line"><span class="comment">#函数对象赋给func。</span></div><div class="line"><span class="comment">#func的调用与正常函数无异。</span></div><div class="line"><span class="comment">#等价于下面这个函数定义</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x, y)</span>:</span></div><div class="line">    <span class="keyword">return</span> x + y</div></pre></td></tr></table></figure>
+<p><strong>函数作为参数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(f, a, b)</span>:</span></div><div class="line">    <span class="comment">#print 'test'</span></div><div class="line">    <span class="keyword">print</span> f(a, b)</div><div class="line"></div><div class="line">test(func, <span class="number">3</span>, <span class="number">5</span>)</div><div class="line"><span class="comment">#上面等价于下面一行</span></div><div class="line">test((<span class="keyword">lambda</span> x,y: x**<span class="number">2</span> + y), <span class="number">6</span>, <span class="number">9</span>)</div></pre></td></tr></table></figure>
+<p><strong>map()函数</strong><br>map()是Python的内置函数。它的第一个参数是一个函数对象。map()的功能是将函数对象依次作用于表的每一个元素，每次作用的结果储存于返回的表re中。例如<code>re = map((lambda x: x+3),[1,3,5,6])</code>，map通过读入的函数(这里是lambda函数)来操作数据（这里“数据”是表中的每一个元素，“操作”是对每个数据加3）。<br>在Python 3.X中，map()的返回值是一个循环对象。可以利用list()函数，将该循环对象转换成表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#如果作为参数的函数对象有多个参数，可使用下面的方式，向map()传递函数参数的多个参数：</span></div><div class="line">re = map((<span class="keyword">lambda</span> x,y: x+y),[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>])</div><div class="line"><span class="comment">#map()将每次从两个表中分别取出一个元素，带入lambda所定义的函数。</span></div></pre></td></tr></table></figure>
+<p><strong>filter()函数</strong><br>filter函数的第一个参数也是一个函数对象。它也是将作为参数的函数对象作用于多个元素。<strong>如果函数对象返回的是True，则该次的元素被储存于返回的表中</strong>。 filter通过读入的函数来筛选数据。同样，在Python 3.X中，filter返回的不是表，而是循环对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a)</span>:</span></div><div class="line">    <span class="keyword">if</span> a &gt; <span class="number">100</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"><span class="keyword">print</span> filter(func,[<span class="number">10</span>,<span class="number">56</span>,<span class="number">101</span>,<span class="number">500</span>])</div></pre></td></tr></table></figure>
+<p><strong>reduce函数</strong><br>reduce函数的第一个参数也是函数，但有一个要求，就是这个函数自身能接收两个参数。reduce可以累进地将函数作用于各个参数。如下例：</p>
+<p><code>print reduce((lambda x,y: x+y),[1,2,5,7,9])</code><br>reduce的第一个参数是lambda函数，它接收两个参数x,y, 返回x+y。</p>
+<p>reduce将表中的前两个元素(1和2)传递给lambda函数，得到3。该返回值(3)将作为lambda函数的第一个参数，而表中的下一个元素(5)作为lambda函数的第二个参数，进行下一次的对lambda函数的调用，得到8。依次调用lambda函数，每次lambda函数的第一个参数是上一次运算结果，而第二个参数为表中的下一个元素，直到表中没有剩余元素。</p>
+<p>上面例子，相当于(((1+2)+5)+7)+9</p>
+<p><em>提醒： reduce()函数在3.0里面不能直接用的，它被定义在了functools包里面，需要引入包。</em></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Python基本知识&quot;&gt;&lt;a href=&quot;#Python基本知识&quot; class=&quot;headerlink&quot; title=&quot;Python基本知识&quot;&gt;&lt;/a&gt;Python基本知识&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;区分大小写，用&lt;code&gt;#&lt;/code&gt;来注释&lt;/li&gt;
+&lt;l
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Python" scheme="http://wenjiewang.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Multivariate Linear Regression and the Octave</title>
+    <link href="http://wenjiewang.top/2016/10/31/ML-second/"/>
+    <id>http://wenjiewang.top/2016/10/31/ML-second/</id>
+    <published>2016-10-31T01:12:05.000Z</published>
+    <updated>2016-11-09T16:02:09.777Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Enviroment-Setup-Instructions"><a href="#Enviroment-Setup-Instructions" class="headerlink" title="Enviroment Setup Instructions"></a>Enviroment Setup Instructions</h2><h2 id="Multivariate-Linear-Regression"><a href="#Multivariate-Linear-Regression" class="headerlink" title="Multivariate Linear Regression"></a>Multivariate Linear Regression</h2><h3 id="Mutiple-Features"><a href="#Mutiple-Features" class="headerlink" title="Mutiple Features"></a>Mutiple Features</h3><h3 id="Gradient-Descent-for-Multiple-Variables"><a href="#Gradient-Descent-for-Multiple-Variables" class="headerlink" title="Gradient Descent for Multiple Variables"></a>Gradient Descent for Multiple Variables</h3><h3 id="Gradient-Descent-in-Practice-Feature-Scaling"><a href="#Gradient-Descent-in-Practice-Feature-Scaling" class="headerlink" title="Gradient Descent in Practice (Feature Scaling)"></a>Gradient Descent in Practice (Feature Scaling)</h3><p>Make sure features are on a similar scale.</p>
+<p>Get every Feature into approximately a -1 ≤ x<sub>i</sub> ≤ 1 range<br>将数据集（训练集）进行缩放，原因是直接使用原始的数据集进行梯度下降，迭代次数会非常多而且相当复杂。</p>
+<p><strong>Mean normalization</strong> Replace x<sub>i</sub> with x<sub>i</sub> - u<sub>i</sub> (average value) / s<sub>i</sub> (range) to make features have approximately zero mean (Do not apply to x<sub>0</sub> = 1)</p>
+<h3 id="Gradient-Descent-in-Practice-Learning-Rate"><a href="#Gradient-Descent-in-Practice-Learning-Rate" class="headerlink" title="Gradient Descent in Practice (Learning Rate)"></a>Gradient Descent in Practice (Learning Rate)</h3><ol>
+<li>“Debugging”: How to make sure gradient descent is working correctly</li>
+</ol>
+<p>example automatic convergence test: Declare convergence if  J(θ) decrease by less than 10 <sup>-3</sup> in one iteration<br>Gradient descent not working : use smaller <code>α</code> </p>
+<p><code>α</code> 很足够小，那么每次迭代后的梯度都会下降，但是收敛的速度很慢<br><code>α</code> 太大了，不能够每次迭代梯度都能下降，可能造成不收敛（may not converge or slow converge)</p>
+<ol>
+<li>How to choose learning rate <code>α</code> </li>
+</ol>
+<h3 id="Features-and-polynomial-Regression-多项式回归"><a href="#Features-and-polynomial-Regression-多项式回归" class="headerlink" title="Features and polynomial Regression(多项式回归)"></a>Features and polynomial Regression(多项式回归)</h3><p>That is, how to fit a polynomial, like a quadratic function, or a cubic function, to your data</p>
+<h2 id="Computing-Parameters-Analytically"><a href="#Computing-Parameters-Analytically" class="headerlink" title="Computing Parameters Analytically"></a>Computing Parameters Analytically</h2><h3 id="Normal-Equation-标准方程法"><a href="#Normal-Equation-标准方程法" class="headerlink" title="Normal Equation(标准方程法)"></a>Normal Equation(标准方程法)</h3><p>Normal Equation: Method to solve for θ Analytically.<br>θ=(X<sup>T</sup>X)<sup>-1</sup>X<sup>T</sup>y</p>
+<p>m training examples, n features<br>the disadvantages and advantages between Gradient Descent and Normal Equation<br>Gradient Descent                               Normal Equation<br>• Need to choose <code>α</code>                           • No need to choose <code>α</code><br>• Needs many iterations.                       • Don’t need to iterate.<br>• Works well even                              • Need to compute (X<sup>T</sup>X)<sup>-1</sup> 时间复杂度 O(n<sup>3</sup>)<br>when <code>n</code> is large.                             • Slow if <code>n</code> is very large (N&gt;10000)</p>
+<h3 id="Normal-Equation-Noninvertibility"><a href="#Normal-Equation-Noninvertibility" class="headerlink" title="Normal Equation Noninvertibility"></a>Normal Equation Noninvertibility</h3><p>Normal Equation : θ=(X<sup>T</sup>X)<sup>-1</sup>X<sup>T</sup>y<br>what if X<sup>T</sup>X is non-invertible?(singular/degenerate)</p>
+<ol>
+<li>Redundant features(linearly dependent). E.g. x<sub>1</sub>=size in feet <sup>2</sup> x2 = size in m<sup>2</sup></li>
+<li>Too many features(e.g.m≤n)<br>·  Delete some features, or use regularization</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">prinv(x&apos;*x)*x&apos;*y</div><div class="line">pinv and inv</div><div class="line">pinv函数可以伪逆(Return the pseudoinverse of X.)</div></pre></td></tr></table></figure>
+<h2 id="Octave-Tutorial"><a href="#Octave-Tutorial" class="headerlink" title="Octave Tutorial"></a>Octave Tutorial</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">format long/short</div><div class="line">v = 1:0.1:2</div><div class="line">v = 1:6</div><div class="line">ones(1,3)</div><div class="line">C = 2*ones(2,3)</div><div class="line">v = rand(3,3) 随机随机矩阵</div><div class="line">w = randn(1,1000)高斯随机矩阵</div><div class="line">eye(4)单位矩阵</div><div class="line">help rand</div><div class="line">size(A)返回矩阵大小，size(A,1)返回矩阵的行数</div><div class="line">who/whos</div><div class="line">v = princeY(1:10)</div><div class="line">load princeY.dat</div><div class="line">save hello.mat v</div><div class="line">save hello.txt v -ascii</div><div class="line"></div><div class="line">A = [1 2;3 4;5 6]</div><div class="line">A(3,2)</div><div class="line">A(2,:)</div><div class="line">A = [A,[100;101;102]]</div><div class="line">A(:)</div><div class="line"></div><div class="line">A*C</div><div class="line">A.*C</div><div class="line">abs(v)</div><div class="line">log(v)</div><div class="line">exp(v)</div><div class="line">A&apos;</div><div class="line">max(a)</div><div class="line">[val,ind]=max(a)</div><div class="line">max(A)</div><div class="line">magic(Number)</div><div class="line"></div><div class="line">sum</div><div class="line">prod</div><div class="line">floor</div><div class="line">ceil</div><div class="line">max(A,[],1)</div><div class="line">max(max(A))</div><div class="line">sum(sum(A.*eye(9)))</div><div class="line">flipud(eye(9))</div></pre></td></tr></table></figure>
+<h2 id="Word-List"><a href="#Word-List" class="headerlink" title="Word List"></a>Word List</h2><p>Feature Scaling: 特征缩放<br>Mean normalization：均值归一化<br>iteration： 迭代<br>converge：使收敛<br>Noninvertibility：不可逆性<br>round off your answer to two decimal ：保留两位小数<br>unvectorized/verctorized : 未向量化的/向量化的</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Enviroment-Setup-Instructions&quot;&gt;&lt;a href=&quot;#Enviroment-Setup-Instructions&quot; class=&quot;headerlink&quot; title=&quot;Enviroment Setup Instructions&quot;&gt;&lt;/a
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ML" scheme="http://wenjiewang.top/tags/ML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Introduction of Machine Learning</title>
+    <link href="http://wenjiewang.top/2016/10/26/ML-introduction/"/>
+    <id>http://wenjiewang.top/2016/10/26/ML-introduction/</id>
+    <published>2016-10-26T04:11:05.000Z</published>
+    <updated>2016-11-09T16:03:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>机器学习是一门研究在非特定编程条件下让计算机采取行动的学科。最近二十年，机器学习为我们带来了自动驾驶汽车、实用的语音识别、高效的网络搜索，让我们对人类基因的解读能力大大提高。当今机器学习技术已经非常普遍，您很可能在毫无察觉情况下每天使用几十次。许多研究者还认为机器学习是人工智能（AI）取得进展的最有效途径。在本课程中，您将学习最高效的机器学习技术，了解如何使用这些技术，并自己动手实践这些技术。更重要的是，您将不仅将学习理论知识，还将学习如何实践，如何快速使用强大的技术来解决新问题。最后，您将了解在硅谷企业如何在机器学习和AI领域进行创新。 本课程将广泛介绍机器学习、数据挖掘和统计模式识别。相关主题包括：(i) 监督式学习（参数和非参数算法、支持向量机、核函数和神经网络）。(ii) 无监督学习（集群、降维、推荐系统和深度学习）。(iii) 机器学习实例（偏见/方差理论；机器学习和AI领域的创新）。课程将引用很多案例和应用，您还需要学习如何在不同领域应用学习算法，例如智能机器人（感知和控制）、文本理解（网络搜索和垃圾邮件过滤）、计算机视觉、医学信息学、音频、数据库挖掘等领域。</p>
+<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.</p>
+<p><em>careful abut the meanning of E P T</em></p>
+<p>Example</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Classifying emails as spam or not spam.---&gt; T</div><div class="line">Watching you label emails as spam or not spam. ---&gt;E </div><div class="line">The number (or fraction) of emails correctly classified as spam/not spam. ----&gt;P</div></pre></td></tr></table></figure>
+<h2 id="supervised-learning（有监督的学习）"><a href="#supervised-learning（有监督的学习）" class="headerlink" title="supervised learning（有监督的学习）"></a>supervised learning（有监督的学习）</h2><p>the term supervised learning refers to the fact that we gave the algorithm a data set in which the “right answers” were given. </p>
+<h3 id="regression-problem"><a href="#regression-problem" class="headerlink" title="regression problem"></a>regression problem</h3><p>To define with a bit more terminology this is also called a regression problem and by regression problem I mean we’re trying to predict a <strong>continuous</strong> value output.</p>
+<h3 id="classification-problem"><a href="#classification-problem" class="headerlink" title="classification problem"></a>classification problem</h3><p>The term classification refers to the fact that here we’re trying to predict a <strong>discrete</strong> value output: zero or one, malignant or benign.<br>example:  Given email labeled as spam/not spam, learn a spam filter(垃圾邮件的分类)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a quadratic function or a seconde-order polynomial一个二次函数或者一个二次多项式</div><div class="line">a breast cancer as malignant or benign 恶性/良性</div><div class="line">clump thickness </div><div class="line">uniformity of cell size/shape</div></pre></td></tr></table></figure>
+<p>(a) Regression - Given a picture of Male/Female, we have to predict his/her age on the basis of the given picture.<br>(b) Classification - Given a patient with a tumor/diabetes, we have to predict whether the tumor is malignant or benign.</p>
+<h2 id="unsupervised-learning（无监督的学习）or-clustering（聚类）"><a href="#unsupervised-learning（无监督的学习）or-clustering（聚类）" class="headerlink" title="unsupervised learning（无监督的学习）or clustering（聚类）"></a>unsupervised learning（无监督的学习）or clustering（聚类）</h2><p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
+<p>examples</p>
+<ol>
+<li>google news</li>
+<li>understanding genomics(<strong>clustering</strong>). Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.</li>
+<li><p>Cocktail(鸡尾酒) party problem algorithm(<strong>Non-clustering</strong>). The “Cocktail Party Algorithm”, allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).<br>Octave(similar to Matlab)<br><code>[W,s,v] = svd((repmat(sum(x.*x,1),size(x,1),1).*x)*x&#39;);</code></p>
+</li>
+<li><p>The market segmentation example </p>
+</li>
+<li>Astronomical data analysis</li>
+</ol>
+<h2 id="Linear-regression-with-one-variable"><a href="#Linear-regression-with-one-variable" class="headerlink" title="Linear regression with one variable"></a>Linear regression with one variable</h2><p>Training Set–&gt;Learning Algorithm –&gt; hypothesis(假设)</p>
+<p>Linear regression with one variable == univariate linear regression</p>
+<p><strong>cost function</strong> == squared errror cause function<br><strong>Gradient Descent</strong>(梯度下降) can coverge to a local minimum, even with the learning rate <code>α</code> <strong>fixed</strong>. As we approach a local minimum, gradient descent will automatically take smaller steps. So, no need to decrease <code>α</code> over time.(the result is a local optimus)<br>If <code>α</code> is too small,’gradient descent can be slow.If <code>α</code> is too large, gradient descent can overshoot the minimum. It may fail to converge, or even diverge.<br><strong>Batch Gradient Descent</strong>  batch : Each step of gradient descent uses all the training examples.</p>
+<h2 id="Linear-Algebra-Review"><a href="#Linear-Algebra-Review" class="headerlink" title="Linear Algebra Review"></a>Linear Algebra Review</h2><p><strong>Matrix</strong> : Rectangular array of numbers<br>Dimension of matrix: number of rows x(by) number of columns</p>
+<p><strong>Vector</strong> : An n x 1 matrix.  –&gt; n-dimensional vector</p>
+<p><strong>Indentity Matrix</strong> </p>
+<p><strong>Inverse Matrix</strong></p>
+<p><strong>Transpose Matrix</strong></p>
+<h2 id="WordList"><a href="#WordList" class="headerlink" title="WordList"></a>WordList</h2><ol>
+<li>a quadratic function or a seconde-order polynomial一个二次函数或者一个二次多项式</li>
+<li>a breast cancer as malignant or benign 恶性/良性</li>
+<li>clump thickness 肿瘤块的浓度</li>
+<li>uniformity of cell size/shape</li>
+<li>fraction of emails correctly classified as spam / not spam.</li>
+<li>You have a large <strong>inventory</strong> of identical items</li>
+<li><strong>Cocktail</strong> party problem</li>
+<li>Machine learning is the field of study that gives computers the ability to learn without being <strong>explicitly</strong>programmed.</li>
+<li>contour plots/figures</li>
+<li>the derivative term</li>
+<li>caculus</li>
+<li>convex function == bowl-shaped</li>
+<li>scalar multiplication == real number multiplication</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;机器学习是一门研究在非特定编程条件下让计算机采取行动的学科。最近二十年，机器学习为我们带来了自动驾驶汽车、实用的语音识别、高效的网络搜索，让我们对人类基因的解读能力大大提高。当今机器学习技术已经非常普遍，您很可能在毫无察觉情况下每天使用几十次。许多研究者还认为机器学习是人工
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ML" scheme="http://wenjiewang.top/tags/ML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Palindrome Number</title>
+    <link href="http://wenjiewang.top/2016/10/25/Leetcode-406/"/>
+    <id>http://wenjiewang.top/2016/10/25/Leetcode-406/</id>
+    <published>2016-10-24T16:16:23.000Z</published>
+    <updated>2016-10-25T01:33:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第406题</p>
+<h1 id="题目406-Queue-Reconstruction-by-Height"><a href="#题目406-Queue-Reconstruction-by-Height" class="headerlink" title="题目406 Queue Reconstruction by Height"></a>题目406 Queue Reconstruction by Height</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers <code>(h, k)</code>, where h is the height of the person and <code>k</code> is the number of people in front of this person who have a height greater than or equal to <code>h</code>. Write an algorithm to reconstruct the queue.</p>
+<p>Example</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Input:</div><div class="line">[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]</div><div class="line"></div><div class="line">Output:</div><div class="line">[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]</div></pre></td></tr></table></figure>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>刚刚看到题目时候是想按照身高进行从大到小排序，如果第一个数相同则第二个数小的要大（即要在前面）。<br>例如排序后序列为<code>[[7,0], [7,1], [6,1], [5,0], [5,2], [4,4]]</code><br>然后从已排序好的数组people数组第一个元素开始，放入到数组result中，放入的位置就是离result开始位置偏移了元素第二个数字后的位置。如下： </p>
+<ol>
+<li>people: [7,0]<br>插入到离开始位置偏移了0个距离的位置。<br>result: [[7,0]] </li>
+<li>people: [7,1]<br>插入到离开始位置偏移了1个距离的位置，即插入到[7,0]的后面。<br>result: [[7,0], [7,1]] </li>
+<li>people: [6,1]<br>插入到离开始位置偏移了1个距离的位置，即插入到[7,0]的后面。<br>result: [[7,0], [6,1], [7,1]] </li>
+<li>people: [5,0]<br>插入到离开始位置偏移了0个距离的位置，即插入到[7,0]的前面。<br>result: [[5,0], [7,0], [6,1], [7,1]] </li>
+<li>people: [5,2]<br>插入到离开始位置偏移了2个距离的位置，即插入到[7,0]的后面。<br>result: [[5,0], [7,0], [5,2], [6,1], [7,1]] </li>
+<li>people: [4,4]<br>插入到离开始位置偏移了4个距离的位置，即插入到[6,1]的后面。<br>result: [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]</li>
+</ol>
+<p>java代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">//注意这里用二维数组来表示键值对，即该数组有n行，2列，一定是两列，否则返回people</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] reconstructQueue(<span class="keyword">int</span>[][] people) &#123;</div><div class="line">        <span class="keyword">if</span> (people == <span class="keyword">null</span> || people.length &lt;= <span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">return</span> people;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//将数组排序</span></div><div class="line">        Arrays.sort(people, <span class="keyword">new</span> Comparator&lt;<span class="keyword">int</span>[]&gt;() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] o1, <span class="keyword">int</span>[] o2)</span> </span>&#123;</div><div class="line">                <span class="comment">//相等情况下比较第二个数的大小，第二个数小的大</span></div><div class="line">                <span class="keyword">return</span> o1[<span class="number">0</span>] == o2[<span class="number">0</span>] ? o1[<span class="number">1</span>] - o2[<span class="number">1</span>] : o1[<span class="number">0</span>] - o2[<span class="number">0</span>];</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">int</span> n = people.length;</div><div class="line">        <span class="keyword">int</span>[][] ret = <span class="keyword">new</span> <span class="keyword">int</span>[n][];</div><div class="line">        <span class="comment">//从已排序的第一个元素开始，</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, ahead = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">                <span class="comment">//ahead是偏移量</span></div><div class="line">                <span class="keyword">if</span> (ahead &lt; people[i][<span class="number">1</span>]) &#123;</div><div class="line">                    ahead += (ret[j] == <span class="keyword">null</span> || ret[j][<span class="number">0</span>] &gt;= people[i][<span class="number">0</span>]) ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ret[j] == <span class="keyword">null</span>) &#123;</div><div class="line">                    ret[j] = people[i];</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problemset/algorithms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Leetcoode&lt;/a&gt;上的第406题&lt;/p&gt;
+&lt;h1 id=&quot;题目406-Queue-Reconst
+    
+    </summary>
+    
+      <category term="算法分析" scheme="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="algorithm" scheme="http://wenjiewang.top/tags/algorithm/"/>
+    
+      <category term="Leetcode" scheme="http://wenjiewang.top/tags/Leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>R Learnning</title>
@@ -128,8 +406,8 @@
   
   <entry>
     <title>Chapter Two and One</title>
-    <link href="http://wenjiewang.top/2016/09/28/Chapter-Four/"/>
-    <id>http://wenjiewang.top/2016/09/28/Chapter-Four/</id>
+    <link href="http://wenjiewang.top/2016/09/28/Chapter-Two/"/>
+    <id>http://wenjiewang.top/2016/09/28/Chapter-Two/</id>
     <published>2016-09-28T04:11:05.000Z</published>
     <updated>2016-09-29T13:59:28.255Z</updated>
     
@@ -166,8 +444,8 @@
   
   <entry>
     <title>Chapter Two and One</title>
-    <link href="http://wenjiewang.top/2016/09/28/Chapter-Two/"/>
-    <id>http://wenjiewang.top/2016/09/28/Chapter-Two/</id>
+    <link href="http://wenjiewang.top/2016/09/28/Chapter-Four/"/>
+    <id>http://wenjiewang.top/2016/09/28/Chapter-Four/</id>
     <published>2016-09-28T04:11:05.000Z</published>
     <updated>2016-09-29T13:59:28.255Z</updated>
     
@@ -307,45 +585,6 @@
   </entry>
   
   <entry>
-    <title>String to Integer (atoi)</title>
-    <link href="http://wenjiewang.top/2016/09/11/Leetcode-8/"/>
-    <id>http://wenjiewang.top/2016/09/11/Leetcode-8/</id>
-    <published>2016-09-11T05:15:24.000Z</published>
-    <updated>2016-09-15T10:09:09.254Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第8题</p>
-<h1 id="题目8-String-to-Integer-atoi）"><a href="#题目8-String-to-Integer-atoi）" class="headerlink" title="题目8 String to Integer (atoi）"></a>题目8 String to Integer (atoi）</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Implement <code>atoi</code> to convert a string to an integer.</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>把字符串转换成整型数。</p>
-<ol>
-<li>函数跳过前面的空格字符，然后从第一个字符开始只能为<code>+</code>，<code>-</code>或者<code>数字</code>,之后跟着一串数字。</li>
-<li>首先去掉字符串开始的空格字符，然后判断第一个字符是否为<code>+</code>,<code>-</code>或者<code>数字</code>，若不是则返回0；</li>
-<li>判断最后解析出来的数字是否溢出，上溢则返回<code>INT_MAX (2147483647)</code>,下溢则返回<code>INT_MIN (-2147483648)</code></li>
-<li>一定要用<strong>double</strong>来保存整数，不能用long，因为测试用例中比long还大的数。</li>
-</ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">//判断一个字符是否为数字</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isNum</span><span class="params">(<span class="keyword">char</span> s)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(s&gt;=<span class="string">'0'</span>&amp;&amp;s&lt;=<span class="string">'9'</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//我的方法有点乱。。</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        <span class="keyword">double</span> s = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> flag = <span class="number">1</span>;<span class="comment">//用来保存+，-，若为-，flag=-1</span></div><div class="line">        <span class="keyword">int</span> size =<span class="number">0</span>;<span class="comment">//记录+-符号的个数</span></div><div class="line">        <span class="keyword">int</span> j;</div><div class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;str.length();++j)<span class="keyword">if</span>(str.charAt(j)!=<span class="string">' '</span>)<span class="keyword">break</span>;<span class="comment">//去除空格</span></div><div class="line">        <span class="keyword">if</span>(j&lt;str.length()&amp;&amp;str.charAt(j)!=<span class="string">'-'</span>&amp;&amp;str.charAt(j)!=<span class="string">'+'</span>&amp;&amp;!isNum(str.charAt(j)))<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//不满足条件2直接返回0</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = j;i&lt;str.length();i++)&#123;</div><div class="line">            <span class="keyword">char</span> ch = str.charAt(i);</div><div class="line">            <span class="keyword">if</span>(ch==<span class="string">'-'</span>||ch==<span class="string">'+'</span>)&#123;</div><div class="line">                size++;</div><div class="line">                <span class="keyword">if</span>(size&gt;<span class="number">1</span>)&#123;<span class="comment">//符号的个数&gt;1，跳出循环</span></div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">//判断符号后若不为数字或者该符号在字符串最后则返回0                </span></div><div class="line">                <span class="keyword">if</span>(i&lt;str.length()-<span class="number">1</span>&amp;&amp;!isNum(str.charAt(i+<span class="number">1</span>))||i==str.length()-<span class="number">1</span>) &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">                &#125;</div><div class="line">                flag = ch==<span class="string">'-'</span>?-<span class="number">1</span>:<span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span>(isNum(ch)) &#123;</div><div class="line">                    s = s * <span class="number">10</span> + ch - <span class="string">'0'</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span>&#123;<span class="comment">//整数解析完毕，跳出循环</span></div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        s = flag*s;</div><div class="line">        <span class="keyword">if</span>(s&gt;Integer.MAX_VALUE)</div><div class="line">            <span class="keyword">return</span> Integer.MAX_VALUE;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s&lt;Integer.MIN_VALUE)</div><div class="line">            <span class="keyword">return</span> Integer.MIN_VALUE;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)s;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>方法二</p>
-<p>该方法参考的discuss上的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> POrN = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//用来去掉字符串开始时的空格</span></div><div class="line">        <span class="keyword">char</span>[] charArr = str.toCharArray();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c:charArr)&#123;</div><div class="line">            count ++;</div><div class="line">            <span class="keyword">if</span>( c &gt;=<span class="string">'0'</span> &amp;&amp; c &lt;=<span class="string">'9'</span> )&#123;</div><div class="line">                result *= <span class="number">10</span>;</div><div class="line">                result += ( c - <span class="string">'0'</span>);</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'-'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN = -<span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'+'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN =  <span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">' '</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                <span class="comment">//刚刚开始时count一定为1，若这时字符也恰好为空格，则count--，</span></div><div class="line">                <span class="comment">//下次判断又可以判断了</span></div><div class="line">                count --;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>( result &gt; Integer.MAX_VALUE )&#123;</div><div class="line">            <span class="keyword">if</span>(POrN == <span class="number">1</span>)</div><div class="line">                <span class="keyword">return</span> Integer.MAX_VALUE;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> Integer.MIN_VALUE;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)(result * POrN);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problemset/algorithms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Leetcoode&lt;/a&gt;上的第8题&lt;/p&gt;
-&lt;h1 id=&quot;题目8-String-to-Integer
-    
-    </summary>
-    
-      <category term="算法分析" scheme="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="algorithm" scheme="http://wenjiewang.top/tags/algorithm/"/>
-    
-      <category term="Leetcode" scheme="http://wenjiewang.top/tags/Leetcode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Container With Most Water(Leetcode 11)</title>
     <link href="http://wenjiewang.top/2016/09/11/Leetcode-11/"/>
     <id>http://wenjiewang.top/2016/09/11/Leetcode-11/</id>
@@ -413,6 +652,45 @@
     
       &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problemset/algorithms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Leetcoode&lt;/a&gt;上的第5题与第7题&lt;/p&gt;
 &lt;h1 id=&quot;题目5-Longest-Palin
+    
+    </summary>
+    
+      <category term="算法分析" scheme="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="algorithm" scheme="http://wenjiewang.top/tags/algorithm/"/>
+    
+      <category term="Leetcode" scheme="http://wenjiewang.top/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>String to Integer (atoi)</title>
+    <link href="http://wenjiewang.top/2016/09/11/Leetcode-8/"/>
+    <id>http://wenjiewang.top/2016/09/11/Leetcode-8/</id>
+    <published>2016-09-11T05:15:24.000Z</published>
+    <updated>2016-09-15T10:09:09.254Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第8题</p>
+<h1 id="题目8-String-to-Integer-atoi）"><a href="#题目8-String-to-Integer-atoi）" class="headerlink" title="题目8 String to Integer (atoi）"></a>题目8 String to Integer (atoi）</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Implement <code>atoi</code> to convert a string to an integer.</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>把字符串转换成整型数。</p>
+<ol>
+<li>函数跳过前面的空格字符，然后从第一个字符开始只能为<code>+</code>，<code>-</code>或者<code>数字</code>,之后跟着一串数字。</li>
+<li>首先去掉字符串开始的空格字符，然后判断第一个字符是否为<code>+</code>,<code>-</code>或者<code>数字</code>，若不是则返回0；</li>
+<li>判断最后解析出来的数字是否溢出，上溢则返回<code>INT_MAX (2147483647)</code>,下溢则返回<code>INT_MIN (-2147483648)</code></li>
+<li>一定要用<strong>double</strong>来保存整数，不能用long，因为测试用例中比long还大的数。</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">//判断一个字符是否为数字</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isNum</span><span class="params">(<span class="keyword">char</span> s)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(s&gt;=<span class="string">'0'</span>&amp;&amp;s&lt;=<span class="string">'9'</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//我的方法有点乱。。</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        <span class="keyword">double</span> s = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> flag = <span class="number">1</span>;<span class="comment">//用来保存+，-，若为-，flag=-1</span></div><div class="line">        <span class="keyword">int</span> size =<span class="number">0</span>;<span class="comment">//记录+-符号的个数</span></div><div class="line">        <span class="keyword">int</span> j;</div><div class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;str.length();++j)<span class="keyword">if</span>(str.charAt(j)!=<span class="string">' '</span>)<span class="keyword">break</span>;<span class="comment">//去除空格</span></div><div class="line">        <span class="keyword">if</span>(j&lt;str.length()&amp;&amp;str.charAt(j)!=<span class="string">'-'</span>&amp;&amp;str.charAt(j)!=<span class="string">'+'</span>&amp;&amp;!isNum(str.charAt(j)))<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//不满足条件2直接返回0</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = j;i&lt;str.length();i++)&#123;</div><div class="line">            <span class="keyword">char</span> ch = str.charAt(i);</div><div class="line">            <span class="keyword">if</span>(ch==<span class="string">'-'</span>||ch==<span class="string">'+'</span>)&#123;</div><div class="line">                size++;</div><div class="line">                <span class="keyword">if</span>(size&gt;<span class="number">1</span>)&#123;<span class="comment">//符号的个数&gt;1，跳出循环</span></div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">//判断符号后若不为数字或者该符号在字符串最后则返回0                </span></div><div class="line">                <span class="keyword">if</span>(i&lt;str.length()-<span class="number">1</span>&amp;&amp;!isNum(str.charAt(i+<span class="number">1</span>))||i==str.length()-<span class="number">1</span>) &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">                &#125;</div><div class="line">                flag = ch==<span class="string">'-'</span>?-<span class="number">1</span>:<span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span>(isNum(ch)) &#123;</div><div class="line">                    s = s * <span class="number">10</span> + ch - <span class="string">'0'</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span>&#123;<span class="comment">//整数解析完毕，跳出循环</span></div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        s = flag*s;</div><div class="line">        <span class="keyword">if</span>(s&gt;Integer.MAX_VALUE)</div><div class="line">            <span class="keyword">return</span> Integer.MAX_VALUE;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s&lt;Integer.MIN_VALUE)</div><div class="line">            <span class="keyword">return</span> Integer.MIN_VALUE;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)s;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>方法二</p>
+<p>该方法参考的discuss上的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> POrN = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//用来去掉字符串开始时的空格</span></div><div class="line">        <span class="keyword">char</span>[] charArr = str.toCharArray();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c:charArr)&#123;</div><div class="line">            count ++;</div><div class="line">            <span class="keyword">if</span>( c &gt;=<span class="string">'0'</span> &amp;&amp; c &lt;=<span class="string">'9'</span> )&#123;</div><div class="line">                result *= <span class="number">10</span>;</div><div class="line">                result += ( c - <span class="string">'0'</span>);</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'-'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN = -<span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'+'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN =  <span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">' '</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                <span class="comment">//刚刚开始时count一定为1，若这时字符也恰好为空格，则count--，</span></div><div class="line">                <span class="comment">//下次判断又可以判断了</span></div><div class="line">                count --;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>( result &gt; Integer.MAX_VALUE )&#123;</div><div class="line">            <span class="keyword">if</span>(POrN == <span class="number">1</span>)</div><div class="line">                <span class="keyword">return</span> Integer.MAX_VALUE;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> Integer.MIN_VALUE;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)(result * POrN);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problemset/algorithms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Leetcoode&lt;/a&gt;上的第8题&lt;/p&gt;
+&lt;h1 id=&quot;题目8-String-to-Integer
     
     </summary>
     
@@ -782,75 +1060,6 @@
     
     
       <category term="hexo" scheme="http://wenjiewang.top/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to markdown</title>
-    <link href="http://wenjiewang.top/2016/08/22/markdown/"/>
-    <id>http://wenjiewang.top/2016/08/22/markdown/</id>
-    <published>2016-08-21T16:48:19.000Z</published>
-    <updated>2016-08-29T01:37:43.962Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="兼容HTML"><a href="#兼容HTML" class="headerlink" title="兼容HTML"></a>兼容HTML</h2><p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。<br>要制约的只有一些 HTML 区块元素――比如&lt; div&gt;、&lt; table&gt;、&lt; pre&gt;、&lt; p&gt; 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 &lt; p&gt; 标签。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">这是一个普通段落。</div><div class="line"></div><div class="line">&lt;table&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td&gt;Foo&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div><div class="line"></div><div class="line">这是另一个普通段落。</div></pre></td></tr></table></figure>
-<h2 id="特殊字符自动转换"><a href="#特殊字符自动转换" class="headerlink" title="特殊字符自动转换"></a>特殊字符自动转换</h2><p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML 实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像是 <code>&amp;lt;</code> 和 <code>&amp;amp;</code>。比如要链接到如下网址，必须将&amp;改为<code>&amp;amp;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">http://images.google.com/images?num=30&amp;q=larry+bird</div><div class="line">http://images.google.com/images?num=30&amp;amp;q=larry+bird</div></pre></td></tr></table></figure>
-<p>修改后的网址才能放到链接标签的 href 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。</p>
-<h2 id="区块元素"><a href="#区块元素" class="headerlink" title="区块元素"></a>区块元素</h2><h3 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h3><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
-<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>两种方式表示标题，这里只介绍用星号。<strong>星号后一定有个空格</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 标题1</span></div><div class="line"><span class="section">## 标题2</span></div><div class="line"><span class="section">### 标题3</span></div><div class="line"><span class="section">#### 标题4</span></div><div class="line"><span class="section">##### 标题5</span></div><div class="line"><span class="section">###### 标题6</span></div></pre></td></tr></table></figure>
-<h4 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h4><p>Markdown 标记区块引用是使用类似 email 中用 &gt; 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 &gt; ：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="quote">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span></div><div class="line"><span class="quote">&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span></div><div class="line"><span class="quote">&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</span></div><div class="line"><span class="quote">&gt; </span></div><div class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</div><div class="line"><span class="quote">&gt; id sem consectetuer libero luctus adipiscing.</span></div></pre></td></tr></table></figure>
-<p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 &gt; ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</div><div class="line">consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</div><div class="line">Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</div><div class="line"></div><div class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</div><div class="line">id sem consectetuer libero luctus adipiscing.</div></pre></td></tr></table></figure>
-<p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &gt; ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; This is the first level of quoting.</div><div class="line">&gt;</div><div class="line">&gt; &gt; This is nested blockquote.</div><div class="line">&gt;</div><div class="line">&gt; Back to the first level.</div></pre></td></tr></table></figure>
-<p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; ## 这是一个标题。</div><div class="line">&gt; </div><div class="line">&gt; 1.   这是第一行列表项。</div><div class="line">&gt; 2.   这是第二行列表项。</div><div class="line">&gt; </div><div class="line">&gt; 给出一些例子代码：</div><div class="line">&gt; </div><div class="line">&gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);</div></pre></td></tr></table></figure>
-<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>无序列表使用星号、加号或是减号作为列表标记：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">*   Red</div><div class="line">*   Green</div><div class="line">*   Blue</div><div class="line">+   Red</div><div class="line">+   Green</div><div class="line">+   Blue</div><div class="line">-   Red</div><div class="line">-   Green</div><div class="line">-   Blue</div></pre></td></tr></table></figure>
-<p>有序列表则使用数字接着一个英文句点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.  Bird</div><div class="line">2.  McHale</div><div class="line">3.  Parish</div></pre></td></tr></table></figure>
-<h4 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h4><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* * *</div><div class="line"></div><div class="line">***</div><div class="line"></div><div class="line">*****</div><div class="line"></div><div class="line">- - -</div><div class="line"></div><div class="line">---------------------------------------</div></pre></td></tr></table></figure>
-<h3 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h3><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。</p>
-<p>不管是哪一种，链接文字都是用 [方括号] 来标记。</p>
-<p>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字(可以为相对路劲，只要在网址后面，用双引号把 title 文字包起来即可，例如：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">This is [<span class="string">an example</span>](<span class="link">http://example.com/ "Title"</span>) inline link.</div><div class="line"></div><div class="line">[<span class="string">This link</span>](<span class="link">http://example.net/</span>) has no title attribute.</div><div class="line"></div><div class="line">See my [<span class="string">About</span>](<span class="link">/about/</span>) page for details.</div></pre></td></tr></table></figure>
-<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p><img src="http://ocdga6wo9.bkt.clouddn.com/san.jpg" alt="纲手"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![Alt text](链接)</div><div class="line">![纲手](http://ocdga6wo9.bkt.clouddn.com/san.jpg)</div></pre></td></tr></table></figure>
-<h4 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h4><p>Markdown 使用星号（<em>）和底线（_）作为标记强调字词的符号，被 </em> 或 <em> 包围的字词会被转成用 <em> 标签包围，用两个 * 或 </em> 包起来的话，则会被转成 <strong>，例如：<br><strong>强调</strong><br><em>斜体</em><br>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="strong">**强调**</span></div><div class="line"><span class="emphasis">*斜体*</span></div><div class="line">\<span class="emphasis">*没用的强调、*</span></div></pre></td></tr></table></figure></strong></em></p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><ol>
-<li>缩进 4 个空格或是 1 个制表符<br>这是一个普通段落：</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这是一个代码区块。</div></pre></td></tr></table></figure>
-<ol>
-<li>用 <strong>`</strong> 来框住代码</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="code">`这是一个代码区块`</span></div></pre></td></tr></table></figure>
-<ol>
-<li>用 **<figure class="highlight plain"><figcaption><span>来框住代码</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```markdown</div><div class="line">这是一个代码区块</div></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h3><p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;http://example.com/&gt;</div></pre></td></tr></table></figure>
-<p>Markdown 会转为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;</div></pre></td></tr></table></figure>
-<h3 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h3><p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">\   反斜线</div><div class="line">`   反引号</div><div class="line"><span class="bullet">*   </span>星号</div><div class="line">_   底线</div><div class="line">&#123;&#125;  花括号</div><div class="line">[]  方括号</div><div class="line">()  括弧</div><div class="line"><span class="section">#   井字号</span></div><div class="line"><span class="bullet">+   </span>加号</div><div class="line"><span class="bullet">-   </span>减号</div><div class="line">.   英文句点</div><div class="line">!   惊叹号</div></pre></td></tr></table></figure>
-<p>本文参考<a href="http://www.appinn.com/markdown/#precode" target="_blank" rel="external">http://www.appinn.com/markdown/#precode</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;兼容HTML&quot;&gt;&lt;a href=&quot;#兼容HTML&quot; class=&quot;headerlink&quot; title=&quot;兼容HTML&quot;&gt;&lt;/a&gt;兼容HTML&lt;/h2&gt;&lt;p&gt;不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HT
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="markdown" scheme="http://wenjiewang.top/tags/markdown/"/>
     
   </entry>
   

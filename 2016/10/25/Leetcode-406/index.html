@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Container With Most Water(Leetcode 11) | Never Git up</title>
+    <title>Palindrome Number | Never Git up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jerry">
     
 
     
-    <meta name="description" content="Leetcoode上的第11题
-题目8 String to Integer (atoi）问题描述Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoin">
+    <meta name="description" content="Leetcoode上的第406题
+题目406 Queue Reconstruction by Height问题描述Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers (h, k), where h is the height of t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Container With Most Water(Leetcode 11)">
-<meta property="og:url" content="http://wenjiewang.top/2016/09/11/Leetcode-11/index.html">
+<meta property="og:title" content="Palindrome Number">
+<meta property="og:url" content="http://wenjiewang.top/2016/10/25/Leetcode-406/index.html">
 <meta property="og:site_name" content="Never Git up">
-<meta property="og:description" content="Leetcoode上的第11题
-题目8 String to Integer (atoi）问题描述Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoin">
-<meta property="og:updated_time" content="2016-10-07T14:41:58.961Z">
+<meta property="og:description" content="Leetcoode上的第406题
+题目406 Queue Reconstruction by Height问题描述Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers (h, k), where h is the height of t">
+<meta property="og:updated_time" content="2016-10-25T01:33:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Container With Most Water(Leetcode 11)">
-<meta name="twitter:description" content="Leetcoode上的第11题
-题目8 String to Integer (atoi）问题描述Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoin">
+<meta name="twitter:title" content="Palindrome Number">
+<meta name="twitter:description" content="Leetcoode上的第406题
+题目406 Queue Reconstruction by Height问题描述Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers (h, k), where h is the height of t">
 
     
     <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
@@ -84,14 +84,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/09/11/Leetcode-11/" title="Container With Most Water(Leetcode 11)" itemprop="url">Container With Most Water(Leetcode 11)</a>
+      <a href="/2016/10/25/Leetcode-406/" title="Palindrome Number" itemprop="url">Palindrome Number</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-11T05:15:24.000Z" itemprop="datePublished"> 发表于 2016-09-11</time>
+    <time datetime="2016-10-24T16:16:23.000Z" itemprop="datePublished"> 发表于 2016-10-25</time>
     
   </p>
 </header>
@@ -100,19 +100,25 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目8-String-to-Integer-atoi）"><span class="toc-number">1.</span> <span class="toc-text">题目8 String to Integer (atoi）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目406-Queue-Reconstruction-by-Height"><span class="toc-number">1.</span> <span class="toc-text">题目406 Queue Reconstruction by Height</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第11题</p>
-<h1 id="题目8-String-to-Integer-atoi）"><a href="#题目8-String-to-Integer-atoi）" class="headerlink" title="题目8 String to Integer (atoi）"></a>题目8 String to Integer (atoi）</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Given n non-negative integers <code>a1, a2, ..., an</code>, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.<br><br>Note: You may not slant the container.</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>给定n个非负整数，这n个整数分别为<code>a1, a2, ..., an</code>,每个整数都对应一个坐标如<code>ai</code>对应坐标为(i,ai)，该坐标和点(i,0)形成的线段，从n条线段中找出两条使得形成的容器装水最多，容器不能倾斜。</p>
-<p><strong>方法一</strong></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//超时。。。</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = height.length;</div><div class="line">        <span class="keyword">int</span> max_water = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j =<span class="number">0</span>;j&lt;len;j++)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = j+<span class="number">1</span>;i&lt;len;i++)&#123;</div><div class="line">                <span class="comment">//取长度较小的边，类似木桶原理</span></div><div class="line">                <span class="keyword">int</span> h = height[i]&gt;height[j]?height[j]:height[i];</div><div class="line">                <span class="keyword">int</span> w = (i-j)*h;</div><div class="line">                <span class="keyword">if</span>(max_water&lt;w)&#123;</div><div class="line">                    max_water = w;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max_water;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>方法二</p>
-<p>该方法参考的discuss上的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> POrN = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//用来去掉字符串开始时的空格</span></div><div class="line">        <span class="keyword">char</span>[] charArr = str.toCharArray();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c:charArr)&#123;</div><div class="line">            count ++;</div><div class="line">            <span class="keyword">if</span>( c &gt;=<span class="string">'0'</span> &amp;&amp; c &lt;=<span class="string">'9'</span> )&#123;</div><div class="line">                result *= <span class="number">10</span>;</div><div class="line">                result += ( c - <span class="string">'0'</span>);</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'-'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN = -<span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'+'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN =  <span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">' '</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                <span class="comment">//刚刚开始时count一定为1，若这时字符也恰好为空格，则count--，</span></div><div class="line">                <span class="comment">//下次判断又可以判断了</span></div><div class="line">                count --;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>( result &gt; Integer.MAX_VALUE )&#123;</div><div class="line">            <span class="keyword">if</span>(POrN == <span class="number">1</span>)</div><div class="line">                <span class="keyword">return</span> Integer.MAX_VALUE;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> Integer.MIN_VALUE;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)(result * POrN);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+		<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第406题</p>
+<h1 id="题目406-Queue-Reconstruction-by-Height"><a href="#题目406-Queue-Reconstruction-by-Height" class="headerlink" title="题目406 Queue Reconstruction by Height"></a>题目406 Queue Reconstruction by Height</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers <code>(h, k)</code>, where h is the height of the person and <code>k</code> is the number of people in front of this person who have a height greater than or equal to <code>h</code>. Write an algorithm to reconstruct the queue.</p>
+<p>Example</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Input:</div><div class="line">[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]</div><div class="line"></div><div class="line">Output:</div><div class="line">[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]</div></pre></td></tr></table></figure>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>刚刚看到题目时候是想按照身高进行从大到小排序，如果第一个数相同则第二个数小的要大（即要在前面）。<br>例如排序后序列为<code>[[7,0], [7,1], [6,1], [5,0], [5,2], [4,4]]</code><br>然后从已排序好的数组people数组第一个元素开始，放入到数组result中，放入的位置就是离result开始位置偏移了元素第二个数字后的位置。如下： </p>
+<ol>
+<li>people: [7,0]<br>插入到离开始位置偏移了0个距离的位置。<br>result: [[7,0]] </li>
+<li>people: [7,1]<br>插入到离开始位置偏移了1个距离的位置，即插入到[7,0]的后面。<br>result: [[7,0], [7,1]] </li>
+<li>people: [6,1]<br>插入到离开始位置偏移了1个距离的位置，即插入到[7,0]的后面。<br>result: [[7,0], [6,1], [7,1]] </li>
+<li>people: [5,0]<br>插入到离开始位置偏移了0个距离的位置，即插入到[7,0]的前面。<br>result: [[5,0], [7,0], [6,1], [7,1]] </li>
+<li>people: [5,2]<br>插入到离开始位置偏移了2个距离的位置，即插入到[7,0]的后面。<br>result: [[5,0], [7,0], [5,2], [6,1], [7,1]] </li>
+<li>people: [4,4]<br>插入到离开始位置偏移了4个距离的位置，即插入到[6,1]的后面。<br>result: [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]</li>
+</ol>
+<p>java代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">//注意这里用二维数组来表示键值对，即该数组有n行，2列，一定是两列，否则返回people</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] reconstructQueue(<span class="keyword">int</span>[][] people) &#123;</div><div class="line">        <span class="keyword">if</span> (people == <span class="keyword">null</span> || people.length &lt;= <span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">return</span> people;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//将数组排序</span></div><div class="line">        Arrays.sort(people, <span class="keyword">new</span> Comparator&lt;<span class="keyword">int</span>[]&gt;() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] o1, <span class="keyword">int</span>[] o2)</span> </span>&#123;</div><div class="line">                <span class="comment">//相等情况下比较第二个数的大小，第二个数小的大</span></div><div class="line">                <span class="keyword">return</span> o1[<span class="number">0</span>] == o2[<span class="number">0</span>] ? o1[<span class="number">1</span>] - o2[<span class="number">1</span>] : o1[<span class="number">0</span>] - o2[<span class="number">0</span>];</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">int</span> n = people.length;</div><div class="line">        <span class="keyword">int</span>[][] ret = <span class="keyword">new</span> <span class="keyword">int</span>[n][];</div><div class="line">        <span class="comment">//从已排序的第一个元素开始，</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, ahead = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">                <span class="comment">//ahead是偏移量</span></div><div class="line">                <span class="keyword">if</span> (ahead &lt; people[i][<span class="number">1</span>]) &#123;</div><div class="line">                    ahead += (ret[j] == <span class="keyword">null</span> || ret[j][<span class="number">0</span>] &gt;= people[i][<span class="number">0</span>]) ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ret[j] == <span class="keyword">null</span>) &#123;</div><div class="line">                    ret[j] = people[i];</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -135,7 +141,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wenjiewang.top/2016/09/11/Leetcode-11/" data-title="Container With Most Water(Leetcode 11) | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  <div data-url="http://wenjiewang.top/2016/10/25/Leetcode-406/" data-title="Palindrome Number | Never Git up" data-tsina="2952571673" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,18 +155,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/09/12/Leetcode-396-399/" title="Leetcode-396-399">
+ <a href="/2016/10/26/ML-introduction/" title="Introduction of Machine Learning">
   <strong>上一篇：</strong><br/>
   <span>
-  Leetcode-396-399</span>
+  Introduction of Machine Learning</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/09/11/Leetcode-5-7/"  title="Leetcode-5-7">
+<a href="/2016/10/20/R-Summary/"  title="R Learnning">
  <strong>下一篇：</strong><br/> 
- <span>Leetcode-5-7
+ <span>R Learnning
 </span>
 </a>
 </div>
@@ -169,7 +175,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/09/11/Leetcode-11/" data-title="Container With Most Water(Leetcode 11)" data-url="http://wenjiewang.top/2016/09/11/Leetcode-11/"></div>
+	<div class="ds-thread" data-thread-key="2016/10/25/Leetcode-406/" data-title="Palindrome Number" data-url="http://wenjiewang.top/2016/10/25/Leetcode-406/"></div>
 </section>
 
 
@@ -179,7 +185,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目8-String-to-Integer-atoi）"><span class="toc-number">1.</span> <span class="toc-text">题目8 String to Integer (atoi）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目406-Queue-Reconstruction-by-Height"><span class="toc-number">1.</span> <span class="toc-text">题目406 Queue Reconstruction by Height</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li></ol></li></ol>
  
   </div>
 

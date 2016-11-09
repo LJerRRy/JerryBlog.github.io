@@ -1,0 +1,651 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Python入门 | Never Git up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jerry">
+    
+
+    
+    <meta name="description" content="Python基本知识
+区分大小写，用#来注释
+用缩进（四个空格）来表示块
+变量的类型可以变，即不需要删除原始变量，直接进行赋值另一种类型
+print，type函数，print为输出到终端，type查看类型
+常用数据类型有int,float,boolean(True/False),字符串
+sequence序列是一组有序的元素集合，包括tuple（定值表，也叫元组，其中元素不能改变）和list（表，元">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python入门">
+<meta property="og:url" content="http://wenjiewang.top/2016/11/05/pythonbases/index.html">
+<meta property="og:site_name" content="Never Git up">
+<meta property="og:description" content="Python基本知识
+区分大小写，用#来注释
+用缩进（四个空格）来表示块
+变量的类型可以变，即不需要删除原始变量，直接进行赋值另一种类型
+print，type函数，print为输出到终端，type查看类型
+常用数据类型有int,float,boolean(True/False),字符串
+sequence序列是一组有序的元素集合，包括tuple（定值表，也叫元组，其中元素不能改变）和list（表，元">
+<meta property="og:updated_time" content="2016-11-09T16:04:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python入门">
+<meta name="twitter:description" content="Python基本知识
+区分大小写，用#来注释
+用缩进（四个空格）来表示块
+变量的类型可以变，即不需要删除原始变量，直接进行赋值另一种类型
+print，type函数，print为输出到终端，type查看类型
+常用数据类型有int,float,boolean(True/False),字符串
+sequence序列是一组有序的元素集合，包括tuple（定值表，也叫元组，其中元素不能改变）和list（表，元">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/f.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.jpg" alt="Never Git up" title="Never Git up"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Never Git up">Never Git up</a></h1>
+				<h2 class="blog-motto">Better late than never</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/works">My Works</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+    				<label>Search</label>
+    				<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+   				</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/11/05/pythonbases/" title="Python入门" itemprop="url">Python入门</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
+		
+  <p class="article-time">
+    <time datetime="2016-11-05T05:52:05.000Z" itemprop="datePublished"> 发表于 2016-11-05</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python基本知识"><span class="toc-number">1.</span> <span class="toc-text">Python基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python中词典-dictionary"><span class="toc-number">2.</span> <span class="toc-text">Python中词典(dictionary)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python进阶"><span class="toc-number">3.</span> <span class="toc-text">Python进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件操作"><span class="toc-number">3.1.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块"><span class="toc-number">3.2.</span> <span class="toc-text">模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的参数传递"><span class="toc-number">3.3.</span> <span class="toc-text">函数的参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环设计-循环对象-函数对象"><span class="toc-number">3.4.</span> <span class="toc-text">循环设计 循环对象 函数对象</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="Python基本知识"><a href="#Python基本知识" class="headerlink" title="Python基本知识"></a>Python基本知识</h2><ol>
+<li>区分大小写，用<code>#</code>来注释</li>
+<li>用缩进（四个空格）来表示块</li>
+<li>变量的类型可以变，即不需要删除原始变量，直接进行赋值另一种类型</li>
+<li>print，type函数，print为输出到终端，type查看类型</li>
+<li>常用数据类型有int,float,boolean(True/False),字符串</li>
+<li><p>sequence序列是一组有序的元素集合，包括tuple（定值表，也叫元组，其中元素不能改变）和list（表，元素可以改变）<br>序列元素<strong>下标从0开始</strong><br>基本样式 <strong>[下限:上限:步长]</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">s1 = (<span class="number">2</span>, <span class="number">1.3</span>, <span class="string">'love'</span>, <span class="number">5.6</span>, <span class="number">9</span>, <span class="number">12</span>, <span class="keyword">False</span>)         <span class="comment"># s1是一个tuple,用括号来赋值</span></div><div class="line">s2 = [<span class="keyword">True</span>, <span class="number">5</span>, <span class="string">'smile'</span>]                          <span class="comment"># s2是一个list，用中括号来赋值</span></div><div class="line">s3 = [<span class="number">1</span>,[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]]                                 <span class="comment"># 一个序列作为另一个序列的元素</span></div><div class="line"><span class="keyword">print</span> s1[:<span class="number">5</span>]             <span class="comment"># 从开始到下标4 （下标5的元素 不包括在内）</span></div><div class="line"><span class="keyword">print</span> s1[<span class="number">2</span>:]             <span class="comment"># 从下标2到最后</span></div><div class="line"><span class="keyword">print</span> s1[<span class="number">0</span>:<span class="number">5</span>:<span class="number">2</span>]          <span class="comment"># 从下标0到下标4 (下标5不包括在内)，每隔2取一个元素 （下标为0，2，4的元素）</span></div><div class="line"><span class="keyword">print</span> s1[<span class="number">2</span>:<span class="number">0</span>:<span class="number">-1</span>]         <span class="comment"># 从下标2到下标1</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>字符串也是元组，所以也可以像序列一样进行相关操作</p>
+</li>
+<li>逻辑运算符 and,or,not（与或非）</li>
+<li><code>if elif else</code> 选择语句，判断条件直接接在<code>if elif</code>后面，<strong>不需要括号，但其末尾必须有个冒号</strong></li>
+<li><code>for while</code>循环， <code>for 元素 in 序列:</code>其中末尾有个冒号（while也是，判断条件不需要加括号），<code>range()</code>函数来帮助建表，<code>range(5) == [0,1,2,3,4]</code></li>
+<li><code>break, continue</code></li>
+<li><code>def</code>定义函数，可以用<code>return</code>返回函数值，可以返回多个</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">square_sum</span><span class="params">(a,b)</span>:</span></div><div class="line">    c = a**<span class="number">2</span> + b**<span class="number">2</span></div><div class="line">    <span class="keyword">return</span> c</div><div class="line"><span class="comment">#可以return a,b,c多个返回值</span></div></pre></td></tr></table></figure>
+<ol>
+<li>函数调用时，如果参数是表的话，然后对表进行操作，会改变表的值（引用传递），如果是整数的话，不会改变（按值传递）。</li>
+<li>类，用<code>class</code>定义类，都有一个原型（默认为object，但必须写）。属性和方法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span><span class="params">(object)</span>:</span></div><div class="line">    have_feather = <span class="keyword">True</span> <span class="comment">#属性</span></div><div class="line">    way_of_reproduction  = <span class="string">'egg'</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, dx, dy)</span>:</span> <span class="comment">#方法，其中包括一个self（第一个参数必须是self），类似于java或者c++中的this</span></div><div class="line">        position = [<span class="number">0</span>,<span class="number">0</span>]</div><div class="line">        <span class="comment">#self.have_feather = False #调用类属性</span></div><div class="line">        position[<span class="number">0</span>] = position[<span class="number">0</span>] + dx</div><div class="line">        position[<span class="number">1</span>] = position[<span class="number">1</span>] + dy</div><div class="line">        <span class="keyword">return</span> position</div><div class="line"><span class="comment">#类的继承</span></div><div class="line"><span class="comment">#子类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chicken</span><span class="params">(Bird)</span>:</span></div><div class="line">    way_of_move = <span class="string">'walk'</span></div><div class="line">    possible_in_KFC = <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Oriole</span><span class="params">(Bird)</span>:</span></div><div class="line">    way_of_move = <span class="string">'fly'</span></div><div class="line">    possible_in_KFC = <span class="keyword">False</span></div><div class="line"></div><div class="line">summer = Chicken()<span class="comment">#创建一个对象</span></div><div class="line"><span class="keyword">print</span> summer.have_feather<span class="comment">#调用对象的属性</span></div><div class="line"><span class="keyword">print</span> summer.move(<span class="number">5</span>,<span class="number">8</span>)</div></pre></td></tr></table></figure>
+<ol>
+<li><p>类中有个<strong>特殊方法（special method）</strong>  <code>__init__()</code>方法 创建对象时自动调用这个方法，初始化对象的属性。</p>
+</li>
+<li><p>list是一个类，表的运算符，比如+, -, &gt;, &lt;, 以及下标引用[start:end]等等，从根本上都是定义在类内部的方法。</p>
+</li>
+</ol>
+<h2 id="Python中词典-dictionary"><a href="#Python中词典-dictionary" class="headerlink" title="Python中词典(dictionary)"></a>Python中词典(dictionary)</h2><p>一个新的类，词典 (dictionary)。与列表相似，词典也可以储存多个元素。这种储存多个元素的对象称为容器(container)</p>
+<ol>
+<li>词典和表类似的地方，是包含有多个元素，每个元素以逗号分隔。但词典的元素包含有两部分，<strong>键</strong>和<strong>值</strong>，常见的是以字符串来表示键，也可以使用数字或者真值来表示键（不可变的对象可以作为键）。值可以是任意对象。键和值两者一一对应。</li>
+<li>与表不同的是，词典的元素没有顺序。你不能通过下标引用元素。词典是通过键来引用。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">dic = &#123;<span class="string">'tom'</span>:<span class="number">11</span>, <span class="string">'sam'</span>:<span class="number">57</span>,<span class="string">'lily'</span>:<span class="number">100</span>&#125; <span class="comment">#一个词典，词典可以为空</span></div><div class="line"><span class="keyword">print</span> type(dic)</div><div class="line">dic[<span class="string">'lilei'</span>] = <span class="number">99</span> <span class="comment">#添加元素</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic: <span class="comment">#遍历词典</span></div><div class="line">    <span class="keyword">print</span> dic[key]</div><div class="line"></div><div class="line"><span class="keyword">print</span> dic.keys()           <span class="comment"># 返回dic所有的键</span></div><div class="line"><span class="keyword">print</span> dic.values()         <span class="comment"># 返回dic所有的值</span></div><div class="line"><span class="keyword">print</span> dic.items()          <span class="comment"># 返回dic所有的元素（键值对）</span></div><div class="line">dic.clear()                <span class="comment"># 清空dic，dict变为&#123;&#125;</span></div><div class="line"><span class="keyword">del</span> dic[<span class="string">'tom'</span>]             <span class="comment"># 删除 dic 的‘tom’元素</span></div><div class="line"><span class="comment">#del是Python中保留的关键字，用于删除对象。</span></div><div class="line"><span class="keyword">print</span> len(dic)             <span class="comment"># 返回dic元素个数</span></div></pre></td></tr></table></figure>
+<h2 id="Python进阶"><a href="#Python进阶" class="headerlink" title="Python进阶"></a>Python进阶</h2><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p>对象名 = open(文件名，模式)<br>最常用的模式有：</p>
+<pre><code>r 打开只读文件，该文件必须存在。
+r+ 打开可读写的文件，该文件必须存在。
+w 打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。
+w+ 打开可读写文件，若文件存在则文件长度清为零，即该文件内容会消失。若文件不存在则建立该文件。
+a 以附加的方式打开只写文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾，即文件原先的内容会被保留。
+a+ 以附加方式打开可读写的文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾后，即文件原先的内容会被保留。
+上述的形态字符串都可以再加一个b字符，如rb、w+b或ab＋等组合，加入b 字符用来告诉函数库打开的文件为二进制文件，而非纯文字文件。
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">"test.txt"</span>,<span class="string">"r"</span>)</div><div class="line">content = f.read(N)          <span class="comment"># 读取N bytes的数据</span></div><div class="line">content = f.readline()       <span class="comment"># 读取一行</span></div><div class="line">content = f.readlines()      <span class="comment"># 读取所有行，储存在列表中，每个元素是一行。</span></div><div class="line">f.write(<span class="string">'I like apple!\n'</span>)      <span class="comment"># 将'I like apple'写入文件并换行</span></div><div class="line">f.close()   <span class="comment"># 不要忘记关闭文件</span></div></pre></td></tr></table></figure>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>一个.py文件就构成<strong>一个模块</strong>。通过模块，你可以<strong>调用</strong>其它文件中的程序。</p>
+<ol>
+<li>引入模块，用<code>import + 文件名（不要加后缀名）</code><br>引入模块后，可以通过 模块.对象 的方式来调用引入模块中的某个对象。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#first.py文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">laugh</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'HaHaHaHa'</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> first   <span class="comment">#将first文件引入</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    first.laugh()<span class="comment">#first为引入的模块，laugh()是我们所引入的对象。</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> a <span class="keyword">as</span> b             <span class="comment"># 引入模块a，并将模块a重命名为b</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> a <span class="keyword">import</span> function1   <span class="comment"># 从模块a中引入function1对象。调用a中对象时，我们不用再说明模块，即直接使用function1，而不是a.function1。</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> a <span class="keyword">import</span> *           <span class="comment"># 从模块a中引入所有对象。调用a中对象时，我们不用再说明模块，即直接使用对象，而不是a.对象。</span></div></pre></td></tr></table></figure>
+<ol>
+<li>Python会在以下路径中搜索它想要寻找的模块：<br>– 程序所在的文件夹<br>– 操作系统环境变量PYTHONPATH所包含的路径<br>– 标准库的安装路径</li>
+</ol>
+<p>如果自定义的模块，或者下载的模块，可以根据情况放在相应的路径，以便Python可以找到。</p>
+<ol>
+<li>模块包,可以将功能相似的模块放在同一个文件夹（比如说this_dir）中，构成一个模块包。通过<code>import this_dir.module</code><br>引入<code>this_dir</code>文件夹中的<code>module</code>模块。<br>该文件夹中必须包含一个<code>__init__.py</code> 的文件，提醒Python，该文件夹为一个模块包。<code>__init__.py</code> 可以是一个空文件。</li>
+</ol>
+<h3 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h3><p>一般为位置传递，但比较死板。</p>
+<ol>
+<li>关键字(keyword)传递是根据每个参数的名字传递参数。关键字并不用遵守位置的对应关系。</li>
+<li>参数默认值，有的参数有默认值可以不需要传递</li>
+<li>包裹传递：在定义函数时，我们有时候并不知道调用的时候会传递多少个参数。这时候，包裹(packing)位置参数，或者包裹关键字参数，来进行参数传递，会非常有用。<br>Example 1:</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(*name)</span>:</span></div><div class="line">    <span class="keyword">print</span> type(name)</div><div class="line">    <span class="keyword">print</span> name</div><div class="line"></div><div class="line">func(<span class="number">1</span>,<span class="number">4</span>,<span class="number">6</span>)</div><div class="line">func(<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</div><div class="line"><span class="comment">#两次调用，尽管参数个数不同，都基于同一个func定义。</span></div><div class="line"><span class="comment">#在func的参数表中，所有的参数被name收集，根据位置合并成一个元组(tuple)，这就是包裹位置传递。</span></div></pre></td></tr></table></figure>
+<p>Example 2:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(**dict)</span>:</span></div><div class="line">    <span class="keyword">print</span> type(dict)</div><div class="line">    <span class="keyword">print</span> dict</div><div class="line"></div><div class="line">func(a=<span class="number">1</span>,b=<span class="number">9</span>)</div><div class="line">func(m=<span class="number">2</span>,n=<span class="number">1</span>,c=<span class="number">11</span>)</div><div class="line"><span class="comment">#dict是一个字典，收集所有的关键字，传递给函数func。</span></div><div class="line"><span class="comment">#为了提醒Python，参数dict是包裹关键字传递所用的字典，在dict前加 * *。</span></div></pre></td></tr></table></figure>
+<ol>
+<li>解包裹（unpacking）<br>* 和 **，也可以在调用的时候使用，即解包裹(unpacking).所谓的解包裹，就是在传递tuple时，让tuple的每一个元素对应一个位置参数。<br>Example :</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b,c)</span>:</span></div><div class="line">    <span class="keyword">print</span> a,b,c</div><div class="line"></div><div class="line">args = (<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>)</div><div class="line">func(*args)</div><div class="line"></div><div class="line">dict = &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>,<span class="string">'c'</span>:<span class="number">3</span>&#125;</div><div class="line">func(**dict)</div></pre></td></tr></table></figure>
+<ol>
+<li>在定义或者调用参数时，参数的几种传递方式可以混合。但在过程中要小心前后顺序。基本原则是：<strong>先位置，再关键字，再包裹位置，再包裹关键字</strong>，并且根据上面所说的原理细细分辨。</li>
+</ol>
+<h3 id="循环设计-循环对象-函数对象"><a href="#循环设计-循环对象-函数对象" class="headerlink" title="循环设计 循环对象 函数对象"></a>循环设计 循环对象 函数对象</h3><ol>
+<li>循环设计<br>三个函数，<code>range(), enumerate(), zip()</code><br>–range() :<br>–enumerate() : 利用enumerate()函数，可以在每次循环中同时得到下标和元素，其返回的是一个包含两个元素的定值表(tuple)<br>–zip() : 如果你多个等长的序列，然后想要每次循环时从各个序列分别取出一个元素，可以利用zip()方便地实现</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">S = <span class="string">'abcdefghijk'</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(S),<span class="number">2</span>):</div><div class="line">    <span class="keyword">print</span> S[i]</div><div class="line"><span class="keyword">for</span> (index,char) <span class="keyword">in</span> enumerate(S):</div><div class="line">    <span class="keyword">print</span> index</div><div class="line">    <span class="keyword">print</span> char</div><div class="line">ta = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">tb = [<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>]</div><div class="line">tc = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</div><div class="line"><span class="keyword">for</span> (a,b,c) <span class="keyword">in</span> zip(ta,tb,tc):</div><div class="line">    print(a,b,c)</div></pre></td></tr></table></figure>
+<ol>
+<li><strong>循环对象</strong>：循环对象是这样一个对象，它包含有一个<code>next()</code>方法 ( <code>__next__()</code> 方法，在python 3x中 )， 这个方法的目的是进行到下一个结果，而在结束一系列结果之后，举出StopIteration错误。<br>当一个循环结构（比如for）调用循环对象时，<strong>它就会每次循环的时候调用next()方法</strong>，直到StopIteration出现，for循环接收到，就知道循环已经结束，停止调用next()。<br><strong>用循环对象的好处在于</strong>：不用在循环还没有开始的时候，就生成好要使用的元素。所使用的元素可以在循环过程中逐次生成。这样，节省了空间，提高了效率，编程更灵活。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">'test.txt'</span>):</div><div class="line">    <span class="keyword">print</span> line</div><div class="line"><span class="comment">#open()返回的实际上是一个循环对象，包含有next()方法。</span></div><div class="line"><span class="comment">#而该next()方法每次返回的就是新的一行的内容，到达文件结尾时举出StopIteration。这样，我们相当于手工进行了循环。</span></div></pre></td></tr></table></figure>
+<p><strong>迭代器</strong>：从技术上来说，循环对象和for循环调用之间还有一个中间层，就是要将循环对象转换成迭代器(iterator)。这一转换是通过使用iter()函数实现的。但从逻辑层面上，常常可以忽略这一层，所以循环对象和迭代器常常相互指代对方。<br><strong>生成器</strong>(generator)的主要目的是构成一个用户自定义的循环对象。<br>生成器的编写方法和函数定义类似，只是在return的地方<strong>改为yield</strong>。生成器中可以有多个yield。当生成器遇到一个yield时，会暂停运行生成器，返回yield后面的值。当再次调用生成器的时候，会从刚才暂停的地方继续运行，直到下一个yield。生成器自身又构成一个循环器，每次循环使用一个yield返回的值。<br>Example 1：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">()</span>:</span></div><div class="line">    a = <span class="number">100</span></div><div class="line">    <span class="keyword">yield</span> a</div><div class="line">    a = a*<span class="number">8</span></div><div class="line">    <span class="keyword">yield</span> a</div><div class="line">    <span class="keyword">yield</span> <span class="number">1000</span></div><div class="line"><span class="comment">#该生成器共有三个yield， 如果用作循环器时，会进行三次循环。</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> gen():</div><div class="line">    <span class="keyword">print</span> i</div></pre></td></tr></table></figure>
+<p>Example 2:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</div><div class="line">        <span class="keyword">yield</span> i</div><div class="line"><span class="comment">#它又可以写成生成器表达式(Generator Expression)：</span></div><div class="line">G = (x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>))</div></pre></td></tr></table></figure>
+<p><strong>表推导</strong>是快速生成表的方法。它的语法简单，很有实用价值。<br>假设生成表 L ：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">L = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    L.append(x**<span class="number">2</span>)</div><div class="line"><span class="comment">#快捷的写法，也就是表推导的方式:</span></div><div class="line">L = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]</div><div class="line"></div><div class="line">xl = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>]</div><div class="line">yl = [<span class="number">9</span>,<span class="number">12</span>,<span class="number">13</span>]</div><div class="line">L  = [ x**<span class="number">2</span> <span class="keyword">for</span> (x,y) <span class="keyword">in</span> zip(xl,yl) <span class="keyword">if</span> y &gt; <span class="number">10</span>]</div></pre></td></tr></table></figure>
+<ol>
+<li>函数对象<br>一切皆对象，函数也是一个对象，具有属性（可以使用dir()查询）。作为对象，它还可以赋值给其它对象名，或者作为参数传递。即函数也可以作为参数进行传递。</li>
+</ol>
+<p><strong>lambda()函数</strong>：用来<strong>定义函数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func = <span class="keyword">lambda</span> x,y: x + y</div><div class="line"><span class="keyword">print</span> func(<span class="number">3</span>,<span class="number">4</span>)</div><div class="line"><span class="comment">#lambda生成一个函数对象。该函数参数为x,y，返回值为x+y。</span></div><div class="line"><span class="comment">#函数对象赋给func。</span></div><div class="line"><span class="comment">#func的调用与正常函数无异。</span></div><div class="line"><span class="comment">#等价于下面这个函数定义</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x, y)</span>:</span></div><div class="line">    <span class="keyword">return</span> x + y</div></pre></td></tr></table></figure>
+<p><strong>函数作为参数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(f, a, b)</span>:</span></div><div class="line">    <span class="comment">#print 'test'</span></div><div class="line">    <span class="keyword">print</span> f(a, b)</div><div class="line"></div><div class="line">test(func, <span class="number">3</span>, <span class="number">5</span>)</div><div class="line"><span class="comment">#上面等价于下面一行</span></div><div class="line">test((<span class="keyword">lambda</span> x,y: x**<span class="number">2</span> + y), <span class="number">6</span>, <span class="number">9</span>)</div></pre></td></tr></table></figure>
+<p><strong>map()函数</strong><br>map()是Python的内置函数。它的第一个参数是一个函数对象。map()的功能是将函数对象依次作用于表的每一个元素，每次作用的结果储存于返回的表re中。例如<code>re = map((lambda x: x+3),[1,3,5,6])</code>，map通过读入的函数(这里是lambda函数)来操作数据（这里“数据”是表中的每一个元素，“操作”是对每个数据加3）。<br>在Python 3.X中，map()的返回值是一个循环对象。可以利用list()函数，将该循环对象转换成表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#如果作为参数的函数对象有多个参数，可使用下面的方式，向map()传递函数参数的多个参数：</span></div><div class="line">re = map((<span class="keyword">lambda</span> x,y: x+y),[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>])</div><div class="line"><span class="comment">#map()将每次从两个表中分别取出一个元素，带入lambda所定义的函数。</span></div></pre></td></tr></table></figure>
+<p><strong>filter()函数</strong><br>filter函数的第一个参数也是一个函数对象。它也是将作为参数的函数对象作用于多个元素。<strong>如果函数对象返回的是True，则该次的元素被储存于返回的表中</strong>。 filter通过读入的函数来筛选数据。同样，在Python 3.X中，filter返回的不是表，而是循环对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a)</span>:</span></div><div class="line">    <span class="keyword">if</span> a &gt; <span class="number">100</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"><span class="keyword">print</span> filter(func,[<span class="number">10</span>,<span class="number">56</span>,<span class="number">101</span>,<span class="number">500</span>])</div></pre></td></tr></table></figure>
+<p><strong>reduce函数</strong><br>reduce函数的第一个参数也是函数，但有一个要求，就是这个函数自身能接收两个参数。reduce可以累进地将函数作用于各个参数。如下例：</p>
+<p><code>print reduce((lambda x,y: x+y),[1,2,5,7,9])</code><br>reduce的第一个参数是lambda函数，它接收两个参数x,y, 返回x+y。</p>
+<p>reduce将表中的前两个元素(1和2)传递给lambda函数，得到3。该返回值(3)将作为lambda函数的第一个参数，而表中的下一个元素(5)作为lambda函数的第二个参数，进行下一次的对lambda函数的调用，得到8。依次调用lambda函数，每次lambda函数的第一个参数是上一次运算结果，而第二个参数为表中的下一个元素，直到表中没有剩余元素。</p>
+<p>上面例子，相当于(((1+2)+5)+7)+9</p>
+<p><em>提醒： reduce()函数在3.0里面不能直接用的，它被定义在了functools包里面，需要引入包。</em></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://wenjiewang.top/2016/11/05/pythonbases/" data-title="Python入门 | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/10/31/ML-second/"  title="Multivariate Linear Regression and the Octave">
+ <strong>下一篇：</strong><br/> 
+ <span>Multivariate Linear Regression and the Octave
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/11/05/pythonbases/" data-title="Python入门" data-url="http://wenjiewang.top/2016/11/05/pythonbases/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python基本知识"><span class="toc-number">1.</span> <span class="toc-text">Python基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python中词典-dictionary"><span class="toc-number">2.</span> <span class="toc-text">Python中词典(dictionary)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python进阶"><span class="toc-number">3.</span> <span class="toc-text">Python进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件操作"><span class="toc-number">3.1.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块"><span class="toc-number">3.2.</span> <span class="toc-text">模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的参数传递"><span class="toc-number">3.3.</span> <span class="toc-text">函数的参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环设计-循环对象-函数对象"><span class="toc-number">3.4.</span> <span class="toc-text">循环设计 循环对象 函数对象</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/研究生涯/" title="研究生涯">研究生涯<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>10</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法导论/" title="算法导论">算法导论<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>12</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sort/" title="sort">sort<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ML/" title="ML">ML<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/BFS/" title="BFS">BFS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hadoop/" title="hadoop">hadoop<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/R/" title="R">R<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://FangHeart.top" target="_blank" title="FangHeart">FangHeart</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://sikaoa.com" target="_blank" title="SiKaoA">SiKaoA</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+    <iframe width="100%" height="450" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=450&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2952571673&verifier=a427a000&dpc=1"></iframe>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2952571673" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/LJeRRy" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:120392899@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Jerry">Jerry</a>
+		
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260198983'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260198983%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		</p>
+		<script type="text/javascript">
+  		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+ 			 e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  			})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  		_st('install','t5ji62MJwvB-Eyyt7Ktz','2.0.0');
+		</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jerry2016"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_null'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3Dnull' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

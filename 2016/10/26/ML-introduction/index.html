@@ -1,0 +1,581 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Introduction of Machine Learning | Never Git up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jerry">
+    
+
+    
+    <meta name="description" content="机器学习是一门研究在非特定编程条件下让计算机采取行动的学科。最近二十年，机器学习为我们带来了自动驾驶汽车、实用的语音识别、高效的网络搜索，让我们对人类基因的解读能力大大提高。当今机器学习技术已经非常普遍，您很可能在毫无察觉情况下每天使用几十次。许多研究者还认为机器学习是人工智能（AI）取得进展的最有效途径。在本课程中，您将学习最高效的机器学习技术，了解如何使用这些技术，并自己动手实践这些技术。更重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction of Machine Learning">
+<meta property="og:url" content="http://wenjiewang.top/2016/10/26/ML-introduction/index.html">
+<meta property="og:site_name" content="Never Git up">
+<meta property="og:description" content="机器学习是一门研究在非特定编程条件下让计算机采取行动的学科。最近二十年，机器学习为我们带来了自动驾驶汽车、实用的语音识别、高效的网络搜索，让我们对人类基因的解读能力大大提高。当今机器学习技术已经非常普遍，您很可能在毫无察觉情况下每天使用几十次。许多研究者还认为机器学习是人工智能（AI）取得进展的最有效途径。在本课程中，您将学习最高效的机器学习技术，了解如何使用这些技术，并自己动手实践这些技术。更重">
+<meta property="og:updated_time" content="2016-11-09T16:03:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Introduction of Machine Learning">
+<meta name="twitter:description" content="机器学习是一门研究在非特定编程条件下让计算机采取行动的学科。最近二十年，机器学习为我们带来了自动驾驶汽车、实用的语音识别、高效的网络搜索，让我们对人类基因的解读能力大大提高。当今机器学习技术已经非常普遍，您很可能在毫无察觉情况下每天使用几十次。许多研究者还认为机器学习是人工智能（AI）取得进展的最有效途径。在本课程中，您将学习最高效的机器学习技术，了解如何使用这些技术，并自己动手实践这些技术。更重">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/f.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.jpg" alt="Never Git up" title="Never Git up"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Never Git up">Never Git up</a></h1>
+				<h2 class="blog-motto">Better late than never</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/works">My Works</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+    				<label>Search</label>
+    				<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+   				</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/10/26/ML-introduction/" title="Introduction of Machine Learning" itemprop="url">Introduction of Machine Learning</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
+		
+  <p class="article-time">
+    <time datetime="2016-10-26T04:11:05.000Z" itemprop="datePublished"> 发表于 2016-10-26</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#supervised-learning（有监督的学习）"><span class="toc-number">1.</span> <span class="toc-text">supervised learning（有监督的学习）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#regression-problem"><span class="toc-number">1.1.</span> <span class="toc-text">regression problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#classification-problem"><span class="toc-number">1.2.</span> <span class="toc-text">classification problem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unsupervised-learning（无监督的学习）or-clustering（聚类）"><span class="toc-number">2.</span> <span class="toc-text">unsupervised learning（无监督的学习）or clustering（聚类）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-regression-with-one-variable"><span class="toc-number">3.</span> <span class="toc-text">Linear regression with one variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Algebra-Review"><span class="toc-number">4.</span> <span class="toc-text">Linear Algebra Review</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WordList"><span class="toc-number">5.</span> <span class="toc-text">WordList</span></a></li></ol>
+		
+		</div>
+		
+		<p>机器学习是一门研究在非特定编程条件下让计算机采取行动的学科。最近二十年，机器学习为我们带来了自动驾驶汽车、实用的语音识别、高效的网络搜索，让我们对人类基因的解读能力大大提高。当今机器学习技术已经非常普遍，您很可能在毫无察觉情况下每天使用几十次。许多研究者还认为机器学习是人工智能（AI）取得进展的最有效途径。在本课程中，您将学习最高效的机器学习技术，了解如何使用这些技术，并自己动手实践这些技术。更重要的是，您将不仅将学习理论知识，还将学习如何实践，如何快速使用强大的技术来解决新问题。最后，您将了解在硅谷企业如何在机器学习和AI领域进行创新。 本课程将广泛介绍机器学习、数据挖掘和统计模式识别。相关主题包括：(i) 监督式学习（参数和非参数算法、支持向量机、核函数和神经网络）。(ii) 无监督学习（集群、降维、推荐系统和深度学习）。(iii) 机器学习实例（偏见/方差理论；机器学习和AI领域的创新）。课程将引用很多案例和应用，您还需要学习如何在不同领域应用学习算法，例如智能机器人（感知和控制）、文本理解（网络搜索和垃圾邮件过滤）、计算机视觉、医学信息学、音频、数据库挖掘等领域。</p>
+<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.</p>
+<p><em>careful abut the meanning of E P T</em></p>
+<p>Example</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Classifying emails as spam or not spam.---&gt; T</div><div class="line">Watching you label emails as spam or not spam. ---&gt;E </div><div class="line">The number (or fraction) of emails correctly classified as spam/not spam. ----&gt;P</div></pre></td></tr></table></figure>
+<h2 id="supervised-learning（有监督的学习）"><a href="#supervised-learning（有监督的学习）" class="headerlink" title="supervised learning（有监督的学习）"></a>supervised learning（有监督的学习）</h2><p>the term supervised learning refers to the fact that we gave the algorithm a data set in which the “right answers” were given. </p>
+<h3 id="regression-problem"><a href="#regression-problem" class="headerlink" title="regression problem"></a>regression problem</h3><p>To define with a bit more terminology this is also called a regression problem and by regression problem I mean we’re trying to predict a <strong>continuous</strong> value output.</p>
+<h3 id="classification-problem"><a href="#classification-problem" class="headerlink" title="classification problem"></a>classification problem</h3><p>The term classification refers to the fact that here we’re trying to predict a <strong>discrete</strong> value output: zero or one, malignant or benign.<br>example:  Given email labeled as spam/not spam, learn a spam filter(垃圾邮件的分类)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a quadratic function or a seconde-order polynomial一个二次函数或者一个二次多项式</div><div class="line">a breast cancer as malignant or benign 恶性/良性</div><div class="line">clump thickness </div><div class="line">uniformity of cell size/shape</div></pre></td></tr></table></figure>
+<p>(a) Regression - Given a picture of Male/Female, we have to predict his/her age on the basis of the given picture.<br>(b) Classification - Given a patient with a tumor/diabetes, we have to predict whether the tumor is malignant or benign.</p>
+<h2 id="unsupervised-learning（无监督的学习）or-clustering（聚类）"><a href="#unsupervised-learning（无监督的学习）or-clustering（聚类）" class="headerlink" title="unsupervised learning（无监督的学习）or clustering（聚类）"></a>unsupervised learning（无监督的学习）or clustering（聚类）</h2><p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
+<p>examples</p>
+<ol>
+<li>google news</li>
+<li>understanding genomics(<strong>clustering</strong>). Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.</li>
+<li><p>Cocktail(鸡尾酒) party problem algorithm(<strong>Non-clustering</strong>). The “Cocktail Party Algorithm”, allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).<br>Octave(similar to Matlab)<br><code>[W,s,v] = svd((repmat(sum(x.*x,1),size(x,1),1).*x)*x&#39;);</code></p>
+</li>
+<li><p>The market segmentation example </p>
+</li>
+<li>Astronomical data analysis</li>
+</ol>
+<h2 id="Linear-regression-with-one-variable"><a href="#Linear-regression-with-one-variable" class="headerlink" title="Linear regression with one variable"></a>Linear regression with one variable</h2><p>Training Set–&gt;Learning Algorithm –&gt; hypothesis(假设)</p>
+<p>Linear regression with one variable == univariate linear regression</p>
+<p><strong>cost function</strong> == squared errror cause function<br><strong>Gradient Descent</strong>(梯度下降) can coverge to a local minimum, even with the learning rate <code>α</code> <strong>fixed</strong>. As we approach a local minimum, gradient descent will automatically take smaller steps. So, no need to decrease <code>α</code> over time.(the result is a local optimus)<br>If <code>α</code> is too small,’gradient descent can be slow.If <code>α</code> is too large, gradient descent can overshoot the minimum. It may fail to converge, or even diverge.<br><strong>Batch Gradient Descent</strong>  batch : Each step of gradient descent uses all the training examples.</p>
+<h2 id="Linear-Algebra-Review"><a href="#Linear-Algebra-Review" class="headerlink" title="Linear Algebra Review"></a>Linear Algebra Review</h2><p><strong>Matrix</strong> : Rectangular array of numbers<br>Dimension of matrix: number of rows x(by) number of columns</p>
+<p><strong>Vector</strong> : An n x 1 matrix.  –&gt; n-dimensional vector</p>
+<p><strong>Indentity Matrix</strong> </p>
+<p><strong>Inverse Matrix</strong></p>
+<p><strong>Transpose Matrix</strong></p>
+<h2 id="WordList"><a href="#WordList" class="headerlink" title="WordList"></a>WordList</h2><ol>
+<li>a quadratic function or a seconde-order polynomial一个二次函数或者一个二次多项式</li>
+<li>a breast cancer as malignant or benign 恶性/良性</li>
+<li>clump thickness 肿瘤块的浓度</li>
+<li>uniformity of cell size/shape</li>
+<li>fraction of emails correctly classified as spam / not spam.</li>
+<li>You have a large <strong>inventory</strong> of identical items</li>
+<li><strong>Cocktail</strong> party problem</li>
+<li>Machine learning is the field of study that gives computers the ability to learn without being <strong>explicitly</strong>programmed.</li>
+<li>contour plots/figures</li>
+<li>the derivative term</li>
+<li>caculus</li>
+<li>convex function == bowl-shaped</li>
+<li>scalar multiplication == real number multiplication</li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ML/">ML</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://wenjiewang.top/2016/10/26/ML-introduction/" data-title="Introduction of Machine Learning | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/10/31/ML-second/" title="Multivariate Linear Regression and the Octave">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Multivariate Linear Regression and the Octave</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/10/25/Leetcode-406/"  title="Palindrome Number">
+ <strong>下一篇：</strong><br/> 
+ <span>Palindrome Number
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/10/26/ML-introduction/" data-title="Introduction of Machine Learning" data-url="http://wenjiewang.top/2016/10/26/ML-introduction/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#supervised-learning（有监督的学习）"><span class="toc-number">1.</span> <span class="toc-text">supervised learning（有监督的学习）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#regression-problem"><span class="toc-number">1.1.</span> <span class="toc-text">regression problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#classification-problem"><span class="toc-number">1.2.</span> <span class="toc-text">classification problem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unsupervised-learning（无监督的学习）or-clustering（聚类）"><span class="toc-number">2.</span> <span class="toc-text">unsupervised learning（无监督的学习）or clustering（聚类）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-regression-with-one-variable"><span class="toc-number">3.</span> <span class="toc-text">Linear regression with one variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Algebra-Review"><span class="toc-number">4.</span> <span class="toc-text">Linear Algebra Review</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WordList"><span class="toc-number">5.</span> <span class="toc-text">WordList</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>8</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/研究生涯/" title="研究生涯">研究生涯<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法分析/" title="算法分析">算法分析<sup>10</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法导论/" title="算法导论">算法导论<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>12</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Leetcode/" title="Leetcode">Leetcode<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sort/" title="sort">sort<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ML/" title="ML">ML<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/BFS/" title="BFS">BFS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hadoop/" title="hadoop">hadoop<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/R/" title="R">R<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://FangHeart.top" target="_blank" title="FangHeart">FangHeart</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://sikaoa.com" target="_blank" title="SiKaoA">SiKaoA</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+    <iframe width="100%" height="450" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=450&fansRow=1&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2952571673&verifier=a427a000&dpc=1"></iframe>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2952571673" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/LJeRRy" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:120392899@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Jerry">Jerry</a>
+		
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260198983'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260198983%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		</p>
+		<script type="text/javascript">
+  		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+ 			 e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  			})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  		_st('install','t5ji62MJwvB-Eyyt7Ktz','2.0.0');
+		</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jerry2016"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_null'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3Dnull' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
