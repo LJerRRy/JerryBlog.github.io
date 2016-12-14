@@ -4,23 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Multivariate Linear Regression and the Octave | Never Git up</title>
+    <title>Backpropagation and  cost function for neural network | Never Git up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jerry">
     
 
     
-    <meta name="description" content="Enviroment Setup InstructionsMultivariate Linear RegressionMutiple FeaturesGradient Descent for Multiple VariablesGradient Descent in Practice (Feature Scaling)Make sure features are on a similar scal">
+    <meta name="description" content="Backpropagation 反向传播算法Multivariate Linear RegressionMutiple FeaturesGradient Descent for Multiple VariablesGradient Descent in Practice (Feature Scaling)Make sure features are on a similar scale.
+Get">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Multivariate Linear Regression and the Octave">
-<meta property="og:url" content="http://wenjiewang.top/2016/10/31/ML-second/index.html">
+<meta property="og:title" content="Backpropagation and  cost function for neural network">
+<meta property="og:url" content="http://wenjiewang.top/2016/10/31/ML-Backpropagation/index.html">
 <meta property="og:site_name" content="Never Git up">
-<meta property="og:description" content="Enviroment Setup InstructionsMultivariate Linear RegressionMutiple FeaturesGradient Descent for Multiple VariablesGradient Descent in Practice (Feature Scaling)Make sure features are on a similar scal">
-<meta property="og:updated_time" content="2016-11-09T16:02:09.777Z">
+<meta property="og:description" content="Backpropagation 反向传播算法Multivariate Linear RegressionMutiple FeaturesGradient Descent for Multiple VariablesGradient Descent in Practice (Feature Scaling)Make sure features are on a similar scale.
+Get">
+<meta property="og:updated_time" content="2016-11-21T14:18:59.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Multivariate Linear Regression and the Octave">
-<meta name="twitter:description" content="Enviroment Setup InstructionsMultivariate Linear RegressionMutiple FeaturesGradient Descent for Multiple VariablesGradient Descent in Practice (Feature Scaling)Make sure features are on a similar scal">
+<meta name="twitter:title" content="Backpropagation and  cost function for neural network">
+<meta name="twitter:description" content="Backpropagation 反向传播算法Multivariate Linear RegressionMutiple FeaturesGradient Descent for Multiple VariablesGradient Descent in Practice (Feature Scaling)Make sure features are on a similar scale.
+Get">
 
     
     <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
@@ -81,7 +84,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/10/31/ML-second/" title="Multivariate Linear Regression and the Octave" itemprop="url">Multivariate Linear Regression and the Octave</a>
+      <a href="/2016/10/31/ML-Backpropagation/" title="Backpropagation and  cost function for neural network" itemprop="url">Backpropagation and  cost function for neural network</a>
   </h1>
   <p class="article-author">By
        
@@ -97,11 +100,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Enviroment-Setup-Instructions"><span class="toc-number">1.</span> <span class="toc-text">Enviroment Setup Instructions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multivariate-Linear-Regression"><span class="toc-number">2.</span> <span class="toc-text">Multivariate Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutiple-Features"><span class="toc-number">2.1.</span> <span class="toc-text">Mutiple Features</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-for-Multiple-Variables"><span class="toc-number">2.2.</span> <span class="toc-text">Gradient Descent for Multiple Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-in-Practice-Feature-Scaling"><span class="toc-number">2.3.</span> <span class="toc-text">Gradient Descent in Practice (Feature Scaling)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-in-Practice-Learning-Rate"><span class="toc-number">2.4.</span> <span class="toc-text">Gradient Descent in Practice (Learning Rate)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Features-and-polynomial-Regression-多项式回归"><span class="toc-number">2.5.</span> <span class="toc-text">Features and polynomial Regression(多项式回归)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Computing-Parameters-Analytically"><span class="toc-number">3.</span> <span class="toc-text">Computing Parameters Analytically</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Equation-标准方程法"><span class="toc-number">3.1.</span> <span class="toc-text">Normal Equation(标准方程法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Equation-Noninvertibility"><span class="toc-number">3.2.</span> <span class="toc-text">Normal Equation Noninvertibility</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Octave-Tutorial"><span class="toc-number">4.</span> <span class="toc-text">Octave Tutorial</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Word-List"><span class="toc-number">5.</span> <span class="toc-text">Word List</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Backpropagation-反向传播算法"><span class="toc-number">1.</span> <span class="toc-text">Backpropagation 反向传播算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multivariate-Linear-Regression"><span class="toc-number">2.</span> <span class="toc-text">Multivariate Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutiple-Features"><span class="toc-number">2.1.</span> <span class="toc-text">Mutiple Features</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-for-Multiple-Variables"><span class="toc-number">2.2.</span> <span class="toc-text">Gradient Descent for Multiple Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-in-Practice-Feature-Scaling"><span class="toc-number">2.3.</span> <span class="toc-text">Gradient Descent in Practice (Feature Scaling)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-in-Practice-Learning-Rate"><span class="toc-number">2.4.</span> <span class="toc-text">Gradient Descent in Practice (Learning Rate)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Features-and-polynomial-Regression-多项式回归"><span class="toc-number">2.5.</span> <span class="toc-text">Features and polynomial Regression(多项式回归)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Computing-Parameters-Analytically"><span class="toc-number">3.</span> <span class="toc-text">Computing Parameters Analytically</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Equation-标准方程法"><span class="toc-number">3.1.</span> <span class="toc-text">Normal Equation(标准方程法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Equation-Noninvertibility"><span class="toc-number">3.2.</span> <span class="toc-text">Normal Equation Noninvertibility</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Octave-Tutorial"><span class="toc-number">4.</span> <span class="toc-text">Octave Tutorial</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Word-List"><span class="toc-number">5.</span> <span class="toc-text">Word List</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="Enviroment-Setup-Instructions"><a href="#Enviroment-Setup-Instructions" class="headerlink" title="Enviroment Setup Instructions"></a>Enviroment Setup Instructions</h2><h2 id="Multivariate-Linear-Regression"><a href="#Multivariate-Linear-Regression" class="headerlink" title="Multivariate Linear Regression"></a>Multivariate Linear Regression</h2><h3 id="Mutiple-Features"><a href="#Mutiple-Features" class="headerlink" title="Mutiple Features"></a>Mutiple Features</h3><h3 id="Gradient-Descent-for-Multiple-Variables"><a href="#Gradient-Descent-for-Multiple-Variables" class="headerlink" title="Gradient Descent for Multiple Variables"></a>Gradient Descent for Multiple Variables</h3><h3 id="Gradient-Descent-in-Practice-Feature-Scaling"><a href="#Gradient-Descent-in-Practice-Feature-Scaling" class="headerlink" title="Gradient Descent in Practice (Feature Scaling)"></a>Gradient Descent in Practice (Feature Scaling)</h3><p>Make sure features are on a similar scale.</p>
+		<h2 id="Backpropagation-反向传播算法"><a href="#Backpropagation-反向传播算法" class="headerlink" title="Backpropagation 反向传播算法"></a>Backpropagation 反向传播算法</h2><h2 id="Multivariate-Linear-Regression"><a href="#Multivariate-Linear-Regression" class="headerlink" title="Multivariate Linear Regression"></a>Multivariate Linear Regression</h2><h3 id="Mutiple-Features"><a href="#Mutiple-Features" class="headerlink" title="Mutiple Features"></a>Mutiple Features</h3><h3 id="Gradient-Descent-for-Multiple-Variables"><a href="#Gradient-Descent-for-Multiple-Variables" class="headerlink" title="Gradient Descent for Multiple Variables"></a>Gradient Descent for Multiple Variables</h3><h3 id="Gradient-Descent-in-Practice-Feature-Scaling"><a href="#Gradient-Descent-in-Practice-Feature-Scaling" class="headerlink" title="Gradient Descent in Practice (Feature Scaling)"></a>Gradient Descent in Practice (Feature Scaling)</h3><p>Make sure features are on a similar scale.</p>
 <p>Get every Feature into approximately a -1 ≤ x<sub>i</sub> ≤ 1 range<br>将数据集（训练集）进行缩放，原因是直接使用原始的数据集进行梯度下降，迭代次数会非常多而且相当复杂。</p>
 <p><strong>Mean normalization</strong> Replace x<sub>i</sub> with x<sub>i</sub> - u<sub>i</sub> (average value) / s<sub>i</sub> (range) to make features have approximately zero mean (Do not apply to x<sub>0</sub> = 1)</p>
 <h3 id="Gradient-Descent-in-Practice-Learning-Rate"><a href="#Gradient-Descent-in-Practice-Learning-Rate" class="headerlink" title="Gradient Descent in Practice (Learning Rate)"></a>Gradient Descent in Practice (Learning Rate)</h3><ol>
@@ -145,7 +148,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wenjiewang.top/2016/10/31/ML-second/" data-title="Multivariate Linear Regression and the Octave | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  <div data-url="http://wenjiewang.top/2016/10/31/ML-Backpropagation/" data-title="Backpropagation and  cost function for neural network | Never Git up" data-tsina="2952571673" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -159,18 +162,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/11/05/pythonbases/" title="Python入门">
+ <a href="/2016/10/31/ML-second/" title="Multivariate Linear Regression and the Octave">
   <strong>上一篇：</strong><br/>
   <span>
-  Python入门</span>
+  Multivariate Linear Regression and the Octave</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/10/31/ML-Backpropagation/"  title="Backpropagation and  cost function for neural network">
+<a href="/2016/10/26/ML-introduction/"  title="Introduction of Machine Learning">
  <strong>下一篇：</strong><br/> 
- <span>Backpropagation and  cost function for neural network
+ <span>Introduction of Machine Learning
 </span>
 </a>
 </div>
@@ -179,7 +182,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/10/31/ML-second/" data-title="Multivariate Linear Regression and the Octave" data-url="http://wenjiewang.top/2016/10/31/ML-second/"></div>
+	<div class="ds-thread" data-thread-key="2016/10/31/ML-Backpropagation/" data-title="Backpropagation and  cost function for neural network" data-url="http://wenjiewang.top/2016/10/31/ML-Backpropagation/"></div>
 </section>
 
 
@@ -189,7 +192,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Enviroment-Setup-Instructions"><span class="toc-number">1.</span> <span class="toc-text">Enviroment Setup Instructions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multivariate-Linear-Regression"><span class="toc-number">2.</span> <span class="toc-text">Multivariate Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutiple-Features"><span class="toc-number">2.1.</span> <span class="toc-text">Mutiple Features</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-for-Multiple-Variables"><span class="toc-number">2.2.</span> <span class="toc-text">Gradient Descent for Multiple Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-in-Practice-Feature-Scaling"><span class="toc-number">2.3.</span> <span class="toc-text">Gradient Descent in Practice (Feature Scaling)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-in-Practice-Learning-Rate"><span class="toc-number">2.4.</span> <span class="toc-text">Gradient Descent in Practice (Learning Rate)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Features-and-polynomial-Regression-多项式回归"><span class="toc-number">2.5.</span> <span class="toc-text">Features and polynomial Regression(多项式回归)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Computing-Parameters-Analytically"><span class="toc-number">3.</span> <span class="toc-text">Computing Parameters Analytically</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Equation-标准方程法"><span class="toc-number">3.1.</span> <span class="toc-text">Normal Equation(标准方程法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Equation-Noninvertibility"><span class="toc-number">3.2.</span> <span class="toc-text">Normal Equation Noninvertibility</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Octave-Tutorial"><span class="toc-number">4.</span> <span class="toc-text">Octave Tutorial</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Word-List"><span class="toc-number">5.</span> <span class="toc-text">Word List</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Backpropagation-反向传播算法"><span class="toc-number">1.</span> <span class="toc-text">Backpropagation 反向传播算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multivariate-Linear-Regression"><span class="toc-number">2.</span> <span class="toc-text">Multivariate Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutiple-Features"><span class="toc-number">2.1.</span> <span class="toc-text">Mutiple Features</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-for-Multiple-Variables"><span class="toc-number">2.2.</span> <span class="toc-text">Gradient Descent for Multiple Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-in-Practice-Feature-Scaling"><span class="toc-number">2.3.</span> <span class="toc-text">Gradient Descent in Practice (Feature Scaling)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-Descent-in-Practice-Learning-Rate"><span class="toc-number">2.4.</span> <span class="toc-text">Gradient Descent in Practice (Learning Rate)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Features-and-polynomial-Regression-多项式回归"><span class="toc-number">2.5.</span> <span class="toc-text">Features and polynomial Regression(多项式回归)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Computing-Parameters-Analytically"><span class="toc-number">3.</span> <span class="toc-text">Computing Parameters Analytically</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Equation-标准方程法"><span class="toc-number">3.1.</span> <span class="toc-text">Normal Equation(标准方程法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Equation-Noninvertibility"><span class="toc-number">3.2.</span> <span class="toc-text">Normal Equation Noninvertibility</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Octave-Tutorial"><span class="toc-number">4.</span> <span class="toc-text">Octave Tutorial</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Word-List"><span class="toc-number">5.</span> <span class="toc-text">Word List</span></a></li></ol>
  
   </div>
 

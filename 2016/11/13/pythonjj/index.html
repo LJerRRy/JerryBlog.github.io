@@ -4,29 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Leetcode-4 | Never Git up</title>
+    <title>Never Git up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jerry">
     
 
     
-    <meta name="description" content="Leetcode上算法题四，求两个已排序数组的中位数。
-问题描述There are two sorted arrays nums1 and nums2 of size m and n respectively.
-Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n">
+    <meta name="description" content="List
+问题
+
+12345678sampleList = [1,2,3,4,5,6,7,8]#sampleList.insert(2,1)#print(sampleList.count(1))for a in sampleList:    print (a)    if a == 4:        sampleList.reverse()        print(sampleList)
+上面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-4">
-<meta property="og:url" content="http://wenjiewang.top/2016/08/28/leetcode-4/index.html">
+<meta property="og:title" content="Never Git up">
+<meta property="og:url" content="http://wenjiewang.top/2016/11/13/pythonjj/index.html">
 <meta property="og:site_name" content="Never Git up">
-<meta property="og:description" content="Leetcode上算法题四，求两个已排序数组的中位数。
-问题描述There are two sorted arrays nums1 and nums2 of size m and n respectively.
-Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n">
-<meta property="og:updated_time" content="2016-08-30T02:04:22.427Z">
+<meta property="og:description" content="List
+问题
+
+12345678sampleList = [1,2,3,4,5,6,7,8]#sampleList.insert(2,1)#print(sampleList.count(1))for a in sampleList:    print (a)    if a == 4:        sampleList.reverse()        print(sampleList)
+上面">
+<meta property="og:updated_time" content="2016-11-17T12:20:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode-4">
-<meta name="twitter:description" content="Leetcode上算法题四，求两个已排序数组的中位数。
-问题描述There are two sorted arrays nums1 and nums2 of size m and n respectively.
-Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n">
+<meta name="twitter:title" content="Never Git up">
+<meta name="twitter:description" content="List
+问题
+
+12345678sampleList = [1,2,3,4,5,6,7,8]#sampleList.insert(2,1)#print(sampleList.count(1))for a in sampleList:    print (a)    if a == 4:        sampleList.reverse()        print(sampleList)
+上面">
 
     
     <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
@@ -87,14 +93,14 @@ Find the median of the two sorted arrays. The overall run time complexity should
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/28/leetcode-4/" title="Leetcode-4" itemprop="url">Leetcode-4</a>
+      <a href="/2016/11/13/pythonjj/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-28T15:00:32.000Z" itemprop="datePublished"> 发表于 2016-08-28</time>
+    <time datetime="2016-11-13T08:07:36.098Z" itemprop="datePublished"> 发表于 2016-11-13</time>
     
   </p>
 </header>
@@ -103,40 +109,27 @@ Find the median of the two sorted arrays. The overall run time complexity should
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法效率"><span class="toc-number">3.</span> <span class="toc-text">算法效率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-number">4.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-number">4.2.</span> <span class="toc-text">方法二</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">1.</span> <span class="toc-text">List</span></a></li></ol>
 		
 		</div>
 		
-		<p><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="external">Leetcode</a>上算法题四，求两个已排序数组的中位数。</p>
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively.</p>
-<p>Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
-<p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nums1 = [1, 3]</div><div class="line">nums2 = [2]</div><div class="line"></div><div class="line">The median is 2.0</div></pre></td></tr></table></figure></p>
-<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nums1 = [1, 2]</div><div class="line">nums2 = [3, 4]</div><div class="line"></div><div class="line">The median is (2 + 3)/2 = 2.5</div></pre></td></tr></table></figure></p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ul>
-<li><strong>方法一</strong>  将两个数组合并为一个有序数组a，根据两个数组长度的总长度n分类讨论：<ul>
-<li>偶数则取数组a下标为n/2-1和n/2的取均值为所求的中位数，<strong>注意：数组为整数，应该除以2.0，转换为浮点数。</strong></li>
-<li>奇数则取数组a下标为(n+1)/2-1的值为所求的中位数。</li>
-</ul>
-</li>
-<li><strong>方法二</strong> 分开求(未完成)</li>
-</ul>
-<h2 id="算法效率"><a href="#算法效率" class="headerlink" title="算法效率"></a>算法效率</h2><p>方法一的空间复杂度为O(m+n),时间复杂度就是遍历一遍A,B数组为O(m+n);<br><br>方法二</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays2</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = nums1.length + nums2.length;</div><div class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[len];</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>,k = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> (i&lt;nums1.length&amp;&amp;j&lt;nums2.length)&#123;</div><div class="line">            <span class="keyword">if</span>(nums1[i]&lt;nums2[j])&#123;</div><div class="line">                a[k++]=nums1[i++];</div><div class="line">            &#125;<span class="keyword">else</span> &#123;</div><div class="line">                a[k++]=nums2[j++];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//下面的while 只会执行一个</span></div><div class="line">        <span class="keyword">while</span> (i&lt;nums1.length) a[k++]=nums1[i++];</div><div class="line">        <span class="keyword">while</span> (j&lt;nums2.length) a[k++]=nums2[j++];</div><div class="line">        <span class="keyword">if</span>(len%<span class="number">2</span>==<span class="number">0</span>)</div><div class="line">            <span class="keyword">return</span> (a[len/<span class="number">2</span>-<span class="number">1</span>]+a[len/<span class="number">2</span>])/<span class="number">2.0</span>;<span class="comment">//注意：数组为整数，应该除以2.0</span></div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="keyword">return</span> a[(len+<span class="number">1</span>)/<span class="number">2</span>-<span class="number">1</span>];</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = nums1.length + nums2.length;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> flag = <span class="number">0</span>;<span class="comment">//flag 为1时表示数组1进行了++操作，为2表示数组2进行了++操作</span></div><div class="line">        <span class="keyword">if</span> (len % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">int</span> m, n;</div><div class="line">            <span class="keyword">while</span> (i &lt; nums1.length &amp;&amp; i &lt; nums2.length) &#123;</div><div class="line">                <span class="keyword">if</span> (count == len / <span class="number">2</span>) &#123;</div><div class="line">                    <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;<span class="comment">//数组1中有一个中位数其序号为i,另一个中位数序号可能为i+1,j,j+1中的一个</span></div><div class="line">                        <span class="keyword">if</span> (nums1[i] &lt;= nums2[j]) &#123;<span class="comment">//另一个中位数为j</span></div><div class="line">                            <span class="keyword">return</span> (nums1[i] + nums2[j]) / <span class="number">2.0</span>;</div><div class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums1[i + <span class="number">1</span>] &gt; nums2[j + <span class="number">1</span>])</div><div class="line"></div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> (nums1[i] + nums2[j]) / <span class="number">2</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>  
+		<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ol>
+<li>问题</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sampleList = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line"><span class="comment">#sampleList.insert(2,1)</span></div><div class="line"><span class="comment">#print(sampleList.count(1))</span></div><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> sampleList:</div><div class="line">    <span class="keyword">print</span> (a)</div><div class="line">    <span class="keyword">if</span> a == <span class="number">4</span>:</div><div class="line">        sampleList.reverse()</div><div class="line">        print(sampleList)</div></pre></td></tr></table></figure>
+<p>上面代码输出结果如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4</span></div><div class="line">[<span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</div><div class="line"><span class="number">4</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">7</span></div><div class="line"><span class="number">8</span></div></pre></td></tr></table></figure>
+<p>可以发现for循环一个list表时，它本质上还是有个i变量，从0开始一直加到最开始的list表的长度(这个长度每次会重新获取一次），如下例子中，如果每次循环都向list中添加元素，那么应该一直遍历下去，但结果并不是</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">sampleList = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line"><span class="comment">#sampleList.insert(2,1)</span></div><div class="line"><span class="comment">#print(sampleList.count(1))</span></div><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> sampleList:</div><div class="line">    <span class="keyword">print</span> (a)</div><div class="line">    <span class="keyword">if</span> a==<span class="number">1</span>:</div><div class="line">        sampleList.append(<span class="number">12</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">0</span>,len(sampleList)):</div><div class="line">    <span class="keyword">print</span> (a)</div><div class="line">    <span class="keyword">if</span> a==<span class="number">1</span>:</div><div class="line">        sampleList.append(<span class="number">12</span>)</div></pre></td></tr></table></figure>
+<p>python2.x 中,range返回的是一个列表<br>python3.x中,range返回的是一个迭代值<br>类似for n in range(1,10):之类的可以照常使用<br>如果要在3.x中产生1-10的列表,可以list(range(1,10))</p>
+<ol>
+<li>list的方法<br>.append(value) - appends element to end of the list<br>.count(‘x’) - counts the number of occurrences of ‘x’ in the list<br>.index(‘x’) - returns the index of ‘x’ in the list  若不含有x则报错<br>.insert(‘y’,’x’) - inserts ‘x’ at location ‘y’<br>.pop() - returns last element then removes it from the list<br>.remove(‘x’) - finds and removes first ‘x’ from list 无返回值<br>.reverse() - reverses the elements in the list<br>.sort() - sorts the list alphabetically in ascending order, or numerical in ascending order</li>
+</ol>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/算法分析/">算法分析</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/Leetcode/">Leetcode</a>
-  </div>
 
 </div>
 
@@ -144,7 +137,7 @@ Find the median of the two sorted arrays. The overall run time complexity should
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wenjiewang.top/2016/08/28/leetcode-4/" data-title="Leetcode-4 | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  <div data-url="http://wenjiewang.top/2016/11/13/pythonjj/" data-title="Never Git up" data-tsina="2952571673" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -157,19 +150,11 @@ Find the median of the two sorted arrays. The overall run time complexity should
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/08/30/Leetcode-389-390/" title="Leetcode-389-390">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Leetcode-389-390</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/08/25/hadooptest/"  title="hadooptest">
+<a href="/2016/11/05/pythonbases/"  title="Python入门">
  <strong>下一篇：</strong><br/> 
- <span>hadooptest
+ <span>Python入门
 </span>
 </a>
 </div>
@@ -178,7 +163,7 @@ Find the median of the two sorted arrays. The overall run time complexity should
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/08/28/leetcode-4/" data-title="Leetcode-4" data-url="http://wenjiewang.top/2016/08/28/leetcode-4/"></div>
+	<div class="ds-thread" data-thread-key="2016/11/13/pythonjj/" data-title="" data-url="http://wenjiewang.top/2016/11/13/pythonjj/"></div>
 </section>
 
 
@@ -188,7 +173,7 @@ Find the median of the two sorted arrays. The overall run time complexity should
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法效率"><span class="toc-number">3.</span> <span class="toc-text">算法效率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-number">4.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-number">4.2.</span> <span class="toc-text">方法二</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">1.</span> <span class="toc-text">List</span></a></li></ol>
  
   </div>
 
