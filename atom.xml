@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenjiewang.top/"/>
-  <updated>2016-11-17T12:20:20.000Z</updated>
+  <updated>2016-12-14T11:14:47.815Z</updated>
   <id>http://wenjiewang.top/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://wenjiewang.top/2016/11/13/pythonjj/"/>
-    <id>http://wenjiewang.top/2016/11/13/pythonjj/</id>
-    <published>2016-11-13T08:07:36.098Z</published>
-    <updated>2016-11-17T12:20:20.000Z</updated>
+    <title>Python入门List</title>
+    <link href="http://wenjiewang.top/2016/11/14/pythonjj/"/>
+    <id>http://wenjiewang.top/2016/11/14/pythonjj/</id>
+    <published>2016-11-14T05:52:05.000Z</published>
+    <updated>2016-12-14T11:14:47.815Z</updated>
     
     <content type="html"><![CDATA[<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ol>
 <li>问题</li>
@@ -45,6 +45,10 @@
     
     </summary>
     
+      <category term="学习笔记" scheme="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Python" scheme="http://wenjiewang.top/tags/Python/"/>
     
   </entry>
   
@@ -177,50 +181,6 @@ a+ 以附加方式打开可读写的文件。若文件不存在，则会建立�
   </entry>
   
   <entry>
-    <title>Multivariate Linear Regression and the Octave</title>
-    <link href="http://wenjiewang.top/2016/10/31/ML-second/"/>
-    <id>http://wenjiewang.top/2016/10/31/ML-second/</id>
-    <published>2016-10-31T01:12:05.000Z</published>
-    <updated>2016-11-09T16:02:09.777Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Enviroment-Setup-Instructions"><a href="#Enviroment-Setup-Instructions" class="headerlink" title="Enviroment Setup Instructions"></a>Enviroment Setup Instructions</h2><h2 id="Multivariate-Linear-Regression"><a href="#Multivariate-Linear-Regression" class="headerlink" title="Multivariate Linear Regression"></a>Multivariate Linear Regression</h2><h3 id="Mutiple-Features"><a href="#Mutiple-Features" class="headerlink" title="Mutiple Features"></a>Mutiple Features</h3><h3 id="Gradient-Descent-for-Multiple-Variables"><a href="#Gradient-Descent-for-Multiple-Variables" class="headerlink" title="Gradient Descent for Multiple Variables"></a>Gradient Descent for Multiple Variables</h3><h3 id="Gradient-Descent-in-Practice-Feature-Scaling"><a href="#Gradient-Descent-in-Practice-Feature-Scaling" class="headerlink" title="Gradient Descent in Practice (Feature Scaling)"></a>Gradient Descent in Practice (Feature Scaling)</h3><p>Make sure features are on a similar scale.</p>
-<p>Get every Feature into approximately a -1 ≤ x<sub>i</sub> ≤ 1 range<br>将数据集（训练集）进行缩放，原因是直接使用原始的数据集进行梯度下降，迭代次数会非常多而且相当复杂。</p>
-<p><strong>Mean normalization</strong> Replace x<sub>i</sub> with x<sub>i</sub> - u<sub>i</sub> (average value) / s<sub>i</sub> (range) to make features have approximately zero mean (Do not apply to x<sub>0</sub> = 1)</p>
-<h3 id="Gradient-Descent-in-Practice-Learning-Rate"><a href="#Gradient-Descent-in-Practice-Learning-Rate" class="headerlink" title="Gradient Descent in Practice (Learning Rate)"></a>Gradient Descent in Practice (Learning Rate)</h3><ol>
-<li>“Debugging”: How to make sure gradient descent is working correctly</li>
-</ol>
-<p>example automatic convergence test: Declare convergence if  J(θ) decrease by less than 10 <sup>-3</sup> in one iteration<br>Gradient descent not working : use smaller <code>α</code> </p>
-<p><code>α</code> 很足够小，那么每次迭代后的梯度都会下降，但是收敛的速度很慢<br><code>α</code> 太大了，不能够每次迭代梯度都能下降，可能造成不收敛（may not converge or slow converge)</p>
-<ol>
-<li>How to choose learning rate <code>α</code> </li>
-</ol>
-<h3 id="Features-and-polynomial-Regression-多项式回归"><a href="#Features-and-polynomial-Regression-多项式回归" class="headerlink" title="Features and polynomial Regression(多项式回归)"></a>Features and polynomial Regression(多项式回归)</h3><p>That is, how to fit a polynomial, like a quadratic function, or a cubic function, to your data</p>
-<h2 id="Computing-Parameters-Analytically"><a href="#Computing-Parameters-Analytically" class="headerlink" title="Computing Parameters Analytically"></a>Computing Parameters Analytically</h2><h3 id="Normal-Equation-标准方程法"><a href="#Normal-Equation-标准方程法" class="headerlink" title="Normal Equation(标准方程法)"></a>Normal Equation(标准方程法)</h3><p>Normal Equation: Method to solve for θ Analytically.<br>θ=(X<sup>T</sup>X)<sup>-1</sup>X<sup>T</sup>y</p>
-<p>m training examples, n features<br>the disadvantages and advantages between Gradient Descent and Normal Equation<br>Gradient Descent                               Normal Equation<br>• Need to choose <code>α</code>                           • No need to choose <code>α</code><br>• Needs many iterations.                       • Don’t need to iterate.<br>• Works well even                              • Need to compute (X<sup>T</sup>X)<sup>-1</sup> 时间复杂度 O(n<sup>3</sup>)<br>when <code>n</code> is large.                             • Slow if <code>n</code> is very large (N&gt;10000)</p>
-<h3 id="Normal-Equation-Noninvertibility"><a href="#Normal-Equation-Noninvertibility" class="headerlink" title="Normal Equation Noninvertibility"></a>Normal Equation Noninvertibility</h3><p>Normal Equation : θ=(X<sup>T</sup>X)<sup>-1</sup>X<sup>T</sup>y<br>what if X<sup>T</sup>X is non-invertible?(singular/degenerate)</p>
-<ol>
-<li>Redundant features(linearly dependent). E.g. x<sub>1</sub>=size in feet <sup>2</sup> x2 = size in m<sup>2</sup></li>
-<li>Too many features(e.g.m≤n)<br>·  Delete some features, or use regularization</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">prinv(x&apos;*x)*x&apos;*y</div><div class="line">pinv and inv</div><div class="line">pinv函数可以伪逆(Return the pseudoinverse of X.)</div></pre></td></tr></table></figure>
-<h2 id="Octave-Tutorial"><a href="#Octave-Tutorial" class="headerlink" title="Octave Tutorial"></a>Octave Tutorial</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">format long/short</div><div class="line">v = 1:0.1:2</div><div class="line">v = 1:6</div><div class="line">ones(1,3)</div><div class="line">C = 2*ones(2,3)</div><div class="line">v = rand(3,3) 随机随机矩阵</div><div class="line">w = randn(1,1000)高斯随机矩阵</div><div class="line">eye(4)单位矩阵</div><div class="line">help rand</div><div class="line">size(A)返回矩阵大小，size(A,1)返回矩阵的行数</div><div class="line">who/whos</div><div class="line">v = princeY(1:10)</div><div class="line">load princeY.dat</div><div class="line">save hello.mat v</div><div class="line">save hello.txt v -ascii</div><div class="line"></div><div class="line">A = [1 2;3 4;5 6]</div><div class="line">A(3,2)</div><div class="line">A(2,:)</div><div class="line">A = [A,[100;101;102]]</div><div class="line">A(:)</div><div class="line"></div><div class="line">A*C</div><div class="line">A.*C</div><div class="line">abs(v)</div><div class="line">log(v)</div><div class="line">exp(v)</div><div class="line">A&apos;</div><div class="line">max(a)</div><div class="line">[val,ind]=max(a)</div><div class="line">max(A)</div><div class="line">magic(Number)</div><div class="line"></div><div class="line">sum</div><div class="line">prod</div><div class="line">floor</div><div class="line">ceil</div><div class="line">max(A,[],1)</div><div class="line">max(max(A))</div><div class="line">sum(sum(A.*eye(9)))</div><div class="line">flipud(eye(9))</div></pre></td></tr></table></figure>
-<h2 id="Word-List"><a href="#Word-List" class="headerlink" title="Word List"></a>Word List</h2><p>Feature Scaling: 特征缩放<br>Mean normalization：均值归一化<br>iteration： 迭代<br>converge：使收敛<br>Noninvertibility：不可逆性<br>round off your answer to two decimal ：保留两位小数<br>unvectorized/verctorized : 未向量化的/向量化的</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Enviroment-Setup-Instructions&quot;&gt;&lt;a href=&quot;#Enviroment-Setup-Instructions&quot; class=&quot;headerlink&quot; title=&quot;Enviroment Setup Instructions&quot;&gt;&lt;/a
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="ML" scheme="http://wenjiewang.top/tags/ML/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Backpropagation and  cost function for neural network</title>
     <link href="http://wenjiewang.top/2016/10/31/ML-Backpropagation/"/>
     <id>http://wenjiewang.top/2016/10/31/ML-Backpropagation/</id>
@@ -254,6 +214,50 @@ a+ 以附加方式打开可读写的文件。若文件不存在，则会建立�
     <summary type="html">
     
       &lt;h2 id=&quot;Backpropagation-反向传播算法&quot;&gt;&lt;a href=&quot;#Backpropagation-反向传播算法&quot; class=&quot;headerlink&quot; title=&quot;Backpropagation 反向传播算法&quot;&gt;&lt;/a&gt;Backpropagation 反向传播
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ML" scheme="http://wenjiewang.top/tags/ML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Multivariate Linear Regression and the Octave</title>
+    <link href="http://wenjiewang.top/2016/10/31/ML-second/"/>
+    <id>http://wenjiewang.top/2016/10/31/ML-second/</id>
+    <published>2016-10-31T01:12:05.000Z</published>
+    <updated>2016-11-09T16:02:09.777Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Enviroment-Setup-Instructions"><a href="#Enviroment-Setup-Instructions" class="headerlink" title="Enviroment Setup Instructions"></a>Enviroment Setup Instructions</h2><h2 id="Multivariate-Linear-Regression"><a href="#Multivariate-Linear-Regression" class="headerlink" title="Multivariate Linear Regression"></a>Multivariate Linear Regression</h2><h3 id="Mutiple-Features"><a href="#Mutiple-Features" class="headerlink" title="Mutiple Features"></a>Mutiple Features</h3><h3 id="Gradient-Descent-for-Multiple-Variables"><a href="#Gradient-Descent-for-Multiple-Variables" class="headerlink" title="Gradient Descent for Multiple Variables"></a>Gradient Descent for Multiple Variables</h3><h3 id="Gradient-Descent-in-Practice-Feature-Scaling"><a href="#Gradient-Descent-in-Practice-Feature-Scaling" class="headerlink" title="Gradient Descent in Practice (Feature Scaling)"></a>Gradient Descent in Practice (Feature Scaling)</h3><p>Make sure features are on a similar scale.</p>
+<p>Get every Feature into approximately a -1 ≤ x<sub>i</sub> ≤ 1 range<br>将数据集（训练集）进行缩放，原因是直接使用原始的数据集进行梯度下降，迭代次数会非常多而且相当复杂。</p>
+<p><strong>Mean normalization</strong> Replace x<sub>i</sub> with x<sub>i</sub> - u<sub>i</sub> (average value) / s<sub>i</sub> (range) to make features have approximately zero mean (Do not apply to x<sub>0</sub> = 1)</p>
+<h3 id="Gradient-Descent-in-Practice-Learning-Rate"><a href="#Gradient-Descent-in-Practice-Learning-Rate" class="headerlink" title="Gradient Descent in Practice (Learning Rate)"></a>Gradient Descent in Practice (Learning Rate)</h3><ol>
+<li>“Debugging”: How to make sure gradient descent is working correctly</li>
+</ol>
+<p>example automatic convergence test: Declare convergence if  J(θ) decrease by less than 10 <sup>-3</sup> in one iteration<br>Gradient descent not working : use smaller <code>α</code> </p>
+<p><code>α</code> 很足够小，那么每次迭代后的梯度都会下降，但是收敛的速度很慢<br><code>α</code> 太大了，不能够每次迭代梯度都能下降，可能造成不收敛（may not converge or slow converge)</p>
+<ol>
+<li>How to choose learning rate <code>α</code> </li>
+</ol>
+<h3 id="Features-and-polynomial-Regression-多项式回归"><a href="#Features-and-polynomial-Regression-多项式回归" class="headerlink" title="Features and polynomial Regression(多项式回归)"></a>Features and polynomial Regression(多项式回归)</h3><p>That is, how to fit a polynomial, like a quadratic function, or a cubic function, to your data</p>
+<h2 id="Computing-Parameters-Analytically"><a href="#Computing-Parameters-Analytically" class="headerlink" title="Computing Parameters Analytically"></a>Computing Parameters Analytically</h2><h3 id="Normal-Equation-标准方程法"><a href="#Normal-Equation-标准方程法" class="headerlink" title="Normal Equation(标准方程法)"></a>Normal Equation(标准方程法)</h3><p>Normal Equation: Method to solve for θ Analytically.<br>θ=(X<sup>T</sup>X)<sup>-1</sup>X<sup>T</sup>y</p>
+<p>m training examples, n features<br>the disadvantages and advantages between Gradient Descent and Normal Equation<br>Gradient Descent                               Normal Equation<br>• Need to choose <code>α</code>                           • No need to choose <code>α</code><br>• Needs many iterations.                       • Don’t need to iterate.<br>• Works well even                              • Need to compute (X<sup>T</sup>X)<sup>-1</sup> 时间复杂度 O(n<sup>3</sup>)<br>when <code>n</code> is large.                             • Slow if <code>n</code> is very large (N&gt;10000)</p>
+<h3 id="Normal-Equation-Noninvertibility"><a href="#Normal-Equation-Noninvertibility" class="headerlink" title="Normal Equation Noninvertibility"></a>Normal Equation Noninvertibility</h3><p>Normal Equation : θ=(X<sup>T</sup>X)<sup>-1</sup>X<sup>T</sup>y<br>what if X<sup>T</sup>X is non-invertible?(singular/degenerate)</p>
+<ol>
+<li>Redundant features(linearly dependent). E.g. x<sub>1</sub>=size in feet <sup>2</sup> x2 = size in m<sup>2</sup></li>
+<li>Too many features(e.g.m≤n)<br>·  Delete some features, or use regularization</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">prinv(x&apos;*x)*x&apos;*y</div><div class="line">pinv and inv</div><div class="line">pinv函数可以伪逆(Return the pseudoinverse of X.)</div></pre></td></tr></table></figure>
+<h2 id="Octave-Tutorial"><a href="#Octave-Tutorial" class="headerlink" title="Octave Tutorial"></a>Octave Tutorial</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">format long/short</div><div class="line">v = 1:0.1:2</div><div class="line">v = 1:6</div><div class="line">ones(1,3)</div><div class="line">C = 2*ones(2,3)</div><div class="line">v = rand(3,3) 随机随机矩阵</div><div class="line">w = randn(1,1000)高斯随机矩阵</div><div class="line">eye(4)单位矩阵</div><div class="line">help rand</div><div class="line">size(A)返回矩阵大小，size(A,1)返回矩阵的行数</div><div class="line">who/whos</div><div class="line">v = princeY(1:10)</div><div class="line">load princeY.dat</div><div class="line">save hello.mat v</div><div class="line">save hello.txt v -ascii</div><div class="line"></div><div class="line">A = [1 2;3 4;5 6]</div><div class="line">A(3,2)</div><div class="line">A(2,:)</div><div class="line">A = [A,[100;101;102]]</div><div class="line">A(:)</div><div class="line"></div><div class="line">A*C</div><div class="line">A.*C</div><div class="line">abs(v)</div><div class="line">log(v)</div><div class="line">exp(v)</div><div class="line">A&apos;</div><div class="line">max(a)</div><div class="line">[val,ind]=max(a)</div><div class="line">max(A)</div><div class="line">magic(Number)</div><div class="line"></div><div class="line">sum</div><div class="line">prod</div><div class="line">floor</div><div class="line">ceil</div><div class="line">max(A,[],1)</div><div class="line">max(max(A))</div><div class="line">sum(sum(A.*eye(9)))</div><div class="line">flipud(eye(9))</div></pre></td></tr></table></figure>
+<h2 id="Word-List"><a href="#Word-List" class="headerlink" title="Word List"></a>Word List</h2><p>Feature Scaling: 特征缩放<br>Mean normalization：均值归一化<br>iteration： 迭代<br>converge：使收敛<br>Noninvertibility：不可逆性<br>round off your answer to two decimal ：保留两位小数<br>unvectorized/verctorized : 未向量化的/向量化的</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Enviroment-Setup-Instructions&quot;&gt;&lt;a href=&quot;#Enviroment-Setup-Instructions&quot; class=&quot;headerlink&quot; title=&quot;Enviroment Setup Instructions&quot;&gt;&lt;/a
     
     </summary>
     
@@ -701,6 +705,40 @@ a+ 以附加方式打开可读写的文件。若文件不存在，则会建立�
   </entry>
   
   <entry>
+    <title>Container With Most Water(Leetcode 11)</title>
+    <link href="http://wenjiewang.top/2016/09/11/Leetcode-11/"/>
+    <id>http://wenjiewang.top/2016/09/11/Leetcode-11/</id>
+    <published>2016-09-11T05:15:24.000Z</published>
+    <updated>2016-10-07T14:41:58.961Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第11题</p>
+<h1 id="题目8-String-to-Integer-atoi）"><a href="#题目8-String-to-Integer-atoi）" class="headerlink" title="题目8 String to Integer (atoi）"></a>题目8 String to Integer (atoi）</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Given n non-negative integers <code>a1, a2, ..., an</code>, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.<br><br>Note: You may not slant the container.</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>给定n个非负整数，这n个整数分别为<code>a1, a2, ..., an</code>,每个整数都对应一个坐标如<code>ai</code>对应坐标为(i,ai)，该坐标和点(i,0)形成的线段，从n条线段中找出两条使得形成的容器装水最多，容器不能倾斜。</p>
+<p><strong>方法一</strong></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//超时。。。</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = height.length;</div><div class="line">        <span class="keyword">int</span> max_water = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j =<span class="number">0</span>;j&lt;len;j++)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = j+<span class="number">1</span>;i&lt;len;i++)&#123;</div><div class="line">                <span class="comment">//取长度较小的边，类似木桶原理</span></div><div class="line">                <span class="keyword">int</span> h = height[i]&gt;height[j]?height[j]:height[i];</div><div class="line">                <span class="keyword">int</span> w = (i-j)*h;</div><div class="line">                <span class="keyword">if</span>(max_water&lt;w)&#123;</div><div class="line">                    max_water = w;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max_water;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>方法二</p>
+<p>该方法参考的discuss上的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> POrN = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//用来去掉字符串开始时的空格</span></div><div class="line">        <span class="keyword">char</span>[] charArr = str.toCharArray();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c:charArr)&#123;</div><div class="line">            count ++;</div><div class="line">            <span class="keyword">if</span>( c &gt;=<span class="string">'0'</span> &amp;&amp; c &lt;=<span class="string">'9'</span> )&#123;</div><div class="line">                result *= <span class="number">10</span>;</div><div class="line">                result += ( c - <span class="string">'0'</span>);</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'-'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN = -<span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'+'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN =  <span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">' '</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                <span class="comment">//刚刚开始时count一定为1，若这时字符也恰好为空格，则count--，</span></div><div class="line">                <span class="comment">//下次判断又可以判断了</span></div><div class="line">                count --;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>( result &gt; Integer.MAX_VALUE )&#123;</div><div class="line">            <span class="keyword">if</span>(POrN == <span class="number">1</span>)</div><div class="line">                <span class="keyword">return</span> Integer.MAX_VALUE;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> Integer.MIN_VALUE;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)(result * POrN);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problemset/algorithms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Leetcoode&lt;/a&gt;上的第11题&lt;/p&gt;
+&lt;h1 id=&quot;题目8-String-to-Intege
+    
+    </summary>
+    
+      <category term="算法分析" scheme="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="algorithm" scheme="http://wenjiewang.top/tags/algorithm/"/>
+    
+      <category term="Leetcode" scheme="http://wenjiewang.top/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Leetcode-5-7</title>
     <link href="http://wenjiewang.top/2016/09/11/Leetcode-5-7/"/>
     <id>http://wenjiewang.top/2016/09/11/Leetcode-5-7/</id>
@@ -734,40 +772,6 @@ a+ 以附加方式打开可读写的文件。若文件不存在，则会建立�
     
       &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problemset/algorithms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Leetcoode&lt;/a&gt;上的第5题与第7题&lt;/p&gt;
 &lt;h1 id=&quot;题目5-Longest-Palin
-    
-    </summary>
-    
-      <category term="算法分析" scheme="http://wenjiewang.top/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="algorithm" scheme="http://wenjiewang.top/tags/algorithm/"/>
-    
-      <category term="Leetcode" scheme="http://wenjiewang.top/tags/Leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Container With Most Water(Leetcode 11)</title>
-    <link href="http://wenjiewang.top/2016/09/11/Leetcode-11/"/>
-    <id>http://wenjiewang.top/2016/09/11/Leetcode-11/</id>
-    <published>2016-09-11T05:15:24.000Z</published>
-    <updated>2016-10-07T14:41:58.961Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第11题</p>
-<h1 id="题目8-String-to-Integer-atoi）"><a href="#题目8-String-to-Integer-atoi）" class="headerlink" title="题目8 String to Integer (atoi）"></a>题目8 String to Integer (atoi）</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Given n non-negative integers <code>a1, a2, ..., an</code>, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.<br><br>Note: You may not slant the container.</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>给定n个非负整数，这n个整数分别为<code>a1, a2, ..., an</code>,每个整数都对应一个坐标如<code>ai</code>对应坐标为(i,ai)，该坐标和点(i,0)形成的线段，从n条线段中找出两条使得形成的容器装水最多，容器不能倾斜。</p>
-<p><strong>方法一</strong></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>方法一</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//超时。。。</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = height.length;</div><div class="line">        <span class="keyword">int</span> max_water = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j =<span class="number">0</span>;j&lt;len;j++)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = j+<span class="number">1</span>;i&lt;len;i++)&#123;</div><div class="line">                <span class="comment">//取长度较小的边，类似木桶原理</span></div><div class="line">                <span class="keyword">int</span> h = height[i]&gt;height[j]?height[j]:height[i];</div><div class="line">                <span class="keyword">int</span> w = (i-j)*h;</div><div class="line">                <span class="keyword">if</span>(max_water&lt;w)&#123;</div><div class="line">                    max_water = w;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max_water;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>方法二</p>
-<p>该方法参考的discuss上的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> POrN = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//用来去掉字符串开始时的空格</span></div><div class="line">        <span class="keyword">char</span>[] charArr = str.toCharArray();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c:charArr)&#123;</div><div class="line">            count ++;</div><div class="line">            <span class="keyword">if</span>( c &gt;=<span class="string">'0'</span> &amp;&amp; c &lt;=<span class="string">'9'</span> )&#123;</div><div class="line">                result *= <span class="number">10</span>;</div><div class="line">                result += ( c - <span class="string">'0'</span>);</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'-'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN = -<span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">'+'</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                POrN =  <span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( c == <span class="string">' '</span> &amp;&amp; count == <span class="number">1</span>)&#123;</div><div class="line">                <span class="comment">//刚刚开始时count一定为1，若这时字符也恰好为空格，则count--，</span></div><div class="line">                <span class="comment">//下次判断又可以判断了</span></div><div class="line">                count --;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>( result &gt; Integer.MAX_VALUE )&#123;</div><div class="line">            <span class="keyword">if</span>(POrN == <span class="number">1</span>)</div><div class="line">                <span class="keyword">return</span> Integer.MAX_VALUE;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> Integer.MIN_VALUE;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)(result * POrN);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problemset/algorithms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Leetcoode&lt;/a&gt;上的第11题&lt;/p&gt;
-&lt;h1 id=&quot;题目8-String-to-Intege
     
     </summary>
     

@@ -4,26 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Palindrome Number | Never Git up</title>
+    <title>Python入门List | Never Git up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jerry">
     
 
     
-    <meta name="description" content="Leetcoode上的第406题
-题目406 Queue Reconstruction by Height问题描述Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers (h, k), where h is the height of t">
+    <meta name="description" content="List
+问题
+
+12345678sampleList = [1,2,3,4,5,6,7,8]#sampleList.insert(2,1)#print(sampleList.count(1))for a in sampleList:    print (a)    if a == 4:        sampleList.reverse()        print(sampleList)
+上面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Palindrome Number">
-<meta property="og:url" content="http://wenjiewang.top/2016/10/25/Leetcode-406/index.html">
+<meta property="og:title" content="Python入门List">
+<meta property="og:url" content="http://wenjiewang.top/2016/11/14/pythonjj/index.html">
 <meta property="og:site_name" content="Never Git up">
-<meta property="og:description" content="Leetcoode上的第406题
-题目406 Queue Reconstruction by Height问题描述Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers (h, k), where h is the height of t">
-<meta property="og:updated_time" content="2016-10-25T01:33:12.000Z">
+<meta property="og:description" content="List
+问题
+
+12345678sampleList = [1,2,3,4,5,6,7,8]#sampleList.insert(2,1)#print(sampleList.count(1))for a in sampleList:    print (a)    if a == 4:        sampleList.reverse()        print(sampleList)
+上面">
+<meta property="og:updated_time" content="2016-12-14T11:14:47.815Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Palindrome Number">
-<meta name="twitter:description" content="Leetcoode上的第406题
-题目406 Queue Reconstruction by Height问题描述Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers (h, k), where h is the height of t">
+<meta name="twitter:title" content="Python入门List">
+<meta name="twitter:description" content="List
+问题
+
+12345678sampleList = [1,2,3,4,5,6,7,8]#sampleList.insert(2,1)#print(sampleList.count(1))for a in sampleList:    print (a)    if a == 4:        sampleList.reverse()        print(sampleList)
+上面">
 
     
     <link rel="alternative" href="/atom.xml" title="Never Git up" type="application/atom+xml">
@@ -84,14 +93,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/10/25/Leetcode-406/" title="Palindrome Number" itemprop="url">Palindrome Number</a>
+      <a href="/2016/11/14/pythonjj/" title="Python入门List" itemprop="url">Python入门List</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Jerry" target="_blank" itemprop="author">Jerry</a>
 		
   <p class="article-time">
-    <time datetime="2016-10-24T16:16:23.000Z" itemprop="datePublished"> 发表于 2016-10-25</time>
+    <time datetime="2016-11-14T05:52:05.000Z" itemprop="datePublished"> 发表于 2016-11-14</time>
     
   </p>
 </header>
@@ -100,25 +109,22 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目406-Queue-Reconstruction-by-Height"><span class="toc-number">1.</span> <span class="toc-text">题目406 Queue Reconstruction by Height</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">1.</span> <span class="toc-text">List</span></a></li></ol>
 		
 		</div>
 		
-		<p><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="external">Leetcoode</a>上的第406题</p>
-<h1 id="题目406-Queue-Reconstruction-by-Height"><a href="#题目406-Queue-Reconstruction-by-Height" class="headerlink" title="题目406 Queue Reconstruction by Height"></a>题目406 Queue Reconstruction by Height</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers <code>(h, k)</code>, where h is the height of the person and <code>k</code> is the number of people in front of this person who have a height greater than or equal to <code>h</code>. Write an algorithm to reconstruct the queue.</p>
-<p>Example</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Input:</div><div class="line">[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]</div><div class="line"></div><div class="line">Output:</div><div class="line">[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]</div></pre></td></tr></table></figure>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>刚刚看到题目时候是想按照身高进行从大到小排序，如果第一个数相同则第二个数小的要大（即要在前面）。<br>例如排序后序列为<code>[[7,0], [7,1], [6,1], [5,0], [5,2], [4,4]]</code><br>然后从已排序好的数组people数组第一个元素开始，放入到数组result中，放入的位置就是离result开始位置偏移了元素第二个数字后的位置。如下： </p>
-<ol>
-<li>people: [7,0]<br>插入到离开始位置偏移了0个距离的位置。<br>result: [[7,0]] </li>
-<li>people: [7,1]<br>插入到离开始位置偏移了1个距离的位置，即插入到[7,0]的后面。<br>result: [[7,0], [7,1]] </li>
-<li>people: [6,1]<br>插入到离开始位置偏移了1个距离的位置，即插入到[7,0]的后面。<br>result: [[7,0], [6,1], [7,1]] </li>
-<li>people: [5,0]<br>插入到离开始位置偏移了0个距离的位置，即插入到[7,0]的前面。<br>result: [[5,0], [7,0], [6,1], [7,1]] </li>
-<li>people: [5,2]<br>插入到离开始位置偏移了2个距离的位置，即插入到[7,0]的后面。<br>result: [[5,0], [7,0], [5,2], [6,1], [7,1]] </li>
-<li>people: [4,4]<br>插入到离开始位置偏移了4个距离的位置，即插入到[6,1]的后面。<br>result: [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]</li>
+		<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ol>
+<li>问题</li>
 </ol>
-<p>java代码如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">//注意这里用二维数组来表示键值对，即该数组有n行，2列，一定是两列，否则返回people</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] reconstructQueue(<span class="keyword">int</span>[][] people) &#123;</div><div class="line">        <span class="keyword">if</span> (people == <span class="keyword">null</span> || people.length &lt;= <span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">return</span> people;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//将数组排序</span></div><div class="line">        Arrays.sort(people, <span class="keyword">new</span> Comparator&lt;<span class="keyword">int</span>[]&gt;() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] o1, <span class="keyword">int</span>[] o2)</span> </span>&#123;</div><div class="line">                <span class="comment">//相等情况下比较第二个数的大小，第二个数小的大</span></div><div class="line">                <span class="keyword">return</span> o1[<span class="number">0</span>] == o2[<span class="number">0</span>] ? o1[<span class="number">1</span>] - o2[<span class="number">1</span>] : o1[<span class="number">0</span>] - o2[<span class="number">0</span>];</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">int</span> n = people.length;</div><div class="line">        <span class="keyword">int</span>[][] ret = <span class="keyword">new</span> <span class="keyword">int</span>[n][];</div><div class="line">        <span class="comment">//从已排序的第一个元素开始，</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, ahead = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">                <span class="comment">//ahead是偏移量</span></div><div class="line">                <span class="keyword">if</span> (ahead &lt; people[i][<span class="number">1</span>]) &#123;</div><div class="line">                    ahead += (ret[j] == <span class="keyword">null</span> || ret[j][<span class="number">0</span>] &gt;= people[i][<span class="number">0</span>]) ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ret[j] == <span class="keyword">null</span>) &#123;</div><div class="line">                    ret[j] = people[i];</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sampleList = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line"><span class="comment">#sampleList.insert(2,1)</span></div><div class="line"><span class="comment">#print(sampleList.count(1))</span></div><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> sampleList:</div><div class="line">    <span class="keyword">print</span> (a)</div><div class="line">    <span class="keyword">if</span> a == <span class="number">4</span>:</div><div class="line">        sampleList.reverse()</div><div class="line">        print(sampleList)</div></pre></td></tr></table></figure>
+<p>上面代码输出结果如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4</span></div><div class="line">[<span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</div><div class="line"><span class="number">4</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">7</span></div><div class="line"><span class="number">8</span></div></pre></td></tr></table></figure>
+<p>可以发现for循环一个list表时，它本质上还是有个i变量，从0开始一直加到最开始的list表的长度(这个长度每次会重新获取一次），如下例子中，如果每次循环都向list中添加元素，那么应该一直遍历下去，但结果并不是</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">sampleList = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line"><span class="comment">#sampleList.insert(2,1)</span></div><div class="line"><span class="comment">#print(sampleList.count(1))</span></div><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> sampleList:</div><div class="line">    <span class="keyword">print</span> (a)</div><div class="line">    <span class="keyword">if</span> a==<span class="number">1</span>:</div><div class="line">        sampleList.append(<span class="number">12</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">0</span>,len(sampleList)):</div><div class="line">    <span class="keyword">print</span> (a)</div><div class="line">    <span class="keyword">if</span> a==<span class="number">1</span>:</div><div class="line">        sampleList.append(<span class="number">12</span>)</div></pre></td></tr></table></figure>
+<p>python2.x 中,range返回的是一个列表<br>python3.x中,range返回的是一个迭代值<br>类似for n in range(1,10):之类的可以照常使用<br>如果要在3.x中产生1-10的列表,可以list(range(1,10))</p>
+<ol>
+<li>list的方法<br>.append(value) - appends element to end of the list<br>.count(‘x’) - counts the number of occurrences of ‘x’ in the list<br>.index(‘x’) - returns the index of ‘x’ in the list  若不含有x则报错<br>.insert(‘y’,’x’) - inserts ‘x’ at location ‘y’<br>.pop() - returns last element then removes it from the list<br>.remove(‘x’) - finds and removes first ‘x’ from list 无返回值<br>.reverse() - reverses the elements in the list<br>.sort() - sorts the list alphabetically in ascending order, or numerical in ascending order</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -126,13 +132,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/算法分析/">算法分析</a>
+  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/Leetcode/">Leetcode</a>
+  <span></span> <a href="/tags/Python/">Python</a>
   </div>
 
 </div>
@@ -141,7 +147,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wenjiewang.top/2016/10/25/Leetcode-406/" data-title="Palindrome Number | Never Git up" data-tsina="2952571673" class="share clearfix">
+	  <div data-url="http://wenjiewang.top/2016/11/14/pythonjj/" data-title="Python入门List | Never Git up" data-tsina="2952571673" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -154,19 +160,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/10/26/ML-introduction/" title="Introduction of Machine Learning">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Introduction of Machine Learning</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/10/20/R-Summary/"  title="R Learnning">
+<a href="/2016/11/05/pythonbases/"  title="Python入门">
  <strong>下一篇：</strong><br/> 
- <span>R Learnning
+ <span>Python入门
 </span>
 </a>
 </div>
@@ -175,7 +173,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/10/25/Leetcode-406/" data-title="Palindrome Number" data-url="http://wenjiewang.top/2016/10/25/Leetcode-406/"></div>
+	<div class="ds-thread" data-thread-key="2016/11/14/pythonjj/" data-title="Python入门List" data-url="http://wenjiewang.top/2016/11/14/pythonjj/"></div>
 </section>
 
 
@@ -185,7 +183,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目406-Queue-Reconstruction-by-Height"><span class="toc-number">1.</span> <span class="toc-text">题目406 Queue Reconstruction by Height</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.2.</span> <span class="toc-text">解题思路</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">1.</span> <span class="toc-text">List</span></a></li></ol>
  
   </div>
 

@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://wenjiewang.top/2016/11/14/pythonjj/</loc>
+    <lastmod>2016-12-14T11:14:47.815Z</lastmod>
+    <data>
+        <display>
+        <title>Python入门List</title>
+        <pubTime>2016-11-14T05:52:05.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wenjiewang.top/2016/10/31/ML-Backpropagation/</loc>
     <lastmod>2016-11-21T14:18:59.031Z</lastmod>
     <data>
@@ -18,21 +38,6 @@
              
               <breadCrumb title="学习笔记" url="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wenjiewang.top/2016/11/13/pythonjj/</loc>
-    <lastmod>2016-11-17T12:20:20.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2016-11-13T08:07:36.098Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -187,7 +192,7 @@
 
     
   <url>
-    <loc>http://wenjiewang.top/2016/09/28/Chapter-Two/</loc>
+    <loc>http://wenjiewang.top/2016/09/28/Chapter-Four/</loc>
     <lastmod>2016-09-29T13:59:28.255Z</lastmod>
     <data>
         <display>
@@ -209,7 +214,7 @@
 
     
   <url>
-    <loc>http://wenjiewang.top/2016/09/28/Chapter-Four/</loc>
+    <loc>http://wenjiewang.top/2016/09/28/Chapter-Two/</loc>
     <lastmod>2016-09-29T13:59:28.255Z</lastmod>
     <data>
         <display>
@@ -385,15 +390,16 @@
 
     
     
+    
   <url>
-    <loc>http://wenjiewang.top/2016/08/23/gitlearn/</loc>
+    <loc>http://wenjiewang.top/2016/08/23/hello-world/</loc>
     <lastmod>2016-08-29T01:37:43.962Z</lastmod>
     <data>
         <display>
-        <title>git learning day 1</title>
-        <pubTime>2016-08-23T11:00:22.000Z</pubTime>
+        <title>Hello World Hexo</title>
+        <pubTime>2016-08-23T05:35:50.580Z</pubTime>
         
-        <tag>git</tag>
+        <tag>hexo</tag>
          
          
            
@@ -406,14 +412,14 @@
 
     
   <url>
-    <loc>http://wenjiewang.top/2016/08/23/hello-world/</loc>
+    <loc>http://wenjiewang.top/2016/08/23/gitlearn/</loc>
     <lastmod>2016-08-29T01:37:43.962Z</lastmod>
     <data>
         <display>
-        <title>Hello World Hexo</title>
-        <pubTime>2016-08-23T05:35:50.580Z</pubTime>
+        <title>git learning day 1</title>
+        <pubTime>2016-08-23T11:00:22.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>git</tag>
          
          
            
@@ -445,6 +451,25 @@
     </url>
 
     
+  <url>
+    <loc>http://wenjiewang.top/2016/08/25/hadooptest/</loc>
+    <lastmod>2016-08-25T09:14:20.565Z</lastmod>
+    <data>
+        <display>
+        <title>hadooptest</title>
+        <pubTime>2016-08-24T16:58:55.000Z</pubTime>
+        
+        <tag>hadoop</tag>
+         
+         
+           
+             
+              <breadCrumb title="研究生涯" url="http://wenjiewang.top/categories/%E7%A0%94%E7%A9%B6%E7%94%9F%E6%B6%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://wenjiewang.top/2016/08/24/gitlearn2/</loc>
@@ -460,26 +485,6 @@
            
              
               <breadCrumb title="学习笔记" url="http://wenjiewang.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wenjiewang.top/2016/08/25/hadooptest/</loc>
-    <lastmod>2016-08-25T09:14:20.565Z</lastmod>
-    <data>
-        <display>
-        <title>hadooptest</title>
-        <pubTime>2016-08-24T16:58:55.000Z</pubTime>
-        
-        <tag>hadoop</tag>
-         
-         
-           
-             
-              <breadCrumb title="研究生涯" url="http://wenjiewang.top/categories/%E7%A0%94%E7%A9%B6%E7%94%9F%E6%B6%AF/"/>
           
         </display>
     </data>
